@@ -19,10 +19,41 @@ import WaveCta from 'components/WaveCta';
 import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { NavItems } from 'types';
 
+type SingleFooterListItem = { title: string; href: string };
+type FooterListItems = SingleFooterListItem[];
+type SingleFooterList = { title: string; items: FooterListItems };
+type FooterItems = SingleFooterList[];
+
 const navItems: NavItems = [
   { title: 'Awesome SaaS Features', href: '/features' },
   { title: 'Pricing', href: '/pricing' },
   { title: 'Contact', href: '/contact' },
+];
+
+const navs: FooterItems = [
+  {
+    title: 'How is Hannah?',
+    items: [
+      { title: 'Resume', href: '/privacy-policy' },
+      { title: 'Cover Letter', href: '/cookies-policy' },
+      { title: 'Contact', href: '/contact' },
+    ],
+  },
+  {
+    title: 'Develop Archiving',
+    items: [
+      { title: 'Blog', href: '/blog' },
+      { title: 'Series', href: '/series' },
+      { title: 'Guest Book', href: '/help-center' },
+    ],
+  },
+  {
+    title: 'Daily Archiving',
+    items: [
+      { title: 'Trip', href: '/contact' },
+      { title: 'Popular Restaurant', href: '/faq' },
+    ],
+  },
 ];
 
 const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });

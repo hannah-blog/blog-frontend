@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Collapse from 'components/Collapse';
 import Container from 'components/Container';
-import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
 import ThreeLayersCircle from 'components/ThreeLayersCircle';
 import { media } from 'utils/media';
@@ -13,7 +12,7 @@ const TABS = [
     title: '이고는 GC 기본 알고리즘과 동작 방식',
     description:
       '<p>메소드 영역클래스 멤버 변수의 이름, 데이터 타입, 접근 제어자 정보같은 필드 정보와 메소드의 이름, 리턴 타입, 파라미터, 접근 제어자 정보같은 메소드 정보, Type정보(Interface인지 class인지), Runtime Constant Pool(문자 상수, 타입)...</p>',
-    imageUrl: '/demo-illustration-3.png',
+    imageUrl: 'https://velog.velcdn.com/images/coals_0329/post/7ecf59a4-b496-4815-92dd-de471627d188/image.png',
     baseColor: '249,82,120',
     secondColor: '221,9,57',
   },
@@ -21,7 +20,7 @@ const TABS = [
     title: '이고는 MapStruct 튜토리얼',
     description:
       '<p>Kotlin에 MapStruct를 적용해보겠습니다~! 1. 의존성 주입 (gradle) 2. Entity & DTO 3. MapStruct > build(실행) 결과 테스트까지 성공! 📛 public? private? 순탄하게 테스트 코드를 짜면서 돌리던중...</p>',
-    imageUrl: '/demo-illustration-4.png',
+    imageUrl: 'https://velog.velcdn.com/images/coals_0329/post/87ff60ed-852c-472e-b66a-066581f51517/image.png',
     baseColor: '57,148,224',
     secondColor: '99,172,232',
   },
@@ -29,7 +28,7 @@ const TABS = [
     title: '이고는 JPA 에서 JSON 타입 사용하는고 (MySQL)',
     description:
       '<p>MySQL에 있는 json타입을 JPA로 다루어 보는 방법을 정리해보도록 하겠습니다... 이거 포멧이 글자수가 짧아서... 이상하게 ... 되여... 조금... 길게... 쓰도록... 할게요... 읭... 왜 이러지... 글자수때문이 아닌가... 글자수때문이 맞네...</p>',
-    imageUrl: '/demo-illustration-5.png',
+    imageUrl: 'https://velog.velcdn.com/images/coals_0329/post/a4039793-a050-4f4c-a120-b16a24a51b91/image.png',
     baseColor: '88,193,132',
     secondColor: '124,207,158',
   },

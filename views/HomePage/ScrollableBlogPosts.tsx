@@ -4,7 +4,6 @@ import { A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ArticleCard from 'components/ArticleCard';
 import Container from 'components/Container';
-import OverTitle from 'components/OverTitle';
 import SectionTitle from 'components/SectionTitle';
 import { useResizeObserver } from 'hooks/useResizeObserver';
 import { SingleArticle } from 'types';
@@ -37,7 +36,7 @@ export default function ScrollableBlogPosts({ posts }: ScrollableBlogPostsProps)
         {hasMounted && (
           <Swiper modules={[A11y]} slidesPerView={noOfItems} spaceBetween={10} loop>
             {posts.map((singlePost, idx) => (
-              <SwiperSlide key={singlePost.meta.title}>
+              <SwiperSlide key={idx}>
                 <ArticleCard
                   title={singlePost.meta.title}
                   description={singlePost.meta.description}
@@ -59,6 +58,8 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  margin-top: 3rem;
 
   & > *:last-child {
     margin-top: 1rem;

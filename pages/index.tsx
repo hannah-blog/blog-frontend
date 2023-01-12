@@ -23,9 +23,9 @@ export default function Homepage({ posts }: InferGetStaticPropsType<typeof getSt
           <Hero />
         </WhiteBackgroundContainer>
         <DarkerBackgroundContainer>
-          <FeaturesGallery />
-          <Testimonials />
           <ScrollableBlogPosts posts={posts} />
+          <Testimonials />
+          <FeaturesGallery />
         </DarkerBackgroundContainer>
       </HomepageWrapper>
     </>

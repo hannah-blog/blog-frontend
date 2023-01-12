@@ -1,6 +1,6 @@
+import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
 import NextLink from 'next/link';
 import styled from 'styled-components';
 import Container from 'components/Container';
