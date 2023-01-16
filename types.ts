@@ -2,6 +2,12 @@ export type SingleNavItem = { title: string; href: string; outlined?: boolean };
 
 export type NavItems = SingleNavItem[];
 
+export type DetailItem = { title: string; href: string }
+
+export type SingleCustomNavItem = { title: string; href: string; items: DetailItem[] };
+
+export type CustomNavItems = SingleCustomNavItem[];
+
 export type SingleArticle = {
   slug: string;
   content: string;

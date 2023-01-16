@@ -6,7 +6,7 @@ import InformationSection from 'views/ContactPage/InformationSection';
 
 export default function ContactPage() {
   return (
-    <Page title="Contact" description="Minim sint aliquip nostrud excepteur cupidatat amet do laborum exercitation cupidatat ea proident.">
+    <Page title="Contact" description="블로그의 에러 사항이나, 개인적으로 메일을 보내고 싶으신 분들을 위한 contact 페이지 입니다.">
       <ContactContainer>
         <InformationSection />
         <FormSection />

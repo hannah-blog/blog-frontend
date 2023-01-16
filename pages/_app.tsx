@@ -17,12 +17,7 @@ import NavigationDrawer from 'components/NavigationDrawer';
 import NewsletterModal from 'components/NewsletterModal';
 import WaveCta from 'components/WaveCta';
 import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
-import { NavItems } from 'types';
-
-type SingleFooterListItem = { title: string; href: string };
-type FooterListItems = SingleFooterListItem[];
-type SingleFooterList = { title: string; items: FooterListItems };
-type FooterItems = SingleFooterList[];
+import {CustomNavItems, NavItems} from 'types';
 
 const navItems: NavItems = [
   { title: 'Awesome SaaS Features', href: '/features' },
@@ -30,9 +25,10 @@ const navItems: NavItems = [
   { title: 'Contact', href: '/contact' },
 ];
 
-const navs: FooterItems = [
+const navs: CustomNavItems = [
   {
     title: 'How is Hannah?',
+    href: '/features',
     items: [
       { title: 'Resume', href: '/privacy-policy' },
       { title: 'Cover Letter', href: '/cookies-policy' },
@@ -41,6 +37,7 @@ const navs: FooterItems = [
   },
   {
     title: 'Develop Archiving',
+    href: '/pricing',
     items: [
       { title: 'Blog', href: '/blog' },
       { title: 'Series', href: '/series' },
@@ -49,6 +46,7 @@ const navs: FooterItems = [
   },
   {
     title: 'Daily Archiving',
+    href: '/contact',
     items: [
       { title: 'Trip', href: '/contact' },
       { title: 'Popular Restaurant', href: '/faq' },
@@ -64,14 +62,16 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Explora" />
         <link rel="icon" type="image/png" href="/favicon.ico" />
+        <title></title>
       </Head>
       <ColorModeScript />
       <GlobalStyle />
 
       <Providers>
         <Modals />
-        <Navbar items={navItems} />
+        <Navbar items={navs} />
         <TinaEditProvider
           editMode={
             <TinaCMS
