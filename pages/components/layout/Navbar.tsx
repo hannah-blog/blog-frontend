@@ -9,7 +9,7 @@ import {
   Menu,
   MenuHandler,
   MenuList,
-  MenuItem,
+  MenuItem, Avatar,
 } from "@material-tailwind/react";
 
 interface NavbarProps {
@@ -137,7 +137,7 @@ export default function Navbar({
         <div className={`flex w-full items-center !justify-between text-[#1A237E] ${className}`}>
           <Link href="/" className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0">
             <ProfileImg>
-              <img alt="Hannah github profile image" src="https://avatars.githubusercontent.com/u/57277976?v=4" />
+              <Avatar alt="Hannah github profile image" src="https://avatars.githubusercontent.com/u/57277976?v=4" />
               <h1>Hannah Blog</h1>
             </ProfileImg>
           </Link>
