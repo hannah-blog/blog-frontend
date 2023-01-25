@@ -1,3 +1,4 @@
+import {blockIcon, docsIcon, drawerIcon} from "./icons";
 
 type NavChildren = {
   title: string,
@@ -8,6 +9,7 @@ type NavChildrenList = NavChildren[];
 type NavData = {
   mainTitle: string,
   link: string,
+  icon: JSX.Element,
   children: NavChildrenList,
 }
 type NavDataList = NavData[];
@@ -16,6 +18,7 @@ export const navData: NavDataList = [
   {
     mainTitle: "How is Hannah?",
     link: "/introduce",
+    icon: docsIcon,
     children: [
       {
         "title": "Resume",
@@ -34,6 +37,7 @@ export const navData: NavDataList = [
   {
     mainTitle: "Develop Archiving",
     link: "/develop",
+    icon: blockIcon,
     children: [
       {
         "title": "Blog",
@@ -52,6 +56,7 @@ export const navData: NavDataList = [
   {
     mainTitle: "Daily Archiving",
     link: "/daily",
+    icon: drawerIcon,
     children: [
       {
         "title": "Trip",

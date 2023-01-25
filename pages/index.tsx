@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 import MainIntroduce from "./components/main/MainIntroduce";
+import RecentPosts from "./components/main/RecentPosts";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Navbar />
       <main className={styles.main}>
         <MainIntroduce />
+        <RecentPosts />
       </main>
       <Footer />
     </>

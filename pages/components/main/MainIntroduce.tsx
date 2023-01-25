@@ -25,8 +25,7 @@ const MainWrap = styled.div`
   align-items: center;
   height: 300px;
   width: 100%;
-  --tw-text-opacity: 1;
-  color: rgb(26 35 126 / var(--tw-text-opacity));
+  color: rgb(26 35 126);
   margin-top: 7%;
 `;
 
