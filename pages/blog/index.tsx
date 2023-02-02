@@ -1,4 +1,5 @@
+import RecentPosts from "../../components/main/RecentPosts";
 
 export default function Blog() {
-  return <div>Blog</div>
+  return <RecentPosts />
 }

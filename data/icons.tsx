@@ -3,6 +3,8 @@ const docsIcon: JSX.Element =
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
+    height={24}
+    width={24}
     fill="currentColor"
     className="mr-1.5 h-[18px] w-[18px] opacity-75"
   >
@@ -20,6 +22,8 @@ const blockIcon: JSX.Element =
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="currentColor"
+    height={24}
+    width={24}
     className="mr-1.5 h-[18px] w-[18px] opacity-75"
   >
     <path
@@ -33,6 +37,8 @@ const drawerIcon: JSX.Element =
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
+    height={24}
+    width={24}
     fill="currentColor"
     className="mr-1.5 h-[18px] w-[18px] text-inherit opacity-75"
   >

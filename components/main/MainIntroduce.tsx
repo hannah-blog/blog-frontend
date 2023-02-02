@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Typography} from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 import Timer from "../../utils/timer";
 import MainSvg from "../../svg/MainSvg";
 

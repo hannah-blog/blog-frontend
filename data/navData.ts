@@ -1,4 +1,4 @@
-import {blockIcon, docsIcon, drawerIcon} from "./icons";
+import { blockIcon, docsIcon, drawerIcon } from "./icons";
 
 type NavChildren = {
   title: string,

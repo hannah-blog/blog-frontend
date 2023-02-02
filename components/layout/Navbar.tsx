@@ -49,7 +49,7 @@ export default function Navbar({
             <li>
               <span className={navbarItemClasses}>
                 {nav.icon}
-                <span>{nav.mainTitle}</span>
+                <span className="ml-2">{nav.mainTitle}</span>
               </span>
             </li>
           </MenuHandler>
@@ -79,7 +79,7 @@ export default function Navbar({
         shadow={shadow}
       >
         <div className={`flex w-full items-center !justify-between text-[#1A237E] ${className}`}>
-          <Link href="/" className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0">
+          <Link href="/pages" className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0">
             <ProfileImg>
               <Avatar alt="Hannah github profile image" src="https://avatars.githubusercontent.com/u/57277976?v=4"/>
               <h1>Hannah Blog</h1>

@@ -1,11 +1,9 @@
-import MainIntroduce from "./components/main/MainIntroduce";
-import RecentPosts from "./components/main/RecentPosts";
+import MainIntroduce from "../components/main/MainIntroduce";
 
 export default function Home() {
   return (
     <>
       <MainIntroduce />
-      <RecentPosts />
     </>
   )
 }

@@ -28,14 +28,14 @@ export default function Footer() {
         </div>
         <Hr />
         <CopyrightWrap>
-          <Link href="/" className="text-dark inline-flex items-center font-semibold no-underline">
+          <Link href="/pages" className="text-dark inline-flex items-center font-semibold no-underline">
             <span className="mr-1">Powered by</span>
             <Logo>Hannah</Logo>
           </Link>
           <CopyrightBox>
             <Copyright>
               Copyright &copy; {year} Hannah Archiving{" "}
-              <Link href="/" className="text-inherit transition-all">
+              <Link href="/pages" className="text-inherit transition-all">
                 Pages.
               </Link>
             </Copyright>

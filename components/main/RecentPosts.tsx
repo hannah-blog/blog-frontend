@@ -1,4 +1,4 @@
-import {Card, CardBody, CardFooter, CardHeader, Typography} from "@material-tailwind/react";
+import { Card, CardBody, CardFooter, CardHeader, Typography } from "@material-tailwind/react";
 
 export default function RecentPosts() {
   return (
