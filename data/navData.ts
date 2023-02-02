@@ -1,4 +1,4 @@
-import { blockIcon, docsIcon, drawerIcon } from "./icons";
+import { blockIcon, docsIcon, drawerIcon } from "../components/styles/iconComponents";
 
 type NavChildren = {
   title: string,

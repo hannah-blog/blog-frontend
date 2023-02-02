@@ -13,3 +13,15 @@ export const MainWrap = styled.div`
 export const TextWrap = styled.div`
   width: 43%;
 `;
+
+export const TitleText = styled.div`
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0;
+  line-height: 1.25;
+  font-weight: 600;
+  font-size: 3rem;
+  font-family: Roboto, sans-serif;
+  display: block;
+  margin: 2rem;
+  color: rgb(26 35 126);
+`;
