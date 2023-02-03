@@ -1,4 +1,4 @@
-import Post from "../components/main/Post";
+import Post from "../components/post/Post";
 
 export type Tag = {
   name: string,
@@ -135,10 +135,8 @@ class AuthorController(private val authorService: AuthorService) {
 ### 4. Tests
 **postman**
 reuqest / response
-<div>
-\t<img src="https://velog.velcdn.com/images/coals_0329/post/60e601d3-4e13-4bb5-a902-d1af29f6c925/image.png" width="45%" style="float:left;">
-\t<img src="https://velog.velcdn.com/images/coals_0329/post/789d165d-6dcb-4d41-bd21-ef83a308157a/image.png" width="50%" style="float: right;">
-</div>
+<img src="https://velog.velcdn.com/images/coals_0329/post/60e601d3-4e13-4bb5-a902-d1af29f6c925/image.png" />
+<img src="https://velog.velcdn.com/images/coals_0329/post/789d165d-6dcb-4d41-bd21-ef83a308157a/image.png" />
 
 끗! 읽어주셔서 감사합니다 (꾸벅)
 

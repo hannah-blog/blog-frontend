@@ -1,3 +1,4 @@
+# 작업 브랜치에 커밋이 완료 되어있어야함!
 yarn build
 yarn export
 git add out/

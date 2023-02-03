@@ -1,4 +1,4 @@
-import Post from "../../../components/main/Post";
+import Post from "../../../components/post/Post";
 import { postData } from "../../../data/postData";
 import styled from "styled-components";
 import { TitleText } from "../../../components/styles/styleCompnents";
