@@ -14,6 +14,11 @@ export const TextWrap = styled.div`
   width: 43%;
 `;
 
+export const PostWrap = styled.div`
+  margin-top: 3rem;
+  width: 70%;
+`;
+
 export const TitleText = styled.div`
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0;

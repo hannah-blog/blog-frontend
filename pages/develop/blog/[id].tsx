@@ -1,24 +1,23 @@
+import "@uiw/react-markdown-preview/markdown.css";
+
 import { useRouter } from "next/router";
 import { getPostById } from "../../../data/postData";
-import { Viewer } from "@toast-ui/react-editor";
-import { TitleText } from "../../../components/styles/styleCompnents";
-import {useState} from "react";
-import Writer from "../../../utils/Writer";
+import { PostWrap, TitleText } from "../../../components/styles/styleCompnents";
+import dynamic from "next/dynamic";
+import { MarkdownPreviewProps } from "@uiw/react-markdown-preview";
+
+const MarkdownPreview = dynamic<MarkdownPreviewProps>(() => import("@uiw/react-markdown-preview"), { ssr: false });
 
 export default function DetailPost() {
   const { query } = useRouter()
   const showData = getPostById(Number(query.id));
 
-  const [introduction, setIntroduction] = useState("");
-  const onIntroductionHandler = (data: string) => setIntroduction(data);
-
   return <>
-    <div style={{display: "none"}}>
-      <Writer value={introduction} onContentHandler={onIntroductionHandler}/>
-    </div>
     <TitleText>{showData.title}</TitleText>
     <div>{showData.createdDate}</div>
     <img src={showData.thumbnailUrl} alt={"test"}/>
-    <Viewer initialValue={showData.content}/>
+    <PostWrap>
+      <MarkdownPreview source={showData.content}/>
+    </PostWrap>
   </>
 }

@@ -13,5 +13,5 @@ git pull
 git add --all
 git commit -m "어영부영 급하게 만들기..."
 git push
-cd blog-front
+cd ../blog-front
 git checkout feat/resume
