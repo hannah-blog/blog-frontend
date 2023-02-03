@@ -4,6 +4,7 @@ git add out/
 git commit -m "어영부영 급하게 만들기..."
 git subtree push --prefix out origin gh-pages
 git checkout gh-pages
+git pull
 
 cd ..
 rm -rf HongChaeMin.github.io/**
