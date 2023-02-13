@@ -22,8 +22,10 @@ export default function DetailPost() {
       canonical={"https://hongchaemin.github.io/develop/blog/" + showData.id}
       openGraph={{
         url: "https://hongchaemin.github.io/develop/blog/" + showData.id,
-        images: [{ url: showData.thumbnailUrl }],
+        images: [{ url: showData.thumbnailUrl, alt: 'thumbnail image' }],
+        article: { tags: showData.tags.map(tag => tag.name) }
       }}
+
     />
     <TitleText>{showData.title}</TitleText>
     <DateWrap>
