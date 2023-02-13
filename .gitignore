@@ -33,5 +33,5 @@ yarn-error.log*
 .vercel
 
 /out
-/public/sitemap**
+/public/sitemap-0.xml
 
