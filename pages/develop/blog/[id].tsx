@@ -41,7 +41,7 @@ export default function DetailPost() {
 const DateWrap = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 70%;
+  width: 50%;
 `;
 
 const ThumbnailBox = styled.img`
