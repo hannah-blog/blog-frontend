@@ -18,7 +18,7 @@ export default function DetailPost() {
   return <>
     <NextSeo
       title={showData.title}
-      description={showData.content}
+      description={showData.content.substring(0, 100)}
       canonical={"https://hongchaemin.github.io/develop/blog/" + showData.id}
       openGraph={{
         url: "https://hongchaemin.github.io/develop/blog/" + showData.id,
