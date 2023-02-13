@@ -2,7 +2,7 @@
 yarn build
 yarn export
 git add out/
-git commit -m "어영부영 급하게 만들기..."
+git commit -m "feat(seo): seo, site map 적용해보기"
 git subtree push --prefix out origin gh-pages
 git checkout gh-pages
 git pull
@@ -13,7 +13,7 @@ cp -rf blog-front/** HongChaeMin.github.io
 cd HongChaeMin.github.io
 git pull
 git add --all
-git commit -m "어영부영 급하게 만들기..."
+git commit -m "feat(seo): seo, site map 적용해보기"
 git push
 cd ../blog-front
 git checkout feat/resume

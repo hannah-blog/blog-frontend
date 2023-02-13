@@ -141,7 +141,7 @@ reuqest / response
 끗! 읽어주셔서 감사합니다 (꾸벅)
 
 > 좌충우돌 kotlin spring boot project 생성기    https://github.com/HongChaeMin/kotlin/tree/main/kotlinServer`,
-    thumbnailUrl: "https://velog.velcdn.com/images/coals_0329/post/a4039793-a050-4f4c-a120-b16a24a51b91/image.png",
+    thumbnailUrl: "https://velog.velcdn.com/images/coals_0329/post/71ac06f6-91de-4a70-a67d-2366dc50726c/image.jpeg",
     tags: [{"name": "json"}, {"name": "kotlin"}],
     createdDate: "2022.12.13",
   },
@@ -348,7 +348,7 @@ https://mangchhe.github.io/spring/2021/01/25/ModelMapperAndMapStruct/
 읽어주셔서 감사합니다🥰🥰🥰
 
 > 좌충우돌 kotlin spring boot project 생성기 https://github.com/HongChaeMin/kotlin/tree/main/kotlinServer`,
-    thumbnailUrl: "https://velog.velcdn.com/images/coals_0329/post/87ff60ed-852c-472e-b66a-066581f51517/image.png",
+    thumbnailUrl: "https://velog.velcdn.com/images/coals_0329/post/3442e312-8db5-4d34-841a-5ca60f21d389/image.jpeg",
     tags: [{"name": "kotlin"}, {"name": "mapstruct"}],
     createdDate: "2022.12.13"
   },
@@ -506,7 +506,7 @@ https://mangchhe.github.io/spring/2021/01/25/ModelMapperAndMapStruct/
 다음 포스트에는 GC의 종류에 대해서 설명하겠다
 > 원본 파일
 > https://www.figma.com/file/ObHooF2KuUVQxbN2l9OSrG/GC?node-id=429%3A1133`,
-    thumbnailUrl: "https://velog.velcdn.com/images/coals_0329/post/7ecf59a4-b496-4815-92dd-de471627d188/image.png",
+    thumbnailUrl: "https://velog.velcdn.com/images/coals_0329/post/8925965d-724b-4677-a852-9ffe2b8cfb98/image.jpeg",
     tags: [{"name": "GC"}],
     createdDate: "2022.12.13"
   },
@@ -697,7 +697,7 @@ https://steady-coding.tistory.com/611
 https://velog.io/@gillog/Spring-Async-Annotation%EB%B9%84%EB%8F%99%EA%B8%B0-%EB%A9%94%EC%86%8C%EB%93%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
 
 https://brunch.co.kr/@springboot/401`,
-    thumbnailUrl: "https://velog.velcdn.com/images/coals_0329/post/fb9545e2-baf3-44b9-8bd8-6b983999d9b4/image.png",
+    thumbnailUrl: "https://velog.velcdn.com/images/coals_0329/post/178506ab-58b2-4ce4-8f28-565a2c921eb5/image.jpeg",
     tags: [{"name": "java"}, {"name": "spring"}, {"name": "async"}],
     createdDate: "2022.12.13"
   },

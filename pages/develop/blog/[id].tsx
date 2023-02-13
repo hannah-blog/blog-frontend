@@ -5,21 +5,31 @@ import { getPostById } from "../../../data/postData";
 import { PostWrap, TitleText } from "../../../components/styles/styleCompnents";
 import dynamic from "next/dynamic";
 import { MarkdownPreviewProps } from "@uiw/react-markdown-preview";
-import {Typography} from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 import styled from "styled-components";
+import { NextSeo } from "next-seo";
 
-const MarkdownPreview = dynamic<MarkdownPreviewProps>(() => import("@uiw/react-markdown-preview"), { ssr: false });
+const MarkdownPreview = dynamic<MarkdownPreviewProps>(() => import("@uiw/react-markdown-preview"), {ssr: false});
 
 export default function DetailPost() {
-  const { query } = useRouter()
+  const {query} = useRouter()
   const showData = getPostById(Number(query.id));
 
   return <>
+    <NextSeo
+      title={showData.title}
+      description={showData.content}
+      canonical={"https://hongchaemin.github.io/develop/blog/" + showData.id}
+      openGraph={{
+        url: "https://hongchaemin.github.io/develop/blog/" + showData.id,
+        images: [{ url: showData.thumbnailUrl }],
+      }}
+    />
     <TitleText>{showData.title}</TitleText>
     <DateWrap>
       <Typography>Created Date {showData.createdDate}</Typography>
     </DateWrap>
-    <ThumbnailBox src={showData.thumbnailUrl} alt={`${showData.id}-thumbnail-image`} />
+    <ThumbnailBox src={showData.thumbnailUrl} alt={`${showData.id}-thumbnail-image`}/>
     <PostWrap>
       <MarkdownPreview source={showData.content}/>
     </PostWrap>
