@@ -1,37 +1,53 @@
 import "@uiw/react-markdown-preview/markdown.css";
 
-import { useRouter } from "next/router";
-import { getPostById } from "../../../data/postData";
+import { getPostById, Post } from "../../../data/postData";
 import { PostWrap, TitleText } from "../../../components/styles/styleCompnents";
 import dynamic from "next/dynamic";
 import { MarkdownPreviewProps } from "@uiw/react-markdown-preview";
 import { Typography } from "@material-tailwind/react";
 import styled from "styled-components";
 import HeadMeta from "../../../utils/headMeta";
+import { GetServerSideProps } from "next";
 
 const MarkdownPreview = dynamic<MarkdownPreviewProps>(() => import("@uiw/react-markdown-preview"), {ssr: false});
 
-export default function DetailPost() {
-  const {query} = useRouter()
-  const showData = getPostById(Number(query.id));
+interface Props {
+  item: Post
+}
+
+export default function DetailPost({item}: Props) {
 
   return <>
     <HeadMeta
-      title={showData.title}
-      description={showData.content.substring(0, 100)}
-      image={showData.thumbnailUrl}
-      url={"/develop/blog/" + query.id}
-      tags={showData.tags.map(tag => tag.name)}
+      title={item.title}
+      description={item.content.substring(0, 100)}
+      image={item.thumbnailUrl}
+      url={"/develop/blog/" + item.id}
+      tags={item.tags.map(tag => tag.name)}
     />
-    <TitleText>{showData.title}</TitleText>
+    <TitleText>{item.title}</TitleText>
     <DateWrap>
-      <Typography>Created Date {showData.createdDate}</Typography>
+      <Typography>Created Date {item.createdDate}</Typography>
     </DateWrap>
-    <ThumbnailBox src={showData.thumbnailUrl} alt={`${showData.id}-thumbnail-image`}/>
+    <ThumbnailBox src={item.thumbnailUrl} alt={`${item.id}-thumbnail-image`}/>
     <PostWrap>
-      <MarkdownPreview source={showData.content}/>
+      <MarkdownPreview source={item.content}/>
     </PostWrap>
   </>
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const id = Number(ctx.params?.id);
+
+  const data = await getPostById(id);
+
+  console.log(data);
+
+  return {
+    props: {
+      item: data,
+    },
+  };
 }
 
 const DateWrap = styled.div`
