@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import { MarkdownPreviewProps } from "@uiw/react-markdown-preview";
 import { Typography } from "@material-tailwind/react";
 import styled from "styled-components";
-import { NextSeo } from "next-seo";
+import HeadMeta from "../../../utils/headMeta";
 
 const MarkdownPreview = dynamic<MarkdownPreviewProps>(() => import("@uiw/react-markdown-preview"), {ssr: false});
 
@@ -16,16 +16,12 @@ export default function DetailPost() {
   const showData = getPostById(Number(query.id));
 
   return <>
-    <NextSeo
+    <HeadMeta
       title={showData.title}
       description={showData.content.substring(0, 100)}
-      canonical={"https://hongchaemin.github.io/develop/blog/" + showData.id}
-      openGraph={{
-        url: "https://hongchaemin.github.io/develop/blog/" + showData.id,
-        images: [{ url: showData.thumbnailUrl, alt: 'thumbnail image' }],
-        article: { tags: showData.tags.map(tag => tag.name) }
-      }}
-
+      image={showData.thumbnailUrl}
+      url={"/develop/blog/" + query.id}
+      tags={showData.tags.map(tag => tag.name)}
     />
     <TitleText>{showData.title}</TitleText>
     <DateWrap>

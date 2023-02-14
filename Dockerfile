@@ -14,5 +14,5 @@ RUN yarn export
 
 EXPOSE 3000
 
-CMD ["yarn", "run", "dev"]
+CMD ["yarn", "run", "prod"]
 

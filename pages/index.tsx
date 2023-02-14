@@ -3,9 +3,11 @@ import Timer from "../utils/timer";
 import { Typography } from "@material-tailwind/react";
 import MainSvg from "../svg/MainSvg";
 import styled from "styled-components";
+import HeadMeta from "../utils/headMeta";
 
 export default function Home() {
   return <MainWrap>
+    <HeadMeta />
     <TextWrap>
       <Timer />
       <Typography variant="h1">Welcome to Hannah Blog!</Typography>

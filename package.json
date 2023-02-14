@@ -5,6 +5,7 @@
   "homepage": "https://HongChaeMin.github.io",
   "scripts": {
     "dev": "next dev",
+    "prod": "next build && next start",
     "build": "next build",
     "export": "next export",
     "start": "next start",
@@ -27,7 +28,6 @@
     "gh-pages": "^5.0.0",
     "next": "13.1.1",
     "next-remove-imports": "^1.0.8",
-    "next-seo": "^5.15.0",
     "next-sitemap": "^3.1.52",
     "postcss": "^8.4.21",
     "react": "18.2.0",
