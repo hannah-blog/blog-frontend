@@ -9,9 +9,6 @@ RUN yarn
 
 COPY . .
 
-RUN yarn build
-RUN yarn export
-
 EXPOSE 3000
 
 CMD ["yarn", "run", "prod"]

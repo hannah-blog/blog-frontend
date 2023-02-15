@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://hongchaemin.github.io
-
-# Sitemaps
-Sitemap: https://hongchaemin.github.io/sitemap.xml
