@@ -21,21 +21,21 @@ export const navData: NavDataList = [
     icon: docsIcon,
     children: [
       {
-        "title": "Resume",
-        "cLink": "/resume",
-      },
-      {
-        "title": "Cover Letter",
-        "cLink": "/cover-letter",
+        "title": "Profile",
+        "cLink": "/profile",
       },
       {
         "title": "Contact",
         "cLink": "/contact",
       },
+      {
+        "title": "Guest Book",
+        "cLink": "/guest-book",
+      },
     ],
   },
   {
-    mainTitle: "Develop Archiving",
+    mainTitle: "Archiving Develop",
     link: "/develop",
     icon: blockIcon,
     children: [
@@ -47,14 +47,10 @@ export const navData: NavDataList = [
         "title": "Series",
         "cLink": "/series",
       },
-      {
-        "title": "Guest Book",
-        "cLink": "/guest-book",
-      },
     ],
   },
   {
-    mainTitle: "Daily Archiving",
+    mainTitle: "Archiving Daily",
     link: "/daily",
     icon: drawerIcon,
     children: [

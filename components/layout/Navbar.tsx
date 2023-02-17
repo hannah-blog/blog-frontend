@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -42,6 +42,24 @@ export default function Navbar({
     });
   }, []);
 
+  const [hide, setHide] = useState(false);
+  const [pageY, setPageY] = useState(0);
+
+  const handleScroll = () => {
+    const { pageYOffset } = window;
+    const deltaY = pageYOffset - pageY;
+    const hide = pageYOffset !== 0 && deltaY >= 0;
+    setHide(hide);
+    setPageY(pageYOffset);
+  };
+
+  const throttleScroll = throttle(handleScroll, 50);
+
+  useEffect(() => {
+    window.addEventListener('scroll', throttleScroll);
+    return () => window.removeEventListener('scroll', throttleScroll);
+  }, [pageY]);
+
   const navbarMenu = <div className="flex w-full flex-col lg:flex-row xl:ml-40">
     <ul className={`${open ? "mt-4" : ""} mb-0 flex list-none flex-col gap-2 pl-0 text-inherit transition-all lg:ml-auto lg:flex-row lg:gap-4`}>
       { navData.map((nav, index) => {
@@ -69,17 +87,15 @@ export default function Navbar({
   </div>;
 
   return (
-    <div
-      className={`absolute left-2/4 z-[999] my-4 flex w-full max-w-screen-2xl -translate-x-2/4 flex-wrap items-center px-4 lg:fixed ${container}`}
-    >
+    <NavWrap>
       <MTNavbar
         {...rest}
-        className={`py-4 pl-6 pr-2 lg:py-2.5 ${
+        className={`${hide && 'hide'} py-4 pl-6 pr-2 lg:py-2.5 ${
           shadow ? "shadow-2xl shadow-blue-gray-500/10" : ""
         }`}
         shadow={shadow}
       >
-        <div className={`flex w-full items-center !justify-between text-[#1A237E] ${className}`}>
+        <WebNav>
           <Link href="/" className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0">
             <ProfileImg>
               <Avatar alt="Hannah github profile image" src="https://avatars.githubusercontent.com/u/57277976?v=4"/>
@@ -94,18 +110,28 @@ export default function Navbar({
           >
             {open ? menuCloseIcon : menuOpenIcon}
           </IconButton>
-          <div className="lg:base-auto hidden flex-grow basis-full items-center overflow-hidden lg:flex lg-max:max-h-0">
-            {navbarMenu}
-          </div>
-        </div>
+          <MenuWrap>{navbarMenu}</MenuWrap>
+        </WebNav>
         <MobileNav open={open} className={mobileNavClassName}>
           {navbarMenu}
         </MobileNav>
         {sidenavMenu}
       </MTNavbar>
-    </div>
+    </NavWrap>
   );
 }
+
+const throttle = (callback: any, waitTime: number) => {
+  let timerId: NodeJS.Timeout | null;
+  return (event: any) => {
+    if (timerId) return;
+    timerId = setTimeout(() => {
+      callback.call(this, event);
+      timerId = null;
+    }, waitTime);
+  };
+};
+
 
 const ProfileImg = styled.div`
   display: flex;
@@ -122,4 +148,53 @@ const ProfileImg = styled.div`
     height: 50px;
     border-radius: 0.8rem;
   }
+`;
+
+const NavWrap = styled.div`
+  @media (min-width: 960px) {
+    position: fixed;
+  }
+
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  max-width: 1320px;
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  z-index: 999;
+  left: 50%;
+
+  .hide {
+    transform: translateY(-90px);
+    transition: 1s;
+  }
+  
+  .false {
+    transition: 1s;
+  }
+`;
+
+const MenuWrap = styled.div`
+  @media (min-width: 960px) {
+    display: flex;
+  }
+
+  overflow: hidden;
+  align-items: center;
+  flex-basis: 100%;
+  flex-grow: 1;
+`;
+
+const WebNav = styled.div`
+  --tw-text-opacity: 1;
+  color: rgb(26 35 126 / var(--tw-text-opacity));
+  justify-content: space-between !important;
+  align-items: center;
+  width: 100%;
+  display: flex;
 `;
