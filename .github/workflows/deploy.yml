@@ -19,7 +19,7 @@ jobs:
           push: true
           tags: blog-front:${{ github.sha }}
           username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: SSH into server and deploy
         uses: appleboy/ssh-action@master
