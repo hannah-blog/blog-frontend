@@ -2,12 +2,12 @@ FROM node
 
 WORKDIR /app/build
 
-COPY package.json ./
-COPY yarn.lock ./
+COPY ../../package.json ./
+COPY ../../yarn.lock ./
 
 RUN yarn
 
-COPY . .
+COPY ../.. .
 
 EXPOSE 3000
 
