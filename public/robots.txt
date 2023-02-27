@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://hongchaemin.github.io
+Host: https://www.hannah-log.site
 
 # Sitemaps
-Sitemap: https://hongchaemin.github.io/sitemap.xml
+Sitemap: https://www.hannah-log.site/sitemap.xml

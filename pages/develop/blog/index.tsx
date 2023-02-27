@@ -30,8 +30,6 @@ export default function Blog({list}: Props) {
 export const getStaticProps: GetStaticProps = async () => {
   const data = getPosts();
 
-  console.log(data[1]);
-
   return {
     props: {
       list: data,

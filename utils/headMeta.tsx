@@ -1,7 +1,4 @@
 import Head from "next/head";
-import {useState} from "react";
-
-
 
 interface HeadMeta {
   title?: string | null;

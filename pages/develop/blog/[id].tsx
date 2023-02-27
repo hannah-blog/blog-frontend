@@ -44,8 +44,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   const data = await getPostById(id);
 
-  console.log(data);
-
   return {
     props: {
       item: data,
