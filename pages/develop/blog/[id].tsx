@@ -27,7 +27,10 @@ export default function DetailPost({item}: Props) {
       url={"/develop/blog/" + item.id}
       tags={item.tags.map(tag => tag.name)}
     />
-    <ProgressBar><motion.div className="progress-bar" style={{ scaleX: scrollYProgress }} /></ProgressBar>
+    <ProgressBar><motion.div
+      className="progress-bar"
+      style={{ scaleX: scrollYProgress }}
+    /></ProgressBar>
     <TitleText>{item.title}</TitleText>
     <DateWrap>
       <Typography>Created Date {item.createdDate}</Typography>
@@ -73,6 +76,5 @@ const ProgressBar = styled.div`
     background: #1a237e;
     transform-origin: 0;
     z-index: 999;
-    transition: 0.5s;
   }
 `;
