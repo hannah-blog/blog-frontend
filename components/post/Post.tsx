@@ -25,9 +25,11 @@ export default function Post(props: PostProps) {
         </CardBody>
         <CardFooter divider className="flex items-center justify-between py-3">
           <Typography variant="small">
-            {showPostData.tags.map((tag, idx) => {
-              return <Chip className="mr-1" color="indigo" value={`#${tag.name}`} key={idx}/>
-            })}
+            <TagWrap>
+              {showPostData.tags.map((tag, idx) => {
+                return <Chip className="mr-1" color="indigo" value={`#${tag.name}`} key={idx}/>
+              })}
+            </TagWrap>
           </Typography>
           <Typography variant="small" color="gray" className="flex gap-1">
             <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
@@ -60,4 +62,8 @@ const Card = styled.div`
   :hover {
     transform: scale(1.05);
   }
+`;
+
+const TagWrap = styled.div`
+  display: flex;
 `;
