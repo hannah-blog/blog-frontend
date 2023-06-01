@@ -1,11 +1,11 @@
-import Post from "../../../components/post/Post";
-import { getPosts, postData, PostList } from "../../../data/postData";
-import styled from "styled-components";
-import { TitleText } from "../../../components/styles/styleCompnents";
-import { useState } from "react";
-import Pagination from "../../../utils/pagination";
-import HeadMeta from "../../../utils/headMeta";
-import { GetStaticProps } from "next";
+import Post from '../../../components/post/Post';
+import { getPosts, postData, PostList } from '../../../data/postData';
+import styled from 'styled-components';
+import { TitleText } from '../../../components/styles/styleCompnents';
+import { useState } from 'react';
+import Pagination from '../../../utils/pagination';
+import HeadMeta from '../../../utils/headMeta';
+import { GetStaticProps } from 'next';
 
 interface Props {
   list: PostList

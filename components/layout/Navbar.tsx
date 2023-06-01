@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import styled from "styled-components";
+'use client'
 
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
 import {
   Navbar as MTNavbar,
   MobileNav,
@@ -10,9 +11,9 @@ import {
   MenuHandler,
   MenuList,
   MenuItem, Avatar,
-} from "@material-tailwind/react";
-import { navData } from "../../data/navData";
-import { menuCloseIcon, menuOpenIcon } from "../styles/iconComponents";
+} from '@material-tailwind/react';
+import { navData } from '../../data/navData';
+import { menuCloseIcon, menuOpenIcon } from '../styles/iconComponents';
 
 interface NavbarProps {
   container?: string;

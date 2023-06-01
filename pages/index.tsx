@@ -1,6 +1,6 @@
-import { MainWrap } from "../components/styles/styleCompnents";
-import HeadMeta from "../utils/headMeta";
-import WelcomeSection from "../components/mainSection/WelcomeSection";
+import { MainWrap } from '../components/styles/styleCompnents';
+import HeadMeta from '../utils/headMeta';
+import WelcomeSection from '../components/mainSection/WelcomeSection';
 
 export default function Home() {
   return <>

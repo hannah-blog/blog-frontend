@@ -1,12 +1,13 @@
-import { TextWrap } from "../styles/styleCompnents";
-import { Typography } from "@material-tailwind/react";
-import Timer from "../../utils/timer";
-import MainSvg from "../../svg/MainSvg";
-import styled from "styled-components";
-import { motion } from "framer-motion";
+'use client'
+
+import { TextWrap } from '../styles/styleCompnents';
+import { Typography } from '@material-tailwind/react';
+import Timer from '../../utils/timer';
+import MainSvg from '../../svg/MainSvg';
+import styled from 'styled-components';
 
 export default function WelcomeSection() {
-  return <motion.div layoutScroll style={{ overflow: "scroll" }}>
+  return <>
     <TextWrap>
       <Timer/>
       <Typography variant="h1">Welcome to Hannah Blog!</Typography>
@@ -18,7 +19,7 @@ export default function WelcomeSection() {
     <SvgWrap>
       <MainSvg/>
     </SvgWrap>
-  </motion.div>
+  </>
 }
 
 const SvgWrap = styled.div`

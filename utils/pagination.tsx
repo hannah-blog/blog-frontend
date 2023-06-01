@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction } from "react";
-import { Button } from "@material-tailwind/react";
-import styled from "styled-components";
+import { Dispatch, SetStateAction } from 'react';
+import { Button } from '@material-tailwind/react';
+import styled from 'styled-components';
 
 interface pageInfo {
   total: number,

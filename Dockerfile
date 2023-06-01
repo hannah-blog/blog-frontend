@@ -2,13 +2,12 @@ FROM node
 
 WORKDIR /app/build
 
-COPY package.json ./
-COPY yarn.lock ./
+COPY . .
 
-RUN yarn
+RUN yarn install
 
-COPY ../.. .
+RUN yarn build
 
 EXPOSE 3000
 
-CMD ["yarn", "run", "prod"]
+CMD ["yarn", "start"]
