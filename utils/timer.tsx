@@ -1,4 +1,7 @@
+'use client'
+
 import { useEffect, useState } from 'react';
+import { Typography } from '@material-tailwind/react';
 
 function padTo2Digits(num: number) {
   return num.toString().padStart(2, '0');
@@ -30,7 +33,7 @@ const Timer = () => {
     return () => clearInterval(countDate);
   }, []);
 
-  return <h2>{formatDate(date)}</h2>;
+  return <Typography color="indigo">{formatDate(date)}</Typography>;
 }
 
 export default Timer;

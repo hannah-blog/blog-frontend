@@ -15,11 +15,11 @@ export default function Blog({list}: Props) {
   const [page, setPage] = useState(1);
   const offset = (page - 1) * 9;
 
-  return <div className={"w-full"}>
-    <HeadMeta title="Develop Blog" description="Hannah Develop Blog"/>
+  return <div className="w-full">
+    <HeadMeta title="Develop Blog" description="Hannah Develop Blog" />
     <TitleText>Develop Blog Page</TitleText>
     <BlogListBox>
-      { list.slice(offset, offset + 9).map((post, idx) => {
+      {list.slice(offset, offset + 9).map((post, idx) => {
         return <Post key={idx} post={post} idx={idx} />;
       })}
     </BlogListBox>

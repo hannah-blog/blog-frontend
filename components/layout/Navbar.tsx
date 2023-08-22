@@ -5,12 +5,11 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import {
   Navbar as MTNavbar,
-  MobileNav,
   IconButton,
   Menu,
   MenuHandler,
   MenuList,
-  MenuItem, Avatar,
+  MenuItem, Avatar, Collapse,
 } from '@material-tailwind/react';
 import { navData } from '../../data/navData';
 import { menuCloseIcon, menuOpenIcon } from '../styles/iconComponents';
@@ -113,9 +112,9 @@ export default function Navbar({
           </IconButton>
           <MenuWrap>{navbarMenu}</MenuWrap>
         </WebNav>
-        <MobileNav open={open} className={mobileNavClassName}>
+        <Collapse open={open} className={mobileNavClassName}>
           {navbarMenu}
-        </MobileNav>
+        </Collapse>
         {sidenavMenu}
       </MTNavbar>
     </NavWrap>
