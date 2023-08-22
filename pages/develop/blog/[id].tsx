@@ -11,49 +11,50 @@ import styled from 'styled-components';
 import HeadMeta from '../../../utils/headMeta';
 import { GetServerSideProps } from 'next';
 import { motion, useScroll } from 'framer-motion';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const MarkdownPreview = dynamic<MarkdownPreviewProps>(() => import("@uiw/react-markdown-preview"), {ssr: false});
 
-interface Props {
-  item: Post
-}
-
-export default function DetailPost({item}: Props) {
+export default function DetailPost() {
   const { scrollYProgress } = useScroll();
+  const [item, setItem] = useState<Post | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const id = Number(router.query.id);
+
+    const fetchData = async () => {
+      const data = await getPostById(id);
+      setItem(data);
+    }
+
+    fetchData();
+  }, [router.isReady]);
 
   return <>
-    <HeadMeta
-      title={item.title}
-      description={item.content.substring(0, 100)}
-      image={item.thumbnailUrl}
-      url={"/develop/blog/" + item.id}
-      tags={item.tags.map(tag => tag.name)}
-    />
-    <ProgressBar><motion.div
-      className="progress-bar"
-      style={{ scaleX: scrollYProgress }}
-    /></ProgressBar>
-    <TitleText>{item.title}</TitleText>
-    <DateWrap>
-      <Typography>Created Date {item.createdDate}</Typography>
-    </DateWrap>
-    <ThumbnailBox src={item.thumbnailUrl} alt={`${item.id}-thumbnail-image`}/>
-    <PostWrap>
-      <MarkdownPreview source={item.content}/>
-    </PostWrap>
+    { item ? <>
+      <HeadMeta
+        title={item.title}
+        description={item.content.substring(0, 100)}
+        image={item.thumbnailUrl}
+        url={"/develop/blog/" + item.id}
+        tags={item.tags.map(tag => tag.name)}
+      />
+      <ProgressBar><motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      /></ProgressBar>
+      <TitleText>{item.title}</TitleText>
+      <DateWrap>
+        <Typography>Created Date {item.createdDate}</Typography>
+      </DateWrap>
+      <ThumbnailBox src={item.thumbnailUrl} alt={`${item.id}-thumbnail-image`}/>
+      <PostWrap>
+        <MarkdownPreview source={item.content}/>
+      </PostWrap>
+    </> : <>Loading...</> }
   </>
-}
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const id = Number(ctx.params?.id);
-
-  const data = await getPostById(id);
-
-  return {
-    props: {
-      item: data,
-    },
-  };
 }
 
 const DateWrap = styled.div`

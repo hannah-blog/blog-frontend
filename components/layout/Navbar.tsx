@@ -14,36 +14,13 @@ import {
 import { navData } from '../../data/navData';
 import { menuCloseIcon, menuOpenIcon } from '../styles/iconComponents';
 
-interface NavbarProps {
-  container?: string;
-  className?: string;
-  shadow?: boolean;
-  sidenavMenu?: any;
-  mobileNavClassName?: string;
-
-  [key: string]: any;
-}
-
-export default function Navbar({
-   container,
-   className,
-   shadow,
-   sidenavMenu,
-   mobileNavClassName = "text-[#1A237E]",
-   ...rest
- }: NavbarProps) {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const navbarItemClasses =
-    "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-current font-light lg:px-2 cursor-pointer";
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      window.innerWidth >= 960 && setOpen(false);
-    });
-  }, []);
-
   const [hide, setHide] = useState(false);
   const [pageY, setPageY] = useState(0);
+
+  const navbarItemClasses =
+    "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-current font-light lg:px-2 cursor-pointer";
 
   const handleScroll = () => {
     const { pageYOffset } = window;
@@ -52,7 +29,6 @@ export default function Navbar({
     setHide(hide);
     setPageY(pageYOffset);
   };
-
   const throttleScroll = throttle(handleScroll, 50);
 
   useEffect(() => {
@@ -88,13 +64,7 @@ export default function Navbar({
 
   return (
     <NavWrap>
-      <MTNavbar
-        {...rest}
-        className={`${hide && 'hide'} py-4 pl-6 pr-2 lg:py-2.5 ${
-          shadow ? "shadow-2xl shadow-blue-gray-500/10" : ""
-        }`}
-        shadow={shadow}
-      >
+      <MTNavbar className={`${hide && 'hide'} py-4 pl-6 pr-2 lg:py-2.5 shadow-2xl shadow-blue-gray-500/10`}>
         <WebNav>
           <Link href="/" className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0">
             <ProfileImg>
@@ -112,10 +82,9 @@ export default function Navbar({
           </IconButton>
           <MenuWrap>{navbarMenu}</MenuWrap>
         </WebNav>
-        <Collapse open={open} className={mobileNavClassName}>
+        <Collapse open={open} className="text-[#1A237E]">
           {navbarMenu}
         </Collapse>
-        {sidenavMenu}
       </MTNavbar>
     </NavWrap>
   );

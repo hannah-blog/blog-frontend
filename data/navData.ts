@@ -1,20 +1,18 @@
-import { blockIcon, docsIcon, drawerIcon } from "../components/styles/iconComponents";
+import { blockIcon, docsIcon, drawerIcon } from '../components/styles/iconComponents';
 
 type NavChildren = {
   title: string,
   cLink: string,
 };
-type NavChildrenList = NavChildren[];
 
 type NavData = {
   mainTitle: string,
   link: string,
   icon: JSX.Element,
-  children: NavChildrenList,
+  children: NavChildren[],
 }
-type NavDataList = NavData[];
 
-export const navData: NavDataList = [
+export const navData: NavData[] = [
   {
     mainTitle: "How is Hannah?",
     link: "/introduce",
