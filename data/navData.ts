@@ -14,7 +14,7 @@ type NavData = {
 
 export const navData: NavData[] = [
   {
-    mainTitle: "How is Hannah?",
+    mainTitle: "How is ChaeMin?",
     link: "/introduce",
     icon: docsIcon,
     children: [

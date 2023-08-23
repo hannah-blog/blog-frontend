@@ -8,7 +8,7 @@ export const PostWrap = styled.div`
     display: block;
     list-style: disc outside none;
     margin: 1em 0;
-    padding: 0 0 0 40px;
+    padding: 0;
   }
   ol {
     list-style-type: decimal;

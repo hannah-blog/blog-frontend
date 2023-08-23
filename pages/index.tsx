@@ -9,9 +9,9 @@ export default function Home() {
     <HeadMeta description="Welcome to Hannah Blog! Hannah 블로그에 오신 것을 환영합니다! 쓰여진 글은 많이 없지만 즐겁게 보시다 가셨으면 좋겠습니다." />
     <MainWrap>
       <TextWrap>
-        <Typography variant="h1" color="indigo">Welcome to Hannah Blog!</Typography>
+        <Typography variant="h1" color="indigo">Welcome to ChaeMin Blog!</Typography>
         <Typography variant="lead" color="indigo">
-          Hannah 블로그에 오신 것을 환영합니다!<br/>
+          저 블로그에 오신 것을 환영합니다!<br/>
           쓰여진 글은 많이 없지만 즐겁게 보시다 가셨으면 좋겠습니다.
         </Typography>
         <Timer />
@@ -30,7 +30,7 @@ const MainWrap = styled.div`
   height: 300px;
   width: 100%;
   color: rgb(26 35 126);
-  margin-top: 7%;
+  margin-top: 13%;
 `;
 
 const TextWrap = styled.div`
