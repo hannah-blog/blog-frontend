@@ -1,7 +1,7 @@
 import HeadMeta from '../utils/headMeta';
 import Timer from '../utils/timer';
 import { Typography } from '@material-tailwind/react';
-import MainSvg from '../svg/MainSvg';
+import { MainSvg } from '../svg/svgs';
 import styled from 'styled-components';
 
 export default function Home() {
@@ -25,12 +25,11 @@ export default function Home() {
 
 const MainWrap = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 300px;
   width: 100%;
-  color: rgb(26 35 126);
-  margin-top: 13%;
+  margin-top: 11%;
 `;
 
 const TextWrap = styled.div`
