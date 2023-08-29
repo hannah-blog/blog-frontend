@@ -1,6 +1,8 @@
+'use client'
+
 import {
-  Breadcrumbs,
-  Timeline, TimelineBody,
+  Timeline,
+  TimelineBody,
   TimelineConnector,
   TimelineHeader,
   TimelineIcon,
@@ -8,7 +10,7 @@ import {
   Typography
 } from '@material-tailwind/react';
 import styled from 'styled-components';
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Profile() {
   return <MainWrap>

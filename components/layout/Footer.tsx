@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import {navData} from "../../data/navData";
-import Link from "next/link";
+import styled from 'styled-components';
+import {navData} from '../../data/navData';
+import Link from 'next/link';
 
 export default function Footer() {
   const year = new Date().getFullYear();
