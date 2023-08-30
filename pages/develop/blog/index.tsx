@@ -5,8 +5,8 @@ import { postData, PostList } from '../../../data/postData';
 import styled from 'styled-components';
 import { TitleText } from '../../../components/styles/styleCompnents';
 import { useState } from 'react';
-import Pagination from '../../../utils/pagination';
-import HeadMeta from '../../../utils/headMeta';
+import Pagination from '../../../components/utils/pagination';
+import HeadMeta from '../../../components/utils/headMeta';
 
 export default function Blog() {
   const [page, setPage] = useState(1);

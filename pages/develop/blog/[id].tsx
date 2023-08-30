@@ -4,7 +4,7 @@ import '@uiw/react-markdown-preview/markdown.css';
 
 import dynamic from 'next/dynamic';
 import styled from 'styled-components';
-import HeadMeta from '../../../utils/headMeta';
+import HeadMeta from '../../../components/utils/headMeta';
 import { getPostById, Post } from '../../../data/postData';
 import { PostWrap, TitleText } from '../../../components/styles/styleCompnents';
 import { MarkdownPreviewProps } from '@uiw/react-markdown-preview';

@@ -11,9 +11,17 @@ import {
 } from '../../../components/tailwind/components';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { motion, useScroll } from 'framer-motion';
 
 export default function Profile() {
-  return (<MainWrap>
+  const { scrollYProgress } = useScroll();
+
+  return (<>
+    <ProgressBar><motion.div
+      className="progress-bar"
+      style={{ scaleX: scrollYProgress }}
+    /></ProgressBar>
+    <MainWrap>
     <Section>
       <Typography variant="h1">반갑습니다, 저는 홍채민입니다.</Typography>
       <Typography variant="h4"><List>2년차 백엔드 개발자로 일하고 있으며 비지니스 도메인의 가치를 궁극적으로 이해하고 풀어나가는 것을 좋아합니다.</List></Typography>
@@ -235,7 +243,8 @@ export default function Profile() {
         </Predicate>
       </SideBlock>
     </Section>
-  </MainWrap>);
+  </MainWrap>
+  </>);
 }
 
 const MainWrap = styled.div`
@@ -288,4 +297,18 @@ const InlineList = styled.li`
   margin-left: 2.5rem;
   list-style-type: disclosure-closed;
 `;
+
+const ProgressBar = styled.div`
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: #1a237e;
+    transform-origin: 0;
+    z-index: 999;
+  }
+`;
+
 

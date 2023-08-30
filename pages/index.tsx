@@ -1,7 +1,7 @@
 'use client'
 
-import HeadMeta from '../utils/headMeta';
-import Timer from '../utils/timer';
+import HeadMeta from '../components/utils/headMeta';
+import Timer from '../components/utils/timer';
 import { Typography } from '../components/tailwind/components';
 import { MainSvg } from '../svg/svgs';
 import styled from 'styled-components';

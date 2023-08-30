@@ -1,3 +1,5 @@
+'use client'
+
 import { Dispatch, SetStateAction } from 'react';
 import { Button, IconButton } from '@material-tailwind/react';
 import styled from 'styled-components';
