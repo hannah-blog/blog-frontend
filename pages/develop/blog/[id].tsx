@@ -21,6 +21,7 @@ export default function DetailPost() {
   const router = useRouter();
 
   useEffect(() => {
+    if (!router.isReady) return;
     const id = Number(router.query.id);
 
     const fetchData = async () => {
