@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app';
 import Navbar from '../components/layout/Navbar';
 import styles from '../styles/Home.module.css';
 import Footer from '../components/layout/Footer';
-import { ThemeProvider } from '../components/tailwind/components';
+import { ThemeProvider } from '@material-tailwind/react';
 
 export default function App({Component, pageProps}: AppProps) {
   return <ThemeProvider>

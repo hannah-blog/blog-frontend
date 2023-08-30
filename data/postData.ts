@@ -718,7 +718,4 @@ export const getPostById = (id: number): Post => {
   return returnValue;
 }
 
-export const getPosts = (): PostList => {
-  return postData;
-}
 

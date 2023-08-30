@@ -9,52 +9,51 @@ import { getPostById, Post } from '../../../data/postData';
 import { PostWrap, TitleText } from '../../../components/styles/styleCompnents';
 import { MarkdownPreviewProps } from '@uiw/react-markdown-preview';
 import { motion, useScroll } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 import { Typography } from '../../../components/tailwind/components';
+import { GetServerSideProps } from "next";
 
 const MarkdownPreview = dynamic<MarkdownPreviewProps>(() => import("@uiw/react-markdown-preview"), {ssr: false});
 
-export default function DetailPost() {
+interface Props {
+  item: Post
+}
+
+export default function DetailPost({item}: Props) {
   const { scrollYProgress } = useScroll();
-  const [item, setItem] = useState<Post | null>(null);
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!router.isReady) return;
-    const id = Number(router.query.id);
-
-    const fetchData = async () => {
-      const data = await getPostById(id);
-      setItem(data);
-    }
-
-    fetchData();
-  }, [router.isReady]);
 
   return <>
-    { item ? <>
-      <HeadMeta
-        title={item.title}
-        description={item.content.substring(0, 100)}
-        image={item.thumbnailUrl}
-        url={"/develop/blog/" + item.id}
-        tags={item.tags.map(tag => tag.name)}
-      />
-      <ProgressBar><motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      /></ProgressBar>
-      <TitleText>{item.title}</TitleText>
-      <DateWrap>
-        <Typography>Created Date {item.createdDate}</Typography>
-      </DateWrap>
-      <ThumbnailBox src={item.thumbnailUrl} alt={`${item.id}-thumbnail-image`}/>
-      <PostWrap>
-        <MarkdownPreview source={item.content}/>
-      </PostWrap>
-    </> : <>Loading...</> }
-  </>
+    <HeadMeta
+      title={item.title}
+      description={item.content.substring(0, 100)}
+      image={item.thumbnailUrl}
+      url={"/develop/blog/" + item.id}
+      tags={item.tags.map(tag => tag.name)}
+    />
+    <ProgressBar><motion.div
+      className="progress-bar"
+      style={{ scaleX: scrollYProgress }}
+    /></ProgressBar>
+    <TitleText>{item.title}</TitleText>
+    <DateWrap>
+      <Typography>Created Date {item.createdDate}</Typography>
+    </DateWrap>
+    <ThumbnailBox src={item.thumbnailUrl} alt={`${item.id}-thumbnail-image`}/>
+    <PostWrap>
+      <MarkdownPreview source={item.content}/>
+    </PostWrap>
+  </>;
+}
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const id = Number(ctx.params?.id);
+
+  const data = await getPostById(id);
+
+  return {
+    props: {
+      item: data,
+    },
+  };
 }
 
 const DateWrap = styled.div`
