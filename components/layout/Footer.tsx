@@ -1,3 +1,5 @@
+'use client'
+
 import styled from 'styled-components';
 import {navData} from '../../data/navData';
 import Link from 'next/link';

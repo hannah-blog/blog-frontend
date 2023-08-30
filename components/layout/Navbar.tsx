@@ -3,16 +3,18 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { navData } from '../../data/navData';
+import { menuCloseIcon, menuOpenIcon } from '../styles/iconComponents';
 import {
-  Navbar as MTNavbar,
+  Avatar,
+  Collapse,
   IconButton,
   Menu,
   MenuHandler,
+  MenuItem,
   MenuList,
-  MenuItem, Avatar, Collapse,
-} from '@material-tailwind/react';
-import { navData } from '../../data/navData';
-import { menuCloseIcon, menuOpenIcon } from '../styles/iconComponents';
+  MTNavbar
+} from '../tailwind/components';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);

@@ -1,4 +1,6 @@
-import { Button, Typography } from '@material-tailwind/react';
+'use client'
+
+import { Button, Typography } from '../components/tailwind/components';
 import { NotFountSvg } from '../svg/svgs';
 import styled from 'styled-components';
 import Link from 'next/link';

@@ -1,9 +1,9 @@
 'use client'
 
-import { CardBody, CardFooter, CardHeader, Chip, Typography } from '@material-tailwind/react';
 import { Post as PostType } from '../../data/postData';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { CardBody, CardFooter, CardHeader, Chip, Typography } from '../tailwind/components';
 
 interface PostProps {
   post: PostType;

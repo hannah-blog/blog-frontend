@@ -1,18 +1,17 @@
+'use client'
+
 import Post from '../../../components/post/Post';
-import { getPosts, postData, PostList } from '../../../data/postData';
+import { postData, PostList } from '../../../data/postData';
 import styled from 'styled-components';
 import { TitleText } from '../../../components/styles/styleCompnents';
 import { useState } from 'react';
 import Pagination from '../../../utils/pagination';
 import HeadMeta from '../../../utils/headMeta';
-import { GetStaticProps } from 'next';
 
-interface Props {
-  list: PostList
-}
-
-export default function Blog({list}: Props) {
+export default function Blog() {
   const [page, setPage] = useState(1);
+  const [list, setList] = useState<PostList>(postData);
+
   const offset = (page - 1) * 9;
 
   return <div className="w-full">
@@ -25,16 +24,6 @@ export default function Blog({list}: Props) {
     </BlogListBox>
     <Pagination total={postData.length} limit={9} page={page} setPage={setPage} />
   </div>;
-}
-
-export const getStaticProps: GetStaticProps = async () => {
-  const data = getPosts();
-
-  return {
-    props: {
-      list: data,
-    },
-  };
 }
 
 const BlogListBox = styled.div`

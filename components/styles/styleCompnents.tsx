@@ -1,3 +1,5 @@
+'use client'
+
 import styled from 'styled-components';
 
 export const PostWrap = styled.div`
@@ -7,7 +9,7 @@ export const PostWrap = styled.div`
   ul, ol {
     display: block;
     list-style: disc outside none;
-    margin: 1em 0;
+    margin: 1em 0 5px 20px;
     padding: 0;
   }
   ol {
@@ -23,6 +25,14 @@ export const PostWrap = styled.div`
   ol ol, ul ol {
     list-style-type: lower-latin;
     margin-left: 15px;
+  }
+  ul ul ul, ul ol ul, ol ul ul, ol ol ul {
+    list-style-type: square;
+    margin-left: 30px;
+  }
+  ol ol ol, ol ul ol, ul ol ol, ul ul ol {
+    list-style-type: lower-roman;
+    margin-left: 30px;
   }
 `;
 

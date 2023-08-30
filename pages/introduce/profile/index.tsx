@@ -8,12 +8,12 @@ import {
   TimelineIcon,
   TimelineItem,
   Typography
-} from '@material-tailwind/react';
+} from '../../../components/tailwind/components';
 import styled from 'styled-components';
 import Link from 'next/link';
 
 export default function Profile() {
-  return <MainWrap>
+  return (<MainWrap>
     <Section>
       <Typography variant="h1">반갑습니다, 저는 홍채민입니다.</Typography>
       <Typography variant="h4"><List>2년차 백엔드 개발자로 일하고 있으며 비지니스 도메인의 가치를 궁극적으로 이해하고 풀어나가는 것을 좋아합니다.</List></Typography>
@@ -235,7 +235,7 @@ export default function Profile() {
         </Predicate>
       </SideBlock>
     </Section>
-  </MainWrap>;
+  </MainWrap>);
 }
 
 const MainWrap = styled.div`

@@ -2,17 +2,16 @@
 
 import '@uiw/react-markdown-preview/markdown.css';
 
-import { getPostById, Post } from '../../../data/postData';
-import { PostWrap, TitleText } from '../../../components/styles/styleCompnents';
 import dynamic from 'next/dynamic';
-import { MarkdownPreviewProps } from '@uiw/react-markdown-preview';
-import { Typography } from '@material-tailwind/react';
 import styled from 'styled-components';
 import HeadMeta from '../../../utils/headMeta';
-import { GetServerSideProps } from 'next';
+import { getPostById, Post } from '../../../data/postData';
+import { PostWrap, TitleText } from '../../../components/styles/styleCompnents';
+import { MarkdownPreviewProps } from '@uiw/react-markdown-preview';
 import { motion, useScroll } from 'framer-motion';
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { Typography } from '../../../components/tailwind/components';
 
 const MarkdownPreview = dynamic<MarkdownPreviewProps>(() => import("@uiw/react-markdown-preview"), {ssr: false});
 
