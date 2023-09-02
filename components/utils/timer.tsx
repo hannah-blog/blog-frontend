@@ -1,7 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react';
-import { Typography } from '@material-tailwind/react';
+import { useEffect, useState } from 'react'
+import { Typography } from '@/components/tailwind/clientComponents'
 
 function padTo2Digits(num: number) {
   return num.toString().padStart(2, '0');
@@ -37,3 +37,4 @@ const Timer = () => {
 }
 
 export default Timer;
+

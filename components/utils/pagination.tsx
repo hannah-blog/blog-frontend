@@ -1,8 +1,6 @@
-'use client'
-
-import { Dispatch, SetStateAction } from 'react';
-import { Button, IconButton } from '@material-tailwind/react';
-import styled from 'styled-components';
+import styles from '@/styles/components/utils/pagination.module.css'
+import { Button, IconButton } from '@/components/tailwind/client-components'
+import { Dispatch, SetStateAction } from 'react'
 
 interface pageInfo {
   total: number,
@@ -14,7 +12,7 @@ interface pageInfo {
 export default function Pagination({total, limit, page, setPage}: pageInfo) {
   const numPages = Math.ceil(total / limit);
 
-  return <PaginationWrap>
+  return <div className={styles.paginationWrapper}>
     <Button color="blue-gray" variant="text" disabled={ page === 1 } onClick={() => setPage(page - 1)}>
       &lt; Previous
     </Button>
@@ -34,13 +32,5 @@ export default function Pagination({total, limit, page, setPage}: pageInfo) {
     <Button color="blue-gray" variant="text" disabled={ page === numPages } onClick={() => setPage(page + 1)}>
       Next &gt;
     </Button>
-  </PaginationWrap>;
+  </div>;
 }
-
-const PaginationWrap = styled.div`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`;
-

@@ -1,0 +1,23 @@
+.main {
+  width: 100%;
+  padding: 6rem;
+}
+
+.blogListBox {
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleText {
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0;
+  line-height: 1.25;
+  font-weight: 600;
+  font-size: 3rem;
+  font-family: Roboto, sans-serif;
+  display: block;
+  margin: 2rem;
+  color: rgb(26 35 126);
+}

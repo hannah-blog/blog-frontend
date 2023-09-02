@@ -1,0 +1,67 @@
+.profileImage {
+  display: flex;
+}
+
+.profileImage h1 {
+  margin-left: 1rem;
+  font-size: 2rem;
+  margin-top: 0.2rem;
+  font-family: 'Sacramento', serif;
+}
+
+.profileImage img {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.8rem;
+}
+
+.navWrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  max-width: 1320px;
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  z-index: 999;
+  left: 50%;
+}
+
+.navWrapper .hide {
+  transform: translateY(-90px);
+  transition: 1s;
+}
+
+.navWrapper .false {
+  transition: 1s;
+}
+
+.menuWrapper {
+  overflow: hidden;
+  align-items: center;
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+.webNav {
+  --tw-text-opacity: 1;
+  color: rgb(26 35 126 / var(--tw-text-opacity));
+  justify-content: space-between !important;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
+@media (min-width: 960px) {
+  .navWrapper {
+    position: fixed;
+  }
+
+  .menuWrapper {
+    display: flex;
+  }
+}

@@ -1,0 +1,15 @@
+.mainWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  width: 100%;
+}
+
+.contentWrapper {
+  width: 750px;
+  text-align: center;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}

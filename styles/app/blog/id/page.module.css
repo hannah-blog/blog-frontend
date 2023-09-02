@@ -1,0 +1,74 @@
+.dateWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.thumbnail {
+  border-radius: 0.5rem;
+  width: 50%;
+  margin-top: 1rem;
+}
+
+.progressBar .progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: #1a237e;
+  transform-origin: 0;
+  z-index: 999;
+}
+
+.titleText {
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0;
+  line-height: 1.25;
+  font-weight: 600;
+  font-size: 3rem;
+  font-family: Roboto, sans-serif;
+  display: block;
+  margin: 2rem;
+  color: rgb(26 35 126);
+}
+
+.postWrapper {
+  margin-top: 3rem;
+  width: 70%;
+}
+
+.postWrapper ul, .postWrapper ol {
+  display: block;
+  list-style: disc outside none;
+  margin: 1em 0 5px 20px;
+  padding: 0;
+}
+
+.postWrapper ol {
+  list-style-type: decimal;
+}
+
+.postWrapper li {
+  display: list-item;
+}
+
+.postWrapper ul ul, .postWrapper ol ul {
+  list-style-type: circle;
+  margin-left: 15px;
+}
+
+.postWrapper ol ol, .postWrapper ul ol {
+  list-style-type: lower-latin;
+  margin-left: 15px;
+}
+
+.postWrapper ul ul ul, .postWrapper ul ol ul, .postWrapper ol ul ul, .postWrapper ol ol ul {
+  list-style-type: square;
+  margin-left: 30px;
+}
+
+.postWrapper ol ol ol, .postWrapper ol ul ol, .postWrapper ul ol ol, .postWrapper ul ul ol {
+  list-style-type: lower-roman;
+  margin-left: 30px;
+}
