@@ -1,4 +1,4 @@
-import styles from '@/styles/components/card/post.module.css'
+import styles from '@/styles/components/post/post.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Post as PostType } from '@/data/post-data'

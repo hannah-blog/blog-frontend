@@ -3,13 +3,6 @@
   padding: 6rem;
 }
 
-.blogListBox {
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .titleText {
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0;

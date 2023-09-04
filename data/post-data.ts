@@ -711,7 +711,7 @@ export const getPostById = (id: number): Post => {
     createdDate: "블로그가 존재하지 않습니다.",
   };
   postData.forEach(value => {
-    if (value.id === id) returnValue = value;
+    if (value.id == id) returnValue = value;
   });
   return returnValue;
 }

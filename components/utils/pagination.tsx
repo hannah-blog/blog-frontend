@@ -25,7 +25,7 @@ export default function Pagination({total, limit, page, setPage}: pageInfo) {
           onClick={() => setPage(i + 1)}
           className="rounded-full"
         >
-          { i + 1}
+          { i + 1 }
         </IconButton>
       ))}
     </div>
