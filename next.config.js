@@ -13,7 +13,13 @@ const nextConfig = {
         hostname: 'velog.velcdn.com',
         port: '',
         pathname: '/**',
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.hannah-log.site',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   output: 'standalone',
