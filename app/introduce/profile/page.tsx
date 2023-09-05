@@ -8,7 +8,7 @@ import {
   TimelineItem,
   Typography
 } from '@/components/tailwind/client-components'
-import Image from "next/image";
+import Image from 'next/image'
 
 export default function Profile() {
   return <div className={styles.mainWrapper}>
