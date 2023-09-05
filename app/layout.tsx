@@ -1,10 +1,8 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/tailwind/client-components'
+import { inter } from '@/components/font/google'
 import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function RootLayout({
   children,

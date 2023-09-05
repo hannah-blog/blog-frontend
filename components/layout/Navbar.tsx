@@ -15,6 +15,7 @@ import styles from '@/styles/components/layout/navbar.module.css'
 import Link from 'next/link'
 import { navData } from '@/data/nav-data'
 import { menuCloseIcon, menuOpenIcon } from '@/components/svg/icons'
+import { logo } from '@/components/font/google'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -72,7 +73,7 @@ export default function Navbar() {
           <Link href="/" className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0">
             <div className={styles.profileImage}>
               <Avatar alt="Hannah github profile image" src="https://avatars.githubusercontent.com/u/57277976?v=4"/>
-              <h1>Hannah Blog</h1>
+              <h1 style={logo.style}>Hannah Blog</h1>
             </div>
           </Link>
           <IconButton

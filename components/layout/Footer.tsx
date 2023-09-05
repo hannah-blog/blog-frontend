@@ -1,6 +1,7 @@
 import styles from '@/styles/components/layout/footer.module.css'
 import Link from 'next/link'
 import { navData } from '@/data/nav-data'
+import { logo } from '@/components/font/google'
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -30,7 +31,7 @@ export default function Footer() {
         <div className={styles.copyrightWrapper}>
           <Link href="/" className="text-dark inline-flex items-center font-semibold no-underline">
             <span className="mr-1">Powered by</span>
-            <span className={styles.logo}>Hannah</span>
+            <span style={logo.style} className={styles.logo}>Hannah</span>
           </Link>
           <div className={styles.copyrightBox}>
             <div className={styles.copyright}>
