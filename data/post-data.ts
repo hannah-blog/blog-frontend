@@ -1,19 +1,17 @@
 export type Tag = {
   name: string,
 };
-export type TagList = Tag[];
 
 export type Post = {
   id: number,
   title: string,
   content: string,
   thumbnailUrl: string,
-  tags: TagList,
+  tags: Tag[],
   createdDate: string,
 };
-export type PostList = Post[];
 
-export const postData: PostList = [
+export const postData: Post[] = [
   {
     id: 1,
     title: "JPA - JSON in MySQL, message converter",

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Typography } from '@/components/tailwind/clientComponents'
+import { Typography } from '@/components/tailwind/client-components'
 
 function padTo2Digits(num: number) {
   return num.toString().padStart(2, '0');

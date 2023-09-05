@@ -6,9 +6,9 @@ import { motion, useScroll } from 'framer-motion'
 export default function ProgressBar() {
   const { scrollYProgress } = useScroll();
 
-  return <div className={styles.progressBar}>
+  return <div className={styles.progressBarWrapper}>
     <motion.div
-      className="progress-bar"
+      className={styles.progressBar}
       style={{scaleX: scrollYProgress}}
     />
   </div>;

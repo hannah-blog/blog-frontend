@@ -1,16 +1,17 @@
 import '@/app/globals.css'
+
 import { Inter } from 'next/font/google'
 import styles from '@/styles/pages/not-found.module.css'
 import Link from 'next/link'
-import { Button, ThemeProvider, Typography } from '@/components/tailwind/client-components'
+import { Button, Typography } from '@/components/tailwind/client-components'
 import { NotFountSvg } from '@/components/svg/svgs'
-import Navbar from '@/components/layout/navbar'
-import Footer from '@/components/layout/footer'
+import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function NotFound() {
-  return <>
+  return <body className={inter.className}>
     <Navbar />
     <div className={styles.main}>
       <div>
@@ -25,5 +26,5 @@ export default function NotFound() {
       </div>
     </div>
     <Footer />
-  </>;
+  </body>;
 }
