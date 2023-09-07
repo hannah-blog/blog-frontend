@@ -1,5 +1,5 @@
 import styles from '@/styles/app/page.module.css'
-import CircleAnimation from '@/components/motion/circle-animation'
+import CircleAnimation from '@/components/motion/helper/circle-animation'
 import { Typography } from '@/components/tailwind/client-components'
 import { MainSvg } from '@/components/svg/svgs'
 import { formatMetadata } from '@/components/utils/meta-head'

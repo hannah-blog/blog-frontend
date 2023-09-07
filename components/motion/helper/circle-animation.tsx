@@ -1,5 +1,5 @@
 import styles from '@/styles/components/motion/circle-animation.module.css'
-import { Keyframes } from '@/components/utils/keyframes'
+import { Keyframes } from '@/components/motion/keyframes'
 
 export default function CircleAnimation() {
 	return  <div className={styles.animationWrapper}>
