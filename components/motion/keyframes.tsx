@@ -2,7 +2,7 @@ import React from 'react'
 
 interface IProps {
 	name: string;
-	delay?: number;
+	delay: string;
 	[key: string]: React.CSSProperties | string;
 }
 
@@ -19,7 +19,7 @@ export const Keyframes = (props: IProps) => {
 	return <style>
 		{`
 			.${props.name} {
-				animation: ${props.name} ${props.delay + 's' || '1s'} 0s infinite cubic-bezier(.65,.05,.36,1) alternate;
+				animation: ${props.name} ${props.delay} 0s infinite cubic-bezier(.65,.05,.36,1) alternate;
 			}
 			
 			.${props.name}:hover {

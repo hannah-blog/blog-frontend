@@ -8,7 +8,7 @@ export default function CircleAnimation() {
 			return <>
 				<Keyframes
 					name={`svg-animation-${i}`}
-					delay={getRandomInt(100, 200) / 100}
+					delay={`${getRandomInt(100, 200) / 100}s`}
 					_0={{ marginBottom: '2px' }}
 					_70={{ opacity: 0.2 }}
 					_100={{ opacity: 0.3, marginBottom: `${getRandomInt(50, 500)}px`}}
