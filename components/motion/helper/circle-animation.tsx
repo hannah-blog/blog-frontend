@@ -1,5 +1,6 @@
 import styles from '@/styles/components/motion/circle-animation.module.css'
 import { Keyframes } from '@/components/motion/keyframes'
+import { Tooltip } from '@/components/tailwind/client-components'
 
 export default function CircleAnimation() {
 	return  <div className={styles.animationWrapper}>
@@ -13,7 +14,15 @@ export default function CircleAnimation() {
 					_70={{ opacity: 0.2 }}
 					_100={{ opacity: 0.3, marginBottom: `${getRandomInt(50, 500)}px`}}
 				/>
-				<Circle key={i} className={`svg-animation-${i}`} width={size} height={size} fill={getRandomColor()} />
+				<Tooltip
+					content="🥰"
+					animate={{
+						mount: { scale: 1, y: 0 },
+						unmount: { scale: 0, y: 25 },
+					}}
+				>
+					<Circle key={i} className={`svg-animation-${i}`} width={size} height={size} fill={getRandomColor()} />
+				</Tooltip>
 			</>;
 		})}
 	</div>

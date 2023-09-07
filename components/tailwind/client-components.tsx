@@ -21,7 +21,8 @@ import {
   TimelineHeader,
   TimelineIcon,
   TimelineItem,
-  Button
+  Button,
+	Tooltip
 } from '@material-tailwind/react'
 
 export {
@@ -45,6 +46,7 @@ export {
   TimelineHeader,
   TimelineIcon,
   TimelineItem,
-  Button
+  Button,
+	Tooltip
 };
 
