@@ -1,0 +1,27 @@
+.animationWrapper {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  height: 95vh;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+/*.svg {*/
+/*  animation: svg-animation 1s 0s infinite cubic-bezier(.65,.05,.36,1) alternate;*/
+/*}*/
+
+.svg:hover {
+  animation-play-state: paused;
+}
+
+/*@keyframes svg-animation {*/
+/*  0%{ margin-bottom: 2px; }*/
+/*  70%{ opacity: 0.2; }*/
+/*  100%{ margin-bottom: 180px; opacity: 0.3; }*/
+/*}*/
+

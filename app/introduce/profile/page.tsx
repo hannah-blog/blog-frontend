@@ -67,6 +67,7 @@ export default function Profile() {
                       <li className={styles.inline}>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolio/5">코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 도입 및 적용</Link>
                       </li>
+                      <li>DB 마이그레이션 flyway 적용</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>

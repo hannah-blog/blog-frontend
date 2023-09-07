@@ -1,10 +1,9 @@
-export function MainSvg() {
+export function MainSvg({ className }: { className?: string }) {
   return (
     <svg width="800" height="500" viewBox="0 0 900 600" fill="none" xmlns="http://www.w3.org/2000/svg"
-         className="injected-svg modal-svg"
+         className={`${className} injected-svg modal-svg`}
          data-src="https://themeisle.com/wp-content/plugins/illustration/imgs/142.svg"
     >
-      <path fill="#fff" d="M0 0h900v600H0z"></path>
       <path stroke="#E1E4E5" strokeWidth="4" d="M111 543.636h678"></path>
       <path
         d="M222.148 541.402h329.695c12.591 0 22.802-8.17 22.802-18.246v-10.848c0-10.08-10.211-18.246-22.802-18.246h-329.69c15.083 13.191 15.34 33.355.608 46.793l-.613.547z"

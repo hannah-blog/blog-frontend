@@ -8,8 +8,13 @@
 
 .contentWrapper {
   width: 750px;
+  height: 95vh;
   text-align: center;
   display: grid;
   align-content: center;
   justify-content: center;
+}
+
+.indexing {
+  z-index: 3;
 }
