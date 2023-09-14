@@ -2,13 +2,14 @@ import styles from '@/styles/app/blog/id/page.module.css'
 import Image from 'next/image'
 import ProgressBar from '@/components/motion/progress-bar'
 import Markdown from '@/components/utils/markdown'
-import { getPostById } from '@/data/post-data'
 import { Typography } from '@/components/tailwind/client-components'
 import { formatMetadata, Props } from '@/components/utils/meta-head'
+import { fetchBlog } from '@/api/caller'
+import { dateFormat, dateKoFormat, timeFormat } from "@/components/utils/dateUtils";
 
 export async function generateMetadata({ params }: Props) {
   const id = Number(params.id);
-  const post = await getPostById(id);
+  const post = await fetchBlog(id);
 
   return formatMetadata({
     title: post.title,
@@ -24,13 +25,13 @@ export default async function BlogDetail({
 }: {
   params: { id: number }
 }) {
-  const post = await getPostById(id);
+  const post = await fetchBlog(id);
 
   return <div className={styles.blogWrapper}>
     <ProgressBar />
     <div className={styles.titleText}>{post.title}</div>
     <div className={styles.dateWrapper}>
-      <Typography>Created Date {post.createdDate}</Typography>
+      <Typography>Created Date {dateKoFormat(post.createdDate)} {timeFormat(post.createdDate)}</Typography>
     </div>
     <Image
       className={styles.thumbnail}

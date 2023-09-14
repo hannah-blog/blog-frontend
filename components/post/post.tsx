@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Post as PostType } from '@/data/post-data'
 import { CardBody, CardFooter, CardHeader, Chip, Typography } from '@/components/tailwind/client-components'
+import { dateFormat } from '@/components/utils/dateUtils'
 
 export default function Post({ post, idx }: { post: PostType, idx: number }) {
   return (
@@ -27,7 +28,7 @@ export default function Post({ post, idx }: { post: PostType, idx: number }) {
           </Typography>
           <Typography variant="small" color="gray" className="flex gap-1">
             <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
-            {post.createdDate}
+            {dateFormat(post.createdDate)}
           </Typography>
         </CardFooter>
       </div>
