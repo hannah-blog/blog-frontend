@@ -10,7 +10,7 @@ export enum HttpMethod {
 
 export const actions = async (url: string, method: HttpMethod, body: Object | null) => {
 	try {
-		const request = {
+		const request: RequestInit = {
 			method: method,
 			headers: {
 				'Content-Type': 'application/json',
