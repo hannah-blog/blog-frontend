@@ -25,6 +25,7 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  height: fit-content;
 }
 
 .subWrapper {
@@ -59,4 +60,8 @@
 .link:hover {
   text-decoration-color: #7078d8;
   color: #7078d8;
+}
+
+.indexing {
+  z-index: 3;
 }

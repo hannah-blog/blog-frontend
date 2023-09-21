@@ -9,11 +9,12 @@ import {
   Typography
 } from '@/components/tailwind/client-components'
 import Image from 'next/image'
+import CircleAnimation from '@/components/motion/helper/circle-animation'
 
 export default function Profile() {
   return <div className={styles.mainWrapper}>
     <ProgressBar />
-    <div className={styles.subWrapper}>
+    <div className={`${styles.subWrapper} ${styles.indexing}`}>
       <div className={styles.section}>
         <Typography variant="h1">반갑습니다, 저는 홍채민입니다.</Typography>
         <Typography variant="h4">
@@ -99,7 +100,7 @@ export default function Profile() {
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolio/6">Youtube 동시 송출 서비스 개발 - 채팅 연동(Redis Pub/Sub 기반, Python)</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">가변 비트레이트 영상을 위한 m3u8 파일 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">비디오 트랜스코딩 작업 - 가변 비트레이트</Link>
                       </li>
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolio/8">Open API - PublicKey, PrivateKey 도입 및 개발</Link>
@@ -111,7 +112,7 @@ export default function Profile() {
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolio/10">경매 서비스 개발 - 시스템 설계 및 API 개발</Link>
                       </li>
                       <li>입점 신청 Discord WebHook</li>
-                      <li>AntMedia 송출 서버 구축</li>
+                      <li>AntMedia 송출 서버 구축 (Origin 서버 구축)</li>
                       <li>10대 이상의 서버 인프라 관리</li>
                     </ul>
                   </Typography>
@@ -409,6 +410,7 @@ export default function Profile() {
           </Timeline>
         </div>
       </div>
+      <hr className="my-8 border-blue-gray-50"/>
       <div className={styles.section}>
         <Typography variant="h2">Contact</Typography>
         <div className={styles.sideBlock}>
@@ -431,5 +433,6 @@ export default function Profile() {
         </div>
       </div>
     </div>
+    <CircleAnimation />
   </div>;
 }
