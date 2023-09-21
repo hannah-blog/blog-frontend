@@ -5,7 +5,7 @@ import Markdown from '@/components/utils/markdown'
 import { Typography } from '@/components/tailwind/client-components'
 import { formatMetadata, Props } from '@/components/utils/meta-head'
 import { fetchBlog } from '@/api/caller'
-import { dateFormat, dateKoFormat, timeFormat } from "@/components/utils/dateUtils";
+import { dateKoFormat, timeFormat } from "@/components/utils/dateUtils";
 
 export async function generateMetadata({ params }: Props) {
   const id = Number(params.id);

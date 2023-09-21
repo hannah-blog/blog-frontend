@@ -57,12 +57,12 @@ export default function Blog() {
 			thumbnailUrl,
 			tagIds: tags.map(tag => tag.id)
 		}
-		const result = await fetchCreateBlog(request);
+		await fetchCreateBlog(request);
 	}
 
 	return <div className={styles.wrapper}>
 		<Typography variant="h1">Create Blog</Typography>
-		<Input value={title} onChange={onTitle} label="Title" />
+		<Input alt={title} value={title} onChange={onTitle} label="Title" />
 		<MDEditor
 			value={content}
 			onChange={setContent}
@@ -74,8 +74,8 @@ export default function Blog() {
 			}}
 			height={400}
 		/>
-		<Input type="file" onInput={uploadImage} label="썸네일 이미지" placeholder="썸네일 이미지 업로드" width="100%" />
-		<Image src={thumbnailUrl} width={300} height={300} />
+		<Input alt={thumbnailUrl} type="file" onInput={uploadImage} label="썸네일 이미지" placeholder="썸네일 이미지 업로드" width="100%" />
+		<Image alt={thumbnailUrl} src={thumbnailUrl} width={300} height={300} />
 		<Typography variant="h5">추가할 태그</Typography>
 		{tags.map((tag, index) => {
 			return <Button key={index} onClick={() => onTags(tag)} value={tag.id}>

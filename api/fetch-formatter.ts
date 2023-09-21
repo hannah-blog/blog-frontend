@@ -1,7 +1,7 @@
 import * as process from 'process'
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-const imageBaseUrl = process.env.NEXT_PUBLIC_IMAGE_BASE_URL
+const imageBaseUrl = new URL(String(process.env.NEXT_PUBLIC_IMAGE_BASE_URL));
 
 export enum HttpMethod {
 	GET = 'GET',
@@ -31,7 +31,7 @@ export const actions = async (url: string, method: HttpMethod, body: object | nu
 	return;
 }
 
-export const imageActions = async (file) => {
+export const imageActions = async (file: File) => {
 	const formData = new FormData();
 	formData.append('file', file);
 	formData.append('path', 'BLOG');
@@ -44,11 +44,9 @@ export const imageActions = async (file) => {
 				console.error(e);
 				throw new Error('이미지 업로드에 실패했습니다. 다시 시도해주세요.');
 			});
-		console.log(data)
 		return await data.json();
-	} catch (e: unknown) {
-		console.error(e)
-		alert(e.message);
+	} catch (e) {
+		console.error(e);
 	}
 	return;
 }
