@@ -3,22 +3,26 @@
 import styles from '@/styles/app/private/page.module.css'
 import MDEditor from '@uiw/react-md-editor'
 import Image from 'next/image'
+import { ChangeEvent, useEffect, useState } from 'react';
 import { Button, Input, Typography } from '@/components/tailwind/client-components'
-import { useEffect, useState } from 'react'
 import { imageActions } from '@/api/fetch-formatter'
 import { CreatePost, fetchCreateBlog, fetchTags, Tag } from '@/api/caller'
 import onImagePasted from '@/components/utils/on-image-pasted'
 
 export default function Blog() {
 
-	const [title, setTitle] = useState('');
-	const onTitle = ({ target }) => setTitle(target.value);
+	const [title, setTitle] = useState<string>('');
+	const onTitle = (e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value);
 
-	const [content, setContent] = useState('');
+	const [file, setFile] = useState<File | null>(null);
+	const [content, setContent] = useState<string | undefined>();
+	const [thumbnailUrl, setThumbnailUrl] = useState<string>('');
 
-	const [thumbnailUrl, setThumbnailUrl] = useState('');
-	const uploadImage = async ({ target }) => {
-		const file = target.files[0];
+	const uploadImage = async () => {
+		if (!file) {
+			alert('파일 선택하셈');
+			return;
+		}
 		const result = await imageActions(file);
 		if (result) {
 			setThumbnailUrl(result.data);
@@ -26,18 +30,18 @@ export default function Blog() {
 	}
 
 	const [tags, setTags] = useState<Tag[]>([]);
-	const addTag = (tag) => setTags([...tags, tag]);
-	const deleteTag = (deleteTag) => setTags(tags.filter(tag => tag !== deleteTag));
+	const addTag = (tag: Tag) => setTags([...tags, tag]);
+	const deleteTag = (deleteTag: Tag) => setTags(tags.filter(tag => tag !== deleteTag));
 
 	const [defaultTag, setDefaultTag] = useState<Tag[]>([]);
-	const addDefaultTag = (tag) => setDefaultTag([...defaultTag, tag]);
-	const deleteDefaultTag = (deleteTag) => setDefaultTag(defaultTag.filter(tag => tag !== deleteTag));
+	const addDefaultTag = (tag: Tag) => setDefaultTag([...defaultTag, tag]);
+	const deleteDefaultTag = (deleteTag: Tag) => setDefaultTag(defaultTag.filter(tag => tag !== deleteTag));
 
-	const onTags = (tag) => {
+	const onTags = (tag: Tag) => {
 		addDefaultTag(tag);
 		deleteTag(tag);
 	}
-	const onDefaultTags = (tag) => {
+	const onDefaultTags = (tag: Tag) => {
 		deleteDefaultTag(tag);
 		addTag(tag);
 	}
@@ -51,6 +55,10 @@ export default function Blog() {
 	}, []);
 
 	const save = async () => {
+		if (!title || !content || !thumbnailUrl || !tags) {
+			alert('빈칸 채워');
+			return;
+		}
 		const request: CreatePost = {
 			title,
 			content,
@@ -62,7 +70,7 @@ export default function Blog() {
 
 	return <div className={styles.wrapper}>
 		<Typography variant="h1">Create Blog</Typography>
-		<Input alt={title} value={title} onChange={onTitle} label="Title" />
+		<input value={title} onChange={onTitle} />
 		<MDEditor
 			value={content}
 			onChange={setContent}
@@ -74,8 +82,17 @@ export default function Blog() {
 			}}
 			height={400}
 		/>
-		<Input alt={thumbnailUrl} type="file" onInput={uploadImage} label="썸네일 이미지" placeholder="썸네일 이미지 업로드" width="100%" />
-		<Image alt={thumbnailUrl} src={thumbnailUrl} width={300} height={300} />
+		<input
+			type="file"
+			onChange={(e) => {
+				if (!e.target?.files) return;
+				setFile(e.target?.files[0]);
+			}}
+			placeholder="썸네일 이미지 업로드"
+			width="100%"/>
+
+		<Button onClick={uploadImage}>업로드</Button>
+		<Image alt={thumbnailUrl} src={thumbnailUrl} width={300} height={300}/>
 		<Typography variant="h5">추가할 태그</Typography>
 		{tags.map((tag, index) => {
 			return <Button key={index} onClick={() => onTags(tag)} value={tag.id}>

@@ -14,7 +14,7 @@ export default function PostList({ list }: { list: PostType[] }) {
   return <>
     <div className={styles.blogListBox}>
       {list.slice(offset, offset + 9).map((post, idx) => {
-        return <Post key={idx} post={post} idx={idx} />;
+        return <Post key={idx} post={post} />;
       })}
     </div>
     <Pagination total={list.length} limit={9} page={page} setPage={setPage} />
