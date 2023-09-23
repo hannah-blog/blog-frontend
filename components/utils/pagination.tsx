@@ -1,4 +1,4 @@
-import styles from '@/styles/components/utils/pagination.module.css'
+import styles from '@/styles/components/utils/style.module.css'
 import { Button, IconButton } from '@/components/tailwind/client-components'
 import { Dispatch, SetStateAction } from 'react'
 
