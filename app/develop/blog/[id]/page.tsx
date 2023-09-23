@@ -22,8 +22,7 @@ export default function BlogDetail({
 			.then((fetch) => {
 				setPost(fetch)
 			});
-	}, [post])
-
+	}, []);
 
 	return <>
 		{
