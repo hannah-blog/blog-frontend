@@ -4,12 +4,14 @@ import styles from '@/styles/app/private/page.module.css'
 import MDEditor from '@uiw/react-md-editor'
 import Image from 'next/image'
 import { ChangeEvent, useEffect, useState } from 'react';
-import { Button, Input, Typography } from '@/components/tailwind/client-components'
+import { Button, Typography } from '@/components/tailwind/client-components'
 import { imageActions } from '@/api/fetch-formatter'
+import { useRouter } from 'next/navigation'
 import { CreatePost, fetchCreateBlog, fetchTags, Tag } from '@/api/caller'
 import onImagePasted from '@/components/utils/on-image-pasted'
 
 export default function Blog() {
+	const router = useRouter();
 
 	const [title, setTitle] = useState<string>('');
 	const onTitle = (e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value);
@@ -47,11 +49,7 @@ export default function Blog() {
 	}
 
 	useEffect(() => {
-		const fetchDataTags = async () => {
-			const fetchTagsData = await fetchTags();
-			setDefaultTag(fetchTagsData);
-		};
-		fetchDataTags();
+		fetchTags().then(setDefaultTag);
 	}, []);
 
 	const save = async () => {
@@ -65,12 +63,18 @@ export default function Blog() {
 			thumbnailUrl,
 			tagIds: tags.map(tag => tag.id)
 		}
-		await fetchCreateBlog(request);
+		fetchCreateBlog(request)
+			.then(() => {
+				alert('성공');
+				router.push('/private/blog');
+			});
 	}
 
 	return <div className={styles.wrapper}>
 		<Typography variant="h1">Create Blog</Typography>
+		<Typography variant="h5">title</Typography>
 		<input value={title} onChange={onTitle} />
+		<Typography variant="h5">content</Typography>
 		<MDEditor
 			value={content}
 			onChange={setContent}
@@ -82,6 +86,7 @@ export default function Blog() {
 			}}
 			height={400}
 		/>
+		<Typography variant="h5">thumbnail</Typography>
 		<input
 			type="file"
 			onChange={(e) => {
@@ -90,9 +95,8 @@ export default function Blog() {
 			}}
 			placeholder="썸네일 이미지 업로드"
 			width="100%"/>
-
 		<Button onClick={uploadImage}>업로드</Button>
-		<Image alt={thumbnailUrl} src={thumbnailUrl} width={300} height={300}/>
+		<Image alt={thumbnailUrl} src={thumbnailUrl} width={300} height={300} />
 		<Typography variant="h5">추가할 태그</Typography>
 		{tags.map((tag, index) => {
 			return <Button key={index} onClick={() => onTags(tag)} value={tag.id}>
