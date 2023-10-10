@@ -38,6 +38,14 @@ export const fetchCreateBlog = async (request: CreatePost): Promise<Post> => {
 	return actions(RequestUrl.BLOG, HttpMethod.POST, request);
 }
 
+export const fetchUpdateBlog = async (id: number, request: CreatePost): Promise<Post> => {
+	return actions(`${RequestUrl.BLOG}/${id}`, HttpMethod.PATCH, request);
+}
+
+export const fetchDeleteBlog = async (id: number) => {
+	return actions(`${RequestUrl.BLOG}/${id}`, HttpMethod.DELETE,  null);
+}
+
 export const fetchTags = async (): Promise<Tag[]> => {
 	return actions(RequestUrl.TAG, HttpMethod.GET, null);
 }

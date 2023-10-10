@@ -48,7 +48,7 @@ export default function BlogDetail({
 				}
 			});
 		});
-	}, [!defaultTags.length])
+	}, [!defaultTags.length]);
 
 	const uploadImage = async () => {
 		if (!file) {
@@ -56,8 +56,8 @@ export default function BlogDetail({
 			return;
 		}
 		const result = await imageActions(file);
-		if (result) {
-			post.thumbnailUtl = result.data;
+		if (result && post) {
+			post.thumbnailUrl = result.data;
 		}
 	}
 
@@ -72,6 +72,7 @@ export default function BlogDetail({
 	}
 
 	const update = () => {
+		if (!post) return alert('안 돼. 돌아가.');
 		const request = {
 			title: String(post.title),
 			content: String(content),
@@ -86,6 +87,7 @@ export default function BlogDetail({
 	}
 
 	const deletePost = () => {
+		if (!post) return alert('안 돼. 돌아가.');
 		fetchDeleteBlog(post.id)
 			.then(() => {
 				alert('삭제함');

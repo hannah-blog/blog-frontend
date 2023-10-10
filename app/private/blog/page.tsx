@@ -1,15 +1,22 @@
+'use client'
+
 import styles from '@/styles/app/private/page.module.css'
 import { Button, Card, Typography } from '@/components/tailwind/client-components'
+import { fetchBlogs, Post } from '@/api/caller'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { fetchBlogs } from '@/api/caller'
 
 const cardClassName = "h-full w-full overflow-scroll"
 const tableClassName = "w-full min-w-max table-auto text-left"
 const thClassName = "border-b border-blue-gray-100 bg-blue-gray-50 p-4"
 const thTypographyClassName = "font-normal leading-none opacity-70"
 
-export default async function Blog() {
-	const posts = await fetchBlogs();
+export default function Blog() {
+	const [posts, setPosts] = useState<Post[]>([]);
+
+	useEffect(() => {
+		fetchBlogs().then(setPosts);
+	}, [])
 
 	return <div className={styles.wrapper}>
 		<Typography variant="h1">Blog</Typography>
