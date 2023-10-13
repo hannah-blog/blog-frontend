@@ -35,20 +35,23 @@ export default function BlogDetail({
 			setPost(data);
 			setTags(data.tags);
 			setContent(data.content);
-		}).then(() => {
-			fetchTags().then(setDefaultTags)
 		});
 	}, []);
 
 	useEffect(() => {
-		defaultTags.map(tag => {
-			tags.map(t => {
-				if (tag.id === t.id) {
-					setDefaultTags(defaultTags.filter(tag => tag.id !== t.id));
-				}
-			});
+		fetchTags().then((data) => {
+			const tag = tagCheck(data);
+			setDefaultTags(tag);
 		});
-	}, [!defaultTags.length]);
+	}, [tags]);
+
+	const tagCheck = (data: Tag[]) => {
+		const tagIds = tags.map(tag => tag.id);
+		return data.filter(tag => {
+			console.log(tag.id, !tagIds.includes(tag.id))
+			return !tagIds.includes(tag.id)
+		});
+	}
 
 	const uploadImage = async () => {
 		if (!file) {
