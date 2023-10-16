@@ -78,12 +78,8 @@ export default function Blog() {
 		<MDEditor
 			value={content}
 			onChange={setContent}
-			onPaste={async (event) => {
-				await onImagePasted(event.clipboardData, setContent);
-			}}
-			onDrop={async (event) => {
-				await onImagePasted(event.dataTransfer, setContent);
-			}}
+			onPaste={ async (event) => await onImagePasted(event.clipboardData, setContent) }
+			onDrop={ async (event) => await onImagePasted(event.dataTransfer, setContent) }
 			height={400}
 		/>
 		<Typography variant="h5">thumbnail</Typography>

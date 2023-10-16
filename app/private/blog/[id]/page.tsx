@@ -48,7 +48,6 @@ export default function BlogDetail({
 	const tagCheck = (data: Tag[]) => {
 		const tagIds = tags.map(tag => tag.id);
 		return data.filter(tag => {
-			console.log(tag.id, !tagIds.includes(tag.id))
 			return !tagIds.includes(tag.id)
 		});
 	}

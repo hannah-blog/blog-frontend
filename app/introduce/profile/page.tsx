@@ -9,7 +9,6 @@ import {
   Typography
 } from '@/components/tailwind/client-components'
 import Image from 'next/image'
-import CircleAnimation from '@/components/motion/helper/circle-animation'
 
 export default function Profile() {
   return <div className={styles.mainWrapper}>
@@ -19,8 +18,8 @@ export default function Profile() {
         <Typography variant="h1">반갑습니다, 저는 홍채민입니다.</Typography>
         <Typography variant="h4">
           <ul className={styles.list}>
-            <li>2년차 백엔드 개발자로 일하고 있으며 비지니스 도메인의 가치를 궁극적으로 이해하고 풀어나가는 것을 좋아합니다.</li>
-            <li>각 요소들이 균형있고 조화롭게 결합되어 완성도있는 작품을 그리는 예술가와 같은 개발자가 되고 싶습니다.</li>
+            <li>3년차 백엔드 개발자로 일하고 있으며 비지니스 도메인의 가치를 궁극적으로 이해하고 풀어나가는 것을 좋아합니다.</li>
+            <li>각 요소들이 균형있고 조화롭게 결합되어 완성도있는 작품을 그리는 예술가와 같은 개발자가 되는 것이 목표입니다.</li>
           </ul>
         </Typography>
       </div>
@@ -95,25 +94,23 @@ export default function Profile() {
                   <Typography variant="lead">What I did</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>전략 패턴을 활용한 송출 환경 선택 서비스 개발</li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/6">Youtube 동시 송출 서비스 개발 - 채팅 연동(Redis Pub/Sub 기반, Python)</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/6">Youtube 동시 송출 서비스 개발</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">비디오 트랜스코딩 작업 - 가변 비트레이트</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">비디오 트랜스코딩 작업 개발</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/8">Open API - PublicKey, PrivateKey 도입 및 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/8">Open API 개발</Link>
                       </li>
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolio/9">방문자 통계 서비스 개발</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/10">경매 서비스 개발 - 시스템 설계 및 API 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/10">경매 서비스 개발</Link>
                       </li>
                       <li>입점 신청 Discord WebHook</li>
-                      <li>AntMedia 송출 서버 구축 (Origin 서버 구축)</li>
-                      <li>10대 이상의 서버 인프라 관리</li>
+                      <li>AntMedia 송출 서버 구축</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
@@ -145,12 +142,8 @@ export default function Profile() {
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolio/11">월별 매출 현황 서비스 개발</Link>
                       </li>
-                      <li>
-                        KSNET 정산을 위한 결제 데이터 조회 서비스 개발
-                      </li>
-                      <li>
-                        서비스 리뉴얼 참여 - API, 팜케이션 서비스 에디터 적용
-                      </li>
+                      <li>KSNET 정산을 위한 결제 데이터 조회 서비스 개발</li>
+                      <li>서비스 리뉴얼 참여 - API, 팜케이션 서비스 에디터 적용</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
@@ -171,21 +164,19 @@ export default function Profile() {
                   <Typography variant="lead">Description</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>
-                        <Link className={styles.link} href="https://www.g-justgo.com/">강원도 숙박 서비스앱입니다.</Link> 주로 반복 작업을 최소화 시키는 작업이나, 유지보수 업무를 담당하였습니다.
-                      </li>
+                      <li>상품을 실시간으로 반응하고 참여할 수 있는 서비스입니다.(미오픈)</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">What I did</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>쿠버네티스 환경의 오토 스케일링 서버 구축</li>
+                      <li>쿠버네티스 환경의 오토 스케일링 클라우드 서버 구축</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>Java 17, Spring Boot 3, Kubernates, Docker, Cloud...</li>
+                      <li>Java 17, Spring Boot 3, Kubernetes, Docker, Cloud...</li>
                     </ul>
                   </Typography>
                 </TimelineBody>
@@ -309,7 +300,7 @@ export default function Profile() {
                       <Link className={styles.link} href="https://www.hannah-log.site/blog/1">LivePulse 발표 자료</Link>
                     </li>
                     <li className={styles.inline}>
-                      <Link className={styles.link} href="https://www.hannah-log.site/blog/1">일반 개인 서버로 CDN 서버 구축하기</Link>
+                      <Link className={styles.link} href="https://www.hannah-log.site/blog/1">개인 서버로 CDN 서버 구축하기</Link>
                     </li>
                     <li className={styles.inline}>
                       <Link className={styles.link} href="https://www.hannah-log.site/blog/1">NestJS 시리즈</Link>
@@ -433,6 +424,5 @@ export default function Profile() {
         </div>
       </div>
     </div>
-    <CircleAnimation />
   </div>;
 }

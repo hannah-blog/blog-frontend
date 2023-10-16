@@ -3,25 +3,25 @@
 import styles from '@/styles/app/private/page.module.css'
 import Link from 'next/link'
 
-import { Button, Card, Typography } from '@/components/tailwind/client-components'
-import { fetchBlogs, Post } from '@/api/caller'
 import { useEffect, useState } from 'react'
+import { fetchPortfolios, Portfolio } from '@/api/caller'
+import { Button, Card, Typography } from '@/components/tailwind/client-components'
 
 const cardClassName = "h-full w-full overflow-scroll"
 const tableClassName = "w-full min-w-max table-auto text-left"
 const thClassName = "border-b border-blue-gray-100 bg-blue-gray-50 p-4"
 const thTypographyClassName = "font-normal leading-none opacity-70"
 
-export default function Blog() {
-	const [posts, setPosts] = useState<Post[]>([]);
+export default function Portfolio() {
+	const [portfolio, setPortfolio] = useState<Portfolio[]>([]);
 
 	useEffect(() => {
-		fetchBlogs().then(setPosts);
-	}, [])
+		fetchPortfolios().then(setPortfolio);
+	}, []);
 
 	return <div className={styles.wrapper}>
-		<Typography variant="h1">Blog</Typography>
-		<Link href="/private/blog/new">
+		<Typography variant="h1">Portfolio</Typography>
+		<Link href="/private/portfolio/new">
 			<Button size="lg">New</Button>
 		</Link>
 		<Card className={cardClassName}>
@@ -49,26 +49,26 @@ export default function Blog() {
 				</th>
 				</thead>
 				<tbody>
-				{posts.map((post, index) => {
+				{portfolio.map((portfolio, index) => {
 					return <tr key={index}>
 						<td>
 							<Typography variant="small" color="blue-gray" className="font-normal">
-								{post.id}
+								{portfolio.id}
 							</Typography>
 						</td>
 						<td>
 							<Typography variant="small" color="blue-gray" className="font-normal">
-								{post.title}
+								{portfolio.title}
 							</Typography>
 						</td>
 						<td>
 							<Typography variant="small" color="blue-gray" className="font-normal">
-								{post.createdDate}
+								{portfolio.createdDate}
 							</Typography>
 						</td>
 						<td>
-							<Link href={`/private/blog/${post.id}`}>
-								<Button>Edit</Button>
+							<Link href={`/private/portfolio/${portfolio.id}`}>
+								<Button size="sm">Update</Button>
 							</Link>
 						</td>
 					</tr>;
@@ -78,4 +78,3 @@ export default function Blog() {
 		</Card>
 	</div>;
 }
-
