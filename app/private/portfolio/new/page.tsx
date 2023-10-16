@@ -1,12 +1,14 @@
 'use client'
 
 import MDEditor from '@uiw/react-md-editor'
+import Image from 'next/image'
 import styles from '@/styles/app/private/page.module.css'
+import { ChangeEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { imageActions } from '@/api/fetch-formatter'
-import { CreatePortfolio, fetchCreatePortfolio } from "@/api/caller";
-import { Button, Typography } from "@/components/tailwind/client-components";
-import onImagePasted from "@/components/utils/on-image-pasted";
+import { CreatePortfolio, fetchCreatePortfolio } from '@/api/caller'
+import { Button, Typography } from '@/components/tailwind/client-components'
+import onImagePasted from '@/components/utils/on-image-pasted'
 
 export default function Portfolio() {
 	const router = useRouter();
