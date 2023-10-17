@@ -77,3 +77,11 @@ export const fetchPortfolio = async (id: number): Promise<Portfolio> => {
 export const fetchCreatePortfolio = async (request: CreatePortfolio): Promise<Portfolio> => {
 	return actions(RequestUrl.PORTFOLIO, HttpMethod.POST, request);
 }
+
+export const fetchUpdatePortfolio = async (id: number, request: CreatePortfolio): Promise<Portfolio> => {
+	return actions(`${RequestUrl.PORTFOLIO}/${id}`, HttpMethod.PATCH, request);
+}
+
+export const fetchDeletePortfolio = async (id: number) => {
+	return actions(`${RequestUrl.PORTFOLIO}/${id}`, HttpMethod.DELETE,  null);
+}

@@ -103,17 +103,16 @@ export default function BlogDetail({
 				<div className={styles.wrapper}>
 					<Typography variant="h1">Update Blog</Typography>
 					<Typography variant="h5">title</Typography>
-					<input value={post.title} onChange={(e) => post.title = e.target.value} />
+					<input
+						value={post.title}
+						onChange={(e) => setPost({ ...post, title: e.target.value })}
+					/>
 					<Typography variant="h5">content</Typography>
 					<MDEditor
 						value={content}
 						onChange={setContent}
-						onPaste={async (event) => {
-							await onImagePasted(event.clipboardData, setContent);
-						}}
-						onDrop={async (event) => {
-							await onImagePasted(event.dataTransfer, setContent);
-						}}
+						onPaste={async (event) => await onImagePasted(event.clipboardData, setContent) }
+						onDrop={async (event) => await onImagePasted(event.dataTransfer, setContent) }
 						height={400}
 					/>
 					<Typography variant="h5">thumbnail</Typography>
