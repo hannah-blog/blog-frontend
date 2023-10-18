@@ -4,7 +4,7 @@ import { Button, Card, Typography } from '@/components/tailwind/client-component
 interface Data {
 	id: number;
 	title: string;
-	createdDate: string;
+	createdDate?: string;
 }
 
 interface TableProps {
