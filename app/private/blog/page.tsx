@@ -3,14 +3,10 @@
 import styles from '@/styles/app/private/page.module.css'
 import Link from 'next/link'
 
-import { Button, Card, Typography } from '@/components/tailwind/client-components'
+import { Table } from '@/components/utils/table'
+import { Button, Typography } from '@/components/tailwind/client-components'
 import { fetchBlogs, Post } from '@/api/caller'
 import { useEffect, useState } from 'react'
-
-const cardClassName = "h-full w-full overflow-scroll"
-const tableClassName = "w-full min-w-max table-auto text-left"
-const thClassName = "border-b border-blue-gray-100 bg-blue-gray-50 p-4"
-const thTypographyClassName = "font-normal leading-none opacity-70"
 
 export default function Blog() {
 	const [posts, setPosts] = useState<Post[]>([]);
@@ -24,58 +20,7 @@ export default function Blog() {
 		<Link href="/private/blog/new">
 			<Button size="lg">New</Button>
 		</Link>
-		<Card className={cardClassName}>
-			<table className={tableClassName}>
-				<thead>
-				<th className={thClassName}>
-					<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
-						No.
-					</Typography>
-				</th>
-				<th className={thClassName}>
-					<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
-						Title
-					</Typography>
-				</th>
-				<th className={thClassName}>
-					<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
-						Created Date
-					</Typography>
-				</th>
-				<th className={thClassName}>
-					<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
-						Update
-					</Typography>
-				</th>
-				</thead>
-				<tbody>
-				{posts.map((post, index) => {
-					return <tr key={index}>
-						<td>
-							<Typography variant="small" color="blue-gray" className="font-normal">
-								{post.id}
-							</Typography>
-						</td>
-						<td>
-							<Typography variant="small" color="blue-gray" className="font-normal">
-								{post.title}
-							</Typography>
-						</td>
-						<td>
-							<Typography variant="small" color="blue-gray" className="font-normal">
-								{post.createdDate}
-							</Typography>
-						</td>
-						<td>
-							<Link href={`/private/blog/${post.id}`}>
-								<Button>Edit</Button>
-							</Link>
-						</td>
-					</tr>;
-				})}
-				</tbody>
-			</table>
-		</Card>
+		<Table  data={posts} detailPath="blog" />
 	</div>;
 }
 
