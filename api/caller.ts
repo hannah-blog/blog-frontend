@@ -70,10 +70,6 @@ export const fetchCreateTag = async (name: string): Promise<Tag> => {
 	return actions(RequestUrl.TAG, HttpMethod.POST, { name });
 }
 
-export const fetchUpdateTag = async (id: number, name: string): Promise<Tag> => {
-	return actions(`${RequestUrl.TAG}/${id}`, HttpMethod.PATCH, { name });
-}
-
 export const fetchDeleteTag = async (id: number) => {
 	return actions(`${RequestUrl.TAG}/${id}`, HttpMethod.DELETE,  null);
 }
