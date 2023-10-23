@@ -4,6 +4,7 @@ enum RequestUrl {
 	BLOG = 'blog',
 	TAG = 'tag',
 	PORTFOLIO = 'portfolio',
+	SERIES = 'series',
 }
 
 export type Tag = {
@@ -40,6 +41,19 @@ export type CreatePortfolio = {
 	title: string,
 	content: string,
 	thumbnailUrl: string,
+}
+
+export type Series = {
+	id: number,
+	title: string,
+	thumbnailUrl: string,
+	createdDate: string,
+}
+
+export type CreateSeries = {
+	title: string,
+	thumbnailUrl: string,
+	blogIds: number[],
 }
 
 export const fetchBlogs = async (): Promise<Post[]> => {
@@ -92,4 +106,20 @@ export const fetchUpdatePortfolio = async (id: number, request: CreatePortfolio)
 
 export const fetchDeletePortfolio = async (id: number) => {
 	return actions(`${RequestUrl.PORTFOLIO}/${id}`, HttpMethod.DELETE,  null);
+}
+
+export const fetchSeries = async (): Promise<Series[]> => {
+	return actions(RequestUrl.SERIES, HttpMethod.GET, null);
+}
+
+export const fetchCreateSeries = async (request: CreateSeries): Promise<Series> => {
+	return actions(RequestUrl.SERIES, HttpMethod.POST, request);
+}
+
+export const fetchUpdateSeries = async (id: number, request: CreateSeries): Promise<Series> => {
+	return actions(`${RequestUrl.SERIES}/${id}`, HttpMethod.PATCH, request);
+}
+
+export const fetchDeleteSeries = async (id: number) => {
+	return actions(`${RequestUrl.SERIES}/${id}`, HttpMethod.DELETE,  null);
 }
