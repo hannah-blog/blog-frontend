@@ -12,7 +12,6 @@ RUN rm -rf ./.next/cache
 # Rebuild the source code only when needed
 FROM oven/bun:latest AS builder
 WORKDIR /usr/src/app
-COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY . .
 RUN bun build
 
