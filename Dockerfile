@@ -7,11 +7,10 @@ WORKDIR /usr/src/app
 
 # Install dependencies based on the preferred package manager
 COPY package.json pnpm-lock.yaml ./
-FROM oven/bun:1.0.0
 RUN rm -rf ./.next/cache
 
 # Rebuild the source code only when needed
-FROM base AS builder
+FROM oven/bun:latest AS builder
 WORKDIR /usr/src/app
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY . .
