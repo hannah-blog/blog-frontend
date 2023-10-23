@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 
 # Install dependencies based on the preferred package manager
 COPY package.json pnpm-lock.yaml ./
-RUN yarn global add pnpm && pnpm i --no-frozen-lockfile;
+FROM oven/bun:1.0.0
 RUN rm -rf ./.next/cache
 
 # Rebuild the source code only when needed
@@ -15,7 +15,7 @@ FROM base AS builder
 WORKDIR /usr/src/app
 COPY --from=deps /usr/src/app/node_modules ./node_modules
 COPY . .
-RUN yarn build
+RUN bun build
 
 # Production image, copy all the files and run next
 FROM base AS runner
