@@ -13,12 +13,10 @@ FROM deps AS builder
 WORKDIR /usr/src/app
 COPY --from=deps /usr/src/app/node_modules node_modules
 COPY . .
-RUN ls -al
 
 ENV NODE_ENV=production
 RUN sh script/generate-sitemap.sh
 RUN bun run build
-RUN ls -al
 
 # copy production dependencies and source code into final image
 FROM base AS release

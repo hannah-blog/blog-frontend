@@ -3,6 +3,7 @@ import axios from 'axios';
 import fs from 'fs';
 import prettier from 'prettier';
 
+const getDate = new Date().toISOString()
 const DOMAIN = 'https://www.hannah-log.site'
 
 const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
@@ -21,7 +22,7 @@ const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
   })
 
   const blogs = []
-  response.forEach(blog => blogs.push({ id: blog.id, title: blog.title, createdDate: blog.createdDate }))
+  response.forEach(blog => blogs.push({ id: blog.id, title: blog.title }))
 
   const postListSitemap = `
   ${ blogs
@@ -29,7 +30,7 @@ const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
       return `
         <url>
           <loc>${`${DOMAIN}/develop/blog/${post.id}`}</loc>
-          <lastmod>${post.createdDate}</lastmod>
+          <lastmod>${getDate}</lastmod>
         </url>`
     })
     .join('')}
