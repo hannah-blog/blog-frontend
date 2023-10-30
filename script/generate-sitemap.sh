@@ -11,25 +11,25 @@ cd ..
 cd script
 
 # robots.txt 생성
-node ./robots.js
+bun ./robots.js
 
 # 정적 sitemap 생성
 echo "정적 sitemap 생성중.."
-node ./sitemap-common.js
+bun ./sitemap-common.js
 echo "정적 sitemap 생성 완료!"
 
 #동적 sitemap 생성
 echo "동적 sitemap 조회 및 생성중.."
-node ./sitemap-posts.js
+bun ./sitemap-posts.js
 echo "동적 sitemap 생성 완료!"
 
 # sitemap 압축 및 병합
 echo "sitemap gzip 압축중"
-node ./sitemap-compress.js
+bun ./sitemap-compress.js
 echo "sitemap 압축 완료"
 
 # 기본 sitemap 생성
-node ./sitemap.js
+bun ./sitemap.js
 echo "기본 sitemap 생성 완료!"
 
 # Google 서치콘솔에 sitemap 업데이트 핑 전송

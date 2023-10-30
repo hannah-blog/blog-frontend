@@ -6,16 +6,17 @@ WORKDIR /usr/src/app
 
 # Install dependencies based on the preferred package manager
 COPY package.json bun.lockb ./
-RUN bun install --frozen-lockfile --production
+RUN bun install
 
 # Rebuild the source code only when needed
 FROM deps AS builder
 WORKDIR /usr/src/app
 COPY --from=deps /usr/src/app/node_modules node_modules
 COPY . .
+RUN ls -al
 
 ENV NODE_ENV=production
-RUN sh srcript/generate-sitemap.sh
+RUN sh script/generate-sitemap.sh
 RUN bun run build
 RUN ls -al
 

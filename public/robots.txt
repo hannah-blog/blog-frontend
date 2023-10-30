@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+Disallow: /private
+Host: https://www.hannah-log.site
