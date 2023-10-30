@@ -15,6 +15,7 @@ COPY --from=deps /usr/src/app/node_modules node_modules
 COPY . .
 
 ENV NODE_ENV=production
+RUN sh srcript/generate-sitemap.sh
 RUN bun run build
 RUN ls -al
 
