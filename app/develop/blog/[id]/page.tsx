@@ -49,7 +49,7 @@ export default function BlogDetail({
 							height={500}
 						/>
 						<div className={styles.postWrapper}>
-							<Markdown content={post.content}/>
+							<Markdown  content={post.content}/>
 						</div>
 					</div>
 				</> : <Load/>
