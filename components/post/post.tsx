@@ -13,8 +13,10 @@ export default function Post({ post }: { post: PostType }) {
           <Image
             src={post.thumbnailUrl}
             alt="thumbnail-url"
-            width={500}
-            height={500}
+            width={0}
+            height={0}
+            sizes="100vw"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         </CardHeader>
         <CardBody className="text-center">{post.title}</CardBody>
