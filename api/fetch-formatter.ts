@@ -17,6 +17,7 @@ export const actions = async (url: string, method: HttpMethod, body: object | nu
 			headers: {
 				'Content-Type': 'application/json',
 			},
+			cache: 'no-store',
 		}
 		if (body) request['body'] = JSON.stringify(body);
 
