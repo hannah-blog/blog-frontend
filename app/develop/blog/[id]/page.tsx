@@ -12,7 +12,7 @@ import { dateKoFormat, timeFormat } from '@/components/utils/dateUtils'
 import { useEffect, useState } from 'react'
 
 export default function BlogDetail({
-  params: {id},
+  params: { id },
 }: {
 	params: { id: number }
 }) {
@@ -52,7 +52,12 @@ export default function BlogDetail({
 							<Markdown  content={post.content}/>
 						</div>
 					</div>
-				</> : <Load/>
+				</> : <>
+					<HeadMeta
+						title={'Loading...'}
+					/>
+					<Load/>
+				</>
 		}
 	</>;
 }
