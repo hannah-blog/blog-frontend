@@ -6,7 +6,7 @@ import { fetchBlogs } from '@/api/caller'
 import Post from '@/components/post/post'
 import styles from '@/styles/components/post/post-list.module.css'
 import Pagination from '@/components/utils/pagination'
-import Load from "@/components/utils/load";
+import Load from '@/components/utils/load'
 
 export default function PostList() {
   const [page, setPage] = useState(1);
