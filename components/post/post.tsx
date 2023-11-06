@@ -20,18 +20,15 @@ export default function Post({ post }: { post: PostType }) {
           />
         </CardHeader>
         <CardBody className="text-center">{post.title}</CardBody>
-        <CardFooter divider className="flex items-center justify-between py-3">
-          <Typography variant="small">
-            <div className={styles.tagWrapper}>
-              {post.tags.map((tag, idx) => {
-                return <Chip className="mr-1" color="indigo" value={`#${tag.name}`} key={idx} />;
-              })}
-            </div>
-          </Typography>
-          <Typography variant="small" color="gray" className="flex gap-1">
-            <i className="fas fa-map-marker-alt fa-sm mt-[3px]" />
+        <CardFooter divider className={styles.tagWrapper}>
+          <div className={styles.tagList}>
+            {post.tags.map((tag, idx) => {
+              return <Chip className="mr-1 font-sans font-light" color="indigo" value={`#${tag.name}`} key={idx} />;
+            })}
+          </div>
+          <div className={styles.date}>
             {dateFormat(post.createdDate)}
-          </Typography>
+          </div>
         </CardFooter>
       </div>
     </Link>

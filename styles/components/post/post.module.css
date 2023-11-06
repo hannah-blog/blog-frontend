@@ -22,5 +22,41 @@
 }
 
 .tagWrapper {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.tagList {
+  display: flex;
+  width: 72%;
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.tagList:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 15px;
+  bottom: 0;
+  background: linear-gradient(to left, #fff 0%, #fff 100%);
+}
+
+.span {
+  font-weight: 700;
+  font-size: .75rem;
+  font-family: Roboto,sans-serif;
+}
+
+.date {
+  width: 25%;
+  height: 100%;
+  color: slategray;
+  font-family: Roboto,sans-serif;
+  font-weight: lighter;
+  text-align: center;
 }
