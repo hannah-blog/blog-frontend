@@ -1,10 +1,7 @@
-'use client'
-
 import styles from '@/styles/app/private/page.module.css'
 import Link from 'next/link'
 
-import { useEffect, useState } from 'react'
-import { fetchDeleteTag, fetchTags, Tag } from '@/api/caller'
+import { fetchDeleteTag, fetchTags } from '@/api/caller'
 import { Button, Card, Typography } from '@/components/tailwind/client-components'
 
 const cardClassName = "h-full w-full overflow-scroll"
@@ -12,12 +9,8 @@ const tableClassName = "w-full min-w-max table-auto text-left"
 const thClassName = "border-b border-blue-gray-100 bg-blue-gray-50 p-4"
 const thTypographyClassName = "font-normal leading-none opacity-70"
 
-export default function Tag() {
-	const [tags, setTags] = useState<Tag[]>([]);
-
-	useEffect(() => {
-		fetchTags().then(setTags);
-	}, []);
+export default async function Tag() {
+	const tags = await fetchTags();
 
 	const tagDelete = async (id: number) => {
 		fetchDeleteTag(id)
@@ -51,23 +44,26 @@ export default function Tag() {
 				</th>
 				</thead>
 				<tbody>
-				{tags.map((it, index) => {
-					return <tr key={index}>
-						<td>
-							<Typography variant="small" color="blue-gray" className="font-normal">
-								{it.id}
-							</Typography>
-						</td>
-						<td>
-							<Typography variant="small" color="blue-gray" className="font-normal">
-								{it.name}
-							</Typography>
-						</td>
-						<td>
-							<Button onClick={() => tagDelete(it.id)} size="sm">Delete</Button>
-						</td>
-					</tr>;
-				})}
+				{ tags
+					? tags.map((it, index) => {
+						return <tr key={index}>
+							<td>
+								<Typography variant="small" color="blue-gray" className="font-normal">
+									{it.id}
+								</Typography>
+							</td>
+							<td>
+								<Typography variant="small" color="blue-gray" className="font-normal">
+									{it.name}
+								</Typography>
+							</td>
+							<td>
+								<Button onClick={() => tagDelete(it.id)} size="sm">Delete</Button>
+							</td>
+						</tr>;
+					})
+					: <Typography variant="h3">No tags</Typography>
+				}
 				</tbody>
 			</table>
 		</Card>
