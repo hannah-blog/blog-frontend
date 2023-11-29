@@ -8,7 +8,7 @@ import { fetchBlog, Post } from '@/api/caller'
 import { dateKoFormat, timeFormat } from '@/components/utils/dateUtils'
 
 export default async function BlogDetail({
-  params: {id},
+  params: { id },
 }: {
 	params: { id: number }
 }) {

@@ -9,7 +9,7 @@ interface pageInfo {
   setPage: Dispatch<SetStateAction<number>>
 }
 
-export default function Pagination({total, limit, page, setPage}: pageInfo) {
+export default function Pagination({ total, limit, page, setPage }: pageInfo) {
   const numPages = Math.ceil(total / limit);
 
   return <div className={styles.paginationWrapper}>
