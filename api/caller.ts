@@ -1,9 +1,9 @@
 import { actions, HttpMethod } from './fetch-formatter'
 
 enum RequestUrl {
-	BLOG = 'blog',
-	TAG = 'tag',
-	PORTFOLIO = 'portfolio',
+	BLOG = 'blogs',
+	TAG = 'tags',
+	PORTFOLIO = 'portfolios',
 	SERIES = 'series',
 }
 
