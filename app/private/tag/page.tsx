@@ -1,8 +1,9 @@
 import styles from '@/styles/app/private/page.module.css'
 import Link from 'next/link'
 
-import { fetchDeleteTag, fetchTags } from '@/api/caller'
+import { fetchTags } from '@/api/caller'
 import { Button, Card, Typography } from '@/components/tailwind/client-components'
+import { OnClickButton } from '@/app/private/tag/custom-button'
 
 const cardClassName = "h-full w-full overflow-scroll"
 const tableClassName = "w-full min-w-max table-auto text-left"
@@ -11,13 +12,6 @@ const thTypographyClassName = "font-normal leading-none opacity-70"
 
 export default async function Tag() {
 	const tags = await fetchTags();
-
-	const tagDelete = async (id: number) => {
-		fetchDeleteTag(id)
-			.then(() => {
-				alert('성공');
-			});
-	}
 
 	return <div className={styles.wrapper}>
 		<Typography variant="h1">Tags</Typography>
@@ -58,7 +52,7 @@ export default async function Tag() {
 								</Typography>
 							</td>
 							<td>
-								<Button onClick={() => tagDelete(it.id)} size="sm">Delete</Button>
+								<OnClickButton tagId={it.id} />
 							</td>
 						</tr>;
 					})
