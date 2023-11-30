@@ -14,7 +14,7 @@ export default async function Portfolio() {
 			<Button size="lg">New</Button>
 		</Link>
 		{ portfolios
-			? <Table data={portfolio} detailPath="portfolio"/>
+			? <Table data={portfolios} detailPath="portfolio"/>
 			: <Typography variant="h3">No portfolios</Typography>
 		}
 	</div>;
