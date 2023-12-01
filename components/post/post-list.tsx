@@ -12,7 +12,7 @@ export default function PostList() {
   const [page, setPage] = useState(1);
   const [list, setPost] = useState<PostType[]>([]);
 
-  const offset = (page - 1) * 9;
+  const offset = (page - 1) * 12;
 
   useEffect(() => {
     fetchBlogs()
@@ -26,11 +26,11 @@ export default function PostList() {
       list.length !== 0 ?
         <>
           <div className={styles.blogListBox}>
-            {list.slice(offset, offset + 9).map((post, idx) => {
+            {list.slice(offset, offset + 12).map((post, idx) => {
               return <Post key={idx} post={post} />;
             })}
           </div>
-          <Pagination total={list.length} limit={9} page={page} setPage={setPage} />
+          <Pagination total={list.length} limit={12} page={page} setPage={setPage} />
         </>
         : <Load />
     }
