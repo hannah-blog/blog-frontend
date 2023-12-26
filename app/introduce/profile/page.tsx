@@ -158,7 +158,7 @@ export default function Profile() {
                       </li>
                       <li>KSNET 정산을 위한 결제 데이터 조회 서비스 개발</li>
                       <li>서비스 리뉴얼 참여 - API, 팜케이션 서비스 에디터 적용</li>
-                      <li>쿼리 튜닝 5-6s -> 0.1s</li>
+                      <li>쿼리 튜닝 5-6s -&gt; 0.1s</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
