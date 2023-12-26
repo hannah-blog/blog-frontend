@@ -44,8 +44,11 @@ export default function Profile() {
                   <Typography variant="lead">What I did</Typography>
                   <Typography>
                     <ul className={styles.list}>
+                      <li>NestJS - 학습 및 휴리스틱 공유</li>
+                      <li>NestJS API 개발 (인증, 마이그레이션 등)</li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/1">기술 스택 조사 및 선정 (Spring boot)</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/1">기술 스택 조사 및 선정 (Spring boot)</Link>*/}
+                        기술 스택 조사 및 선정 (Spring boot)
                       </li>
                     </ul>
                   </Typography>
@@ -53,19 +56,24 @@ export default function Profile() {
                     <ul className={styles.list}>
                       <li>프로젝트 구조 설계</li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/2">Package 구조 제시 및 프로젝트 도입</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/2">Package 구조 제시 및 프로젝트 도입</Link>*/}
+                        Package 구조 제시 및 프로젝트 도입
                       </li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/4">Java Exception의 간소화 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/4">Java Exception의 간소화 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>*/}
+                        Java Exception의 간소화 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발
                       </li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/3">RESTful API의 HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/3">RESTful API의 HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발</Link>*/}
+                        RESTful API의 HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발
                       </li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/5">Spring 테스트의 간소화 가이드 작성 및 공통된 테스트 환경 구축</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/5">Spring 테스트의 간소화 가이드 작성 및 공통된 테스트 환경 구축</Link>*/}
+                        Spring 테스트의 간소화 가이드 작성 및 공통된 테스트 환경 구축
                       </li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/5">코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 도입 및 적용</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/5">코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 도입 및 적용</Link>*/}
+                        코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 도입 및 적용
                       </li>
                       <li>DB 마이그레이션 flyway 적용</li>
                     </ul>
@@ -95,19 +103,24 @@ export default function Profile() {
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/6">Youtube 동시 송출 서비스 개발</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/6">Youtube 동시 송출 서비스 개발</Link>*/}
+                        Youtube 동시 송출 서비스 개발
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">비디오 트랜스코딩 작업 개발</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">비디오 트랜스코딩 작업 개발</Link>*/}
+                        비디오 트랜스코딩 작업 개발
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/8">Open API 개발</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/8">Open API 개발</Link>*/}
+                        Open API 개발
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/9">방문자 통계 서비스 개발</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/9">방문자 통계 서비스 개발</Link>*/}
+                        방문자 통계 서비스 개발
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/10">경매 서비스 개발</Link>
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/10">경매 서비스 개발</Link>*/}
+                        경매 서비스 개발
                       </li>
                       <li>입점 신청 Discord WebHook</li>
                       <li>AntMedia 송출 서버 구축</li>
@@ -140,10 +153,12 @@ export default function Profile() {
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/11">월별 매출 현황 서비스 개발</Link>
+                        월별 매출 현황 서비스 개발
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/11">월별 매출 현황 서비스 개발</Link>*/}
                       </li>
                       <li>KSNET 정산을 위한 결제 데이터 조회 서비스 개발</li>
                       <li>서비스 리뉴얼 참여 - API, 팜케이션 서비스 에디터 적용</li>
+                      <li>쿼리 튜닝 5-6s -> 0.1s</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
@@ -204,10 +219,12 @@ export default function Profile() {
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-                        <Link className={styles.link} href="https://koramcoenergyplus.com/">코람코에너지리츠</Link> - 다국어 지원 개발 (EN)
+                        {/*<Link className={styles.link} href="https://koramcoenergyplus.com/">코람코에너지리츠</Link>*/}
+                        코람코에너지리츠 - 다국어 지원 개발 (EN)
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://koramcoenergyplus.com/">웹 MES 서비스 - 웇가네, 테라에코 등</Link>
+                        {/*<Link className={styles.link} href="https://koramcoenergyplus.com/">웹 MES 서비스 - 웇가네, 테라에코 등</Link>*/}
+                        웹 MES 서비스 - 웇가네, 테라에코 등
                       </li>
                     </ul>
                   </Typography>
@@ -230,10 +247,12 @@ export default function Profile() {
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-                        <Link className={styles.link} href="https://www.koem.or.kr/site/koem/main.do">해양환경공단</Link> - 유지보수 및 웹 접근성 인증
+                        {/*<Link className={styles.link} href="https://www.koem.or.kr/site/koem/main.do">해양환경공단</Link>*/}
+                        해양환경공단 - 유지보수 및 웹 접근성 인증
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.koem.or.kr/site/koem/main.do">문화예술공단</Link> - 클라우드 이관
+                        {/*<Link className={styles.link} href="https://www.koem.or.kr/site/koem/main.do">문화예술공단</Link>*/}
+                        문화예술공단 - 클라우드 이관
                       </li>
                     </ul>
                   </Typography>
@@ -295,16 +314,16 @@ export default function Profile() {
                     <li className={styles.inline}>
                       Image Service - <Link className={styles.link} href="https://github.com/live-pulse/image-server-api">https://github.com/live-pulse/image-server-api</Link>
                     </li>
-                    <li>Blog</li>
-                    <li className={styles.inline}>
-                      <Link className={styles.link} href="https://www.hannah-log.site/blog/1">LivePulse 발표 자료</Link>
-                    </li>
-                    <li className={styles.inline}>
-                      <Link className={styles.link} href="https://www.hannah-log.site/blog/1">개인 서버로 CDN 서버 구축하기</Link>
-                    </li>
-                    <li className={styles.inline}>
-                      <Link className={styles.link} href="https://www.hannah-log.site/blog/1">NestJS 시리즈</Link>
-                    </li>
+                    {/*<li>Blog</li>*/}
+                    {/*<li className={styles.inline}>*/}
+                    {/*  <Link className={styles.link} href="https://www.hannah-log.site/blog/1">LivePulse 발표 자료</Link>*/}
+                    {/*</li>*/}
+                    {/*<li className={styles.inline}>*/}
+                    {/*  <Link className={styles.link} href="https://www.hannah-log.site/blog/1">개인 서버로 CDN 서버 구축하기</Link>*/}
+                    {/*</li>*/}
+                    {/*<li className={styles.inline}>*/}
+                    {/*  <Link className={styles.link} href="https://www.hannah-log.site/blog/1">NestJS 시리즈</Link>*/}
+                    {/*</li>*/}
                   </ul>
                 </Typography>
                 <Typography variant="lead">Stack</Typography>
@@ -346,11 +365,11 @@ export default function Profile() {
                       Teacher Front - <Link className={styles.link} href="https://github.com/works-hook/hannah-education-admin-front">https://github.com/works-hook/hannah-education-admin-front</Link>
                     </li>
                     <li>Blog</li>
+                    {/*<li className={styles.inline}>*/}
+                    {/*  <Link className={styles.link} href="https://www.hannah-log.site/blog/1">Education 프로젝트 발표 자료</Link>*/}
+                    {/*</li>*/}
                     <li className={styles.inline}>
-                      <Link className={styles.link} href="https://www.hannah-log.site/blog/1">Education 프로젝트 발표 자료</Link>
-                    </li>
-                    <li className={styles.inline}>
-                      <Link className={styles.link} href="https://www.hannah-log.site/blog/1">Spring Boot - 메일 인증 구현하기</Link>
+                      <Link className={styles.link} href="https://www.hannah-log.site/develop/blog/10/">Spring Boot - 메일 인증 구현하기</Link>
                     </li>
                   </ul>
                 </Typography>
