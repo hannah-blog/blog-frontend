@@ -97,24 +97,20 @@ export default function Profile() {
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/6">Youtube 동시 송출 서비스 개발</Link>*/}
-                        Youtube 동시 송출 서비스 개발
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/6">Youtube 동시 송출 서비스 개발</Link>
                       </li>
                       <li>
                         {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">비디오 트랜스코딩 작업 개발</Link>*/}
                         비디오 트랜스코딩 작업 개발
                       </li>
                       <li>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/8">Open API 개발</Link>*/}
-                        Open API 개발
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">Open API 개발</Link>
                       </li>
                       <li>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/9">방문자 통계 서비스 개발</Link>*/}
-                        방문자 통계 서비스 개발
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/8">방문자 통계 서비스 개발</Link>
                       </li>
                       <li>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/10">경매 서비스 개발</Link>*/}
-                        경매 서비스 개발
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/9">경매 서비스 개발</Link>
                       </li>
                       <li>입점 신청 Discord WebHook</li>
                       <li>AntMedia 송출 서버 구축</li>
@@ -146,13 +142,10 @@ export default function Profile() {
                   <Typography variant="lead">What I did</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>
-                        월별 매출 현황 서비스 개발
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/11">월별 매출 현황 서비스 개발</Link>*/}
-                      </li>
+                      <li>쿼리 튜닝 5-6s -&gt; 0.1s</li>
+                      <li>월별 매출 현황 서비스 개발</li>
                       <li>KSNET 정산을 위한 결제 데이터 조회 서비스 개발</li>
                       <li>서비스 리뉴얼 참여 - API, 팜케이션 서비스 에디터 적용</li>
-                      <li>쿼리 튜닝 5-6s -&gt; 0.1s</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
@@ -308,10 +301,10 @@ export default function Profile() {
                     <li className={styles.inline}>
                       Image Service - <Link className={styles.link} href="https://github.com/live-pulse/image-server-api">https://github.com/live-pulse/image-server-api</Link>
                     </li>
-                    {/*<li>Blog</li>*/}
-                    {/*<li className={styles.inline}>*/}
-                    {/*  <Link className={styles.link} href="https://www.hannah-log.site/blog/1">LivePulse 발표 자료</Link>*/}
-                    {/*</li>*/}
+                    <li>Blog</li>
+                    <li className={styles.inline}>
+                      <Link className={styles.link} href="https://www.hannah-log.site/portfolio/10">LivePulse 발표 자료</Link>
+                    </li>
                     {/*<li className={styles.inline}>*/}
                     {/*  <Link className={styles.link} href="https://www.hannah-log.site/blog/1">개인 서버로 CDN 서버 구축하기</Link>*/}
                     {/*</li>*/}
@@ -359,9 +352,9 @@ export default function Profile() {
                       Teacher Front - <Link className={styles.link} href="https://github.com/works-hook/hannah-education-admin-front">https://github.com/works-hook/hannah-education-admin-front</Link>
                     </li>
                     <li>Blog</li>
-                    {/*<li className={styles.inline}>*/}
-                    {/*  <Link className={styles.link} href="https://www.hannah-log.site/blog/1">Education 프로젝트 발표 자료</Link>*/}
-                    {/*</li>*/}
+                    <li className={styles.inline}>
+                      <Link className={styles.link} href="https://www.hannah-log.site/portfolio/11/">Education 프로젝트 발표 자료</Link>
+                    </li>
                     <li className={styles.inline}>
                       <Link className={styles.link} href="https://www.hannah-log.site/develop/blog/10/">Spring Boot - 메일 인증 구현하기</Link>
                     </li>
