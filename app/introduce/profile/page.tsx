@@ -47,8 +47,7 @@ export default function Profile() {
                       <li>NestJS - 학습 및 휴리스틱 공유</li>
                       <li>NestJS API 개발 (인증, 마이그레이션 등)</li>
                       <li>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/1">기술 스택 조사 및 선정 (Spring boot)</Link>*/}
-                        기술 스택 조사 및 선정 (Spring boot)
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/1">기술 스택 조사 및 선정 (Spring boot)</Link>
                       </li>
                     </ul>
                   </Typography>
@@ -56,23 +55,18 @@ export default function Profile() {
                     <ul className={styles.list}>
                       <li>프로젝트 구조 설계</li>
                       <li className={styles.inline}>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/2">Package 구조 제시 및 프로젝트 도입</Link>*/}
-                        Package 구조 제시 및 프로젝트 도입
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/2">Package 구조 제시 및 프로젝트 도입</Link>
                       </li>
                       <li className={styles.inline}>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/4">Java Exception의 간소화 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>*/}
-                        Java Exception의 간소화 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/3">Java Exception의 간소화 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>
                       </li>
                       <li className={styles.inline}>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/3">RESTful API의 HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발</Link>*/}
-                        RESTful API의 HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/4">RESTful API의 HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발</Link>
                       </li>
                       <li className={styles.inline}>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/5">Spring 테스트의 간소화 가이드 작성 및 공통된 테스트 환경 구축</Link>*/}
-                        Spring 테스트의 간소화 가이드 작성 및 공통된 테스트 환경 구축
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/5">Spring 테스트의 간소화 가이드 작성 및 공통된 테스트 환경 구축</Link>
                       </li>
                       <li className={styles.inline}>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/5">코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 도입 및 적용</Link>*/}
                         코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 도입 및 적용
                       </li>
                       <li>DB 마이그레이션 flyway 적용</li>
@@ -80,7 +74,7 @@ export default function Profile() {
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
                   <ul className={styles.list}>
-                    <li>Java 17, Spring Boot 3, MySQL, JPA, JUnit, Gitlab...</li>
+                    <li>Java 17, Spring Boot 3, MySQL, JPA, JUnit, TypeScript, NestJS, Gitlab...</li>
                   </ul>
                 </TimelineBody>
               </TimelineItem>
