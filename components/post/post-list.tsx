@@ -1,38 +1,13 @@
-'use client'
-
-import { useEffect, useState } from 'react'
-import { Post as PostType } from '@/data/post-data'
 import { fetchBlogs } from '@/api/caller'
 import Post from '@/components/post/post'
 import styles from '@/styles/components/post/post-list.module.css'
-import Pagination from '@/components/utils/pagination'
-import Load from '@/components/utils/load'
 
-export default function PostList() {
-  const [page, setPage] = useState(1);
-  const [list, setPost] = useState<PostType[]>([]);
+export default async function PostList() {
+  const posts = await fetchBlogs();
 
-  const offset = (page - 1) * 12;
-
-  useEffect(() => {
-    fetchBlogs()
-      .then((response) => {
-        setPost(response);
-      });
-  }, []);
-
-  return <>
-    {
-      list.length !== 0 ?
-        <>
-          <div className={styles.blogListBox}>
-            {list.slice(offset, offset + 12).map((post, idx) => {
-              return <Post key={idx} post={post} />;
-            })}
-          </div>
-          <Pagination total={list.length} limit={12} page={page} setPage={setPage} />
-        </>
-        : <Load />
-    }
-  </>;
+  return <div className={styles.blogListBox}>
+    {posts.map((post, idx) => {
+      return <Post key={idx} post={post} />;
+    })}
+  </div>;
 }
