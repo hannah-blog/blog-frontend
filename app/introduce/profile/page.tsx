@@ -11,17 +11,21 @@ import {
 import Image from 'next/image'
 
 export default function Profile() {
+  // const [isOpen, setIsOpen] = useState(false);
+  // const handleOpen = () => setIsOpen(!isOpen);
+  //
+  // const [portfolioId, setPortfolioId] = useState(0);
+  // const handlePortfolioId = (id: number) => setPortfolioId(id);
+
   return <div className={styles.mainWrapper}>
     <ProgressBar />
     <div className={`${styles.subWrapper} ${styles.indexing}`}>
       <div className={styles.section}>
         <Typography variant="h1">반갑습니다, 저는 홍채민입니다.</Typography>
-        <Typography variant="h4">
-          <ul className={styles.list}>
-            <li>3년차 백엔드 개발자로 일하고 있으며 비지니스 도메인의 가치를 궁극적으로 이해하고 풀어나가는 것을 좋아합니다.</li>
-            <li>각 요소들이 균형있고 조화롭게 결합되어 완성도있는 작품을 그리는 예술가와 같은 개발자가 되는 것이 목표입니다.</li>
-          </ul>
-        </Typography>
+        <ul className={styles.list}>
+          <li><Typography variant="h4">3년차 백엔드 개발자로 일하고 있으며 비지니스 도메인의 가치를 궁극적으로 이해하고 풀어나가는 것을 좋아합니다.</Typography></li>
+          <li><Typography variant="h4">각 요소들이 균형있고 조화롭게 결합되어 완성도있는 작품을 그리는 예술가와 같은 개발자가 되는 것이 목표입니다.</Typography></li>
+        </ul>
       </div>
       <div className={styles.section}>
         <Typography variant="h2">Career</Typography>
@@ -48,6 +52,12 @@ export default function Profile() {
                       <li>NestJS API 개발 (인증, 마이그레이션 등)</li>
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolio/1">기술 스택 조사 및 선정 (Spring boot)</Link>
+                        {/*<div onClick={ () => {*/}
+                        {/*  handleOpen();*/}
+                        {/*  handlePortfolioId(1);*/}
+                        {/*}} className={styles.link}>*/}
+                        {/*  기술 스택 조사 및 선정 (Spring boot)*/}
+                        {/*</div>*/}
                       </li>
                     </ul>
                   </Typography>
@@ -272,8 +282,12 @@ export default function Profile() {
               </TimelineHeader>
               <TimelineBody className="m-2">
                 <Typography variant="lead">Description</Typography>
-                <Typography><Link className={styles.link} href="https://live-pulse.hannah-log.site/">Live Pulse</Link>는 WebSocket, WebRTC를 이용한 송출 서버 구성 및 HLS 재생 방송 플랫폼입니다.</Typography>
-                <Typography>날방 프로젝트를 하며 배웠던 점을 녹여내고 날방에서 경험한 것을 완전히 제 기술을 만들기 위한 프로젝트입니다.</Typography>
+                <Typography>
+                  <ul className={styles.list}>
+                    <li><Link className={styles.link} href="https://live-pulse.hannah-log.site/">Live Pulse</Link>는 WebSocket, WebRTC를 이용한 송출 서버 구성 및 HLS 재생 방송 플랫폼입니다.</li>
+                    <li>날방 프로젝트를 하며 배웠던 점을 녹여내고 날방에서 경험한 것을 완전히 제 기술을 만들기 위한 프로젝트입니다.</li>
+                  </ul>
+                </Typography>
                 <Typography variant="lead">What I did</Typography>
                 <Typography>
                   <ul className={styles.list}>
@@ -329,8 +343,12 @@ export default function Profile() {
               </TimelineHeader>
               <TimelineBody className="m-2">
                 <Typography variant="lead">Description</Typography>
-                <Typography>유명한 강의 플랫폼인 인프런은 동영상 위주로 강의를 수강합니다.</Typography>
-                <Typography>인프런에서 강의를 보다가 다른 블로그나 문서처럼 글로 설명된 형식의 강의가 있었으면 좋겠다라는 생각이 들어서 프로젝트를 진행하게 되었습니다.</Typography>
+                <Typography>
+                  <ul className={styles.list}>
+                    <li>유명한 강의 플랫폼인 인프런은 동영상 위주로 강의를 수강합니다.</li>
+                    <li>인프런에서 강의를 보다가 다른 블로그나 문서처럼 글로 설명된 형식의 강의가 있었으면 좋겠다라는 생각이 들어서 프로젝트를 진행하게 되었습니다.</li>
+                  </ul>
+                </Typography>
                 <Typography variant="lead">What I did</Typography>
                 <Typography>
                   <ul className={styles.list}>
@@ -376,7 +394,11 @@ export default function Profile() {
               </TimelineHeader>
               <TimelineBody className="m-2">
                 <Typography variant="lead">Description</Typography>
-                <Typography>업무에서 사용하는 메신저로 반복 업무등을 해결하기 위한 도구로써, 웹훅이나 봇을 다루는 기술 향상시키고자 진행한 프로젝트입니다.</Typography>
+                <Typography>
+                  <ul className={styles.list}>
+                    <li>업무에서 사용하는 메신저로 반복 업무등을 해결하기 위한 도구로써, 웹훅이나 봇을 다루는 기술 향상시키고자 진행한 프로젝트입니다.</li>
+                  </ul>
+                </Typography>
                 <Typography variant="lead">What I did</Typography>
                 <Typography>
                   <ul className={styles.list}>
@@ -429,6 +451,7 @@ export default function Profile() {
           </div>
         </div>
       </div>
+      {/*<PortfolioModal isOpen={isOpen} handleOpen={handleOpen} portfolioId={portfolioId} />*/}
     </div>
   </div>;
 }

@@ -1,0 +1,30 @@
+.postWrapper {
+}
+
+.postWrapper ol {
+  list-style-type: decimal;
+}
+
+.postWrapper li {
+  display: list-item;
+}
+
+.postWrapper ul ul, .postWrapper ol ul {
+  list-style-type: circle;
+  margin-left: 15px;
+}
+
+.postWrapper ol ol, .postWrapper ul ol {
+  list-style-type: lower-latin;
+  margin-left: 15px;
+}
+
+.postWrapper ul ul ul, .postWrapper ul ol ul, .postWrapper ol ul ul, .postWrapper ol ol ul {
+  list-style-type: square;
+  margin-left: 30px;
+}
+
+.postWrapper ol ol ol, .postWrapper ol ul ol, .postWrapper ul ol ol, .postWrapper ul ul ol {
+  list-style-type: lower-roman;
+  margin-left: 30px;
+}

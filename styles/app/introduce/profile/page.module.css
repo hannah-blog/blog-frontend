@@ -10,6 +10,7 @@
 .list li {
   margin-left: 1.5rem;
   list-style-type: square;
+  font-weight: 400;
 }
 
 .list .inline {
@@ -60,6 +61,7 @@
 .link:hover {
   text-decoration-color: #7078d8;
   color: #7078d8;
+  cursor: pointer;
 }
 
 .indexing {

@@ -16,7 +16,7 @@ export default async function PortfolioDetail({
 			title={portfolio.title}
 			description={portfolio.content.substring(0, 100)}
 			image={portfolio.thumbnailUrl}
-			url={"/portfolio/" + portfolio.id}
+			url={`/portfolio/${portfolio.id}`}
 		/>
 		<div className={styles.blogWrapper}>
 			<ProgressBar/>
