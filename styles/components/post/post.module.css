@@ -35,15 +35,15 @@
   width: 72%;
   overflow: hidden;
   line-height: 1.5;
+  position: relative;
 }
 
-.tagList:before {
+.tagList:after {
   position: absolute;
-  content: '';
   width: 100%;
-  height: 15px;
-  bottom: 0;
-  background: linear-gradient(to left, #fff 0%, #fff 100%);
+  height: 100%;
+  content: '';
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 93%, #ffffff);
 }
 
 .span {

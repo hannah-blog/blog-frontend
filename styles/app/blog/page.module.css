@@ -14,3 +14,11 @@
   margin: 2rem;
   color: rgb(26 35 126);
 }
+
+.blogListBox {
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+

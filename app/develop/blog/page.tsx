@@ -1,6 +1,7 @@
 import styles from '@/styles/app/blog/page.module.css'
+import Post from '@/components/post/post'
 import { formatMetadata } from '@/components/utils/meta-head'
-import PostList from '@/components/post/post-list'
+import { fetchBlogs } from '@/api/caller'
 
 export async function generateMetadata() {
   return formatMetadata({
@@ -10,8 +11,14 @@ export async function generateMetadata() {
 }
 
 export default async function Blog() {
+  const posts = await fetchBlogs();
+
   return <div className={styles.main}>
     <div className={styles.titleText}>Develop Blog</div>
-    <PostList />
+    <div className={styles.blogListBox}>
+      {posts.map((post, idx) => {
+        return <Post key={idx} post={post} />;
+      })}
+    </div>;
   </div>;
 }
