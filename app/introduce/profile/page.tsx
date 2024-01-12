@@ -83,9 +83,11 @@ export default function Profile() {
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
-                  <ul className={styles.list}>
-                    <li>Java 17, Spring Boot 3, MySQL, JPA, JUnit, TypeScript, NestJS, Gitlab...</li>
-                  </ul>
+                  <Typography>
+                    <ul className={styles.list}>
+                      <li>Java 17, Spring Boot 3, MySQL, JPA, JUnit, TypeScript, NestJS, Gitlab...</li>
+                    </ul>
+                  </Typography>
                 </TimelineBody>
               </TimelineItem>
               <TimelineItem className="pb-5">
@@ -197,8 +199,8 @@ export default function Profile() {
           </div>
           <div>
             <Typography variant="h4">(주) 커넥트웨이브</Typography>
-            <Typography>Backend Developer</Typography>
-            <Typography>2022.01 ~ 현재</Typography>
+            <Typography variant="h6">Backend Developer</Typography>
+            <Typography variant="h6">2022.01 ~ 현재</Typography>
           </div>
         </div>
         <hr className="my-8 border-blue-gray-50"/>
@@ -265,8 +267,8 @@ export default function Profile() {
           </div>
           <div>
             <Typography variant="h4">(주) 제이플러스</Typography>
-            <Typography>Web Developer</Typography>
-            <Typography>2021.08 ~ 2021.12</Typography>
+            <Typography variant="h6">Web Developer</Typography>
+            <Typography variant="h6">2021.08 ~ 2021.12</Typography>
           </div>
         </div>
       </div>
