@@ -23,7 +23,7 @@ export default function Post({ post }: { post: PostType }) {
         <CardFooter divider className={styles.tagWrapper}>
           <div className={styles.tagList}>
             {post.tags.map((tag, idx) => {
-              return <Chip className="mr-1 font-sans font-light" color="indigo" value={`#${tag.name}`} key={idx} />;
+              return <Chip size="md" className="mr-1 font-sans font-medium" color="indigo" value={`#${tag.name}`} key={idx} />;
             })}
           </div>
           <div className={styles.date}>
