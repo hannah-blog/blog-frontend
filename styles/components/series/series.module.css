@@ -1,0 +1,71 @@
+.series {
+  --tw-text-opacity: 1;
+  color: rgb(97 97 97 / var(--tw-text-opacity));
+  text-align: center;
+  background-clip: border-box;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  border-radius: 0.75rem;
+  overflow: hidden;
+  justify-content: center;
+  align-items:flex-end;
+  display: grid;
+  position: relative;
+  transition: transform .2s;
+}
+
+.series:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.seriesHeader {
+  --tw-text-opacity: 1;
+  background-position: center;
+  background-clip: border-box;
+  background-size: cover;
+  background-color: transparent;
+  border-radius: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  inset: 0;
+  position: absolute;
+}
+
+.headerGradient {
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
+  --tw-gradient-from: rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+}
+
+.seriesBody {
+  padding: 3.5rem 3rem;
+  position: relative;
+}
+
+.seriesTitle {
+  -webkit-font-smoothing: antialiased;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  letter-spacing: 0;
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: 2.25rem;
+  font-family: Roboto, sans-serif;
+  padding-top: 2.5rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.seriesDate {
+  --tw-text-opacity: 1;
+  color: rgb(189 189 189 / var(--tw-text-opacity));
+  margin-bottom: 1rem;
+}
