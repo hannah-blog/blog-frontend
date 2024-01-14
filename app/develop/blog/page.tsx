@@ -19,6 +19,6 @@ export default async function Blog() {
       {posts.map((post, idx) => {
         return <Post key={idx} post={post} />;
       })}
-    </div>;
+    </div>
   </div>;
 }
