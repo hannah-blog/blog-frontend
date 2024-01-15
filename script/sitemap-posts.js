@@ -13,7 +13,7 @@ const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
 
   await axios({
     method: 'get',
-    url: 'https://api.hannah-log.site/blog',
+    url: 'https://api.hannah-log.site/blogs',
   }).then((res) => {
     response = res.data.data
   })
