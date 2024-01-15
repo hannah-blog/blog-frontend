@@ -1,3 +1,4 @@
+import Head from 'next/head'
 
 interface MetaParamsType {
   title?: string | null;
@@ -13,7 +14,7 @@ export default function HeadMeta({ title, description, url, image, tags }: MetaP
   const defaultDescription = "Hannah Blog";
 
   return <>
-    <head>
+    <Head>
       <title>{ title ? `${title} | Hannah` : "Archiving for Hannah" }</title>
       <meta name="description" content={ description ? parseMarkdown(description) : defaultDescription } />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -30,7 +31,8 @@ export default function HeadMeta({ title, description, url, image, tags }: MetaP
       <meta name="twitter:description" content={description ? parseMarkdown(description) : "Hannah Blog"} />
       <meta name="twitter:site" content={`@${defaultUrl}`} />
       <meta name="twitter:image" content={image ? image : defaultImage} />
-    </head>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6999099254149920" crossOrigin="anonymous"></script>
+    </Head>
   </>;
 }
 
