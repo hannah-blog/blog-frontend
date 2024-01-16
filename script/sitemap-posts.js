@@ -1,5 +1,3 @@
-
-import axios from 'axios';
 import fs from 'fs';
 import prettier from 'prettier';
 
@@ -9,20 +7,9 @@ const DOMAIN = 'https://www.hannah-log.site'
 const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
 
 (async () => {
-  let response = []
+  const response = await (await (fetch('https://api.hannah-log.site/blogs'))).json();
 
-  await axios({
-    method: 'get',
-    url: 'https://api.hannah-log.site/blogs',
-  }).then((res) => {
-    response = res.data.data
-  })
-  .catch((e) => {
-    console.log(e.response.data)
-  })
-
-  const blogs = []
-  response.forEach(blog => blogs.push({ id: blog.id, title: blog.title }))
+  const blogs = response.data;
 
   const postListSitemap = `
   ${ blogs

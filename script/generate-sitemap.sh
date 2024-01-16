@@ -33,5 +33,8 @@ bun ./sitemap.js
 echo "기본 sitemap 생성 완료!"
 
 # Google 서치콘솔에 sitemap 업데이트 핑 전송
-curl http://google.com/ping?sitemap=http://www.hannah-log.site/sitemap.xml
-echo "Google에 sitemap 핑 전송"
+# curl http://google.com/ping?sitemap=http://www.hannah-log.site/sitemap.xml
+# echo "Google에 sitemap 핑 전송"
+
+# 위의 핑 전송 api는 지원이 중단되었습니다.
+# Sitemaps ping is deprecated. See https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping.<
