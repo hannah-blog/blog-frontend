@@ -32,8 +32,8 @@ export default async function BlogDetail({
 				className={styles.thumbnail}
 				src={post.thumbnailUrl}
 				alt={`${post.id}-thumbnail-image`}
-				width={500}
-				height={500}
+				width={300}
+				height={200}
 			/>
 			<div className={styles.postWrapper}>
 				<Markdown content={post.content}/>
