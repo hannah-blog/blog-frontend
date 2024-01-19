@@ -81,25 +81,3 @@
   list-style-type: lower-roman;
   margin-left: 30px;
 }
-
-.tagWrapper {
-  position: fixed;
-  width: 100%;
-  height: auto;
-  display: grid;
-  justify-content: start;
-  align-content: start;
-  text-align: start;
-  padding: 10em 0 0 3em;
-}
-
-.indexWrapper {
-  position: fixed;
-  width: 100%;
-  height: auto;
-  justify-content: end;
-  display: grid;
-  align-content: end;
-  text-align: end;
-  padding: 10em 3em 0 0;
-}
