@@ -11,7 +11,7 @@ type IdxType = {
 export default function IdxBox({ content, id }: { content: string, id: number }) {
 	const result: IdxType[] = [];
 
-	const contentByLine = getPlainContent(content);
+	const contentByLine: string[] = getPlainContent(content);
 	contentByLine.map((line) => {
 		const first = firstMatch(line);
 		const second = secondMatch(line);
@@ -39,7 +39,7 @@ export default function IdxBox({ content, id }: { content: string, id: number })
 	</div>;
 }
 
-const getPlainContent = (content: string): string => {
+const getPlainContent = (content: string): string[] => {
 	return content
 		.replace(/^> (.*$)/gim, '')
 		.replace(/\*\*(.*)\*\*/gim, '')
@@ -50,15 +50,15 @@ const getPlainContent = (content: string): string => {
 		.split('\n');
 }
 
-const firstMatch = (str: string): string[] => {
+const firstMatch = (str: string) => {
 	return str.match(/^# (.*$)/gim);
 }
 
-const secondMatch = (str: string): string[] => {
+const secondMatch = (str: string) => {
 	return str.match(/^## (.*$)/gim);
 }
 
-const thirdMatch = (str: string): string[] => {
+const thirdMatch = (str: string) => {
 	return str.match(/^### (.*$)/gim);
 }
 
@@ -72,7 +72,7 @@ const getIdx = (idx: number, str: string): IdxType => {
 }
 
 const getHash = (idx: number): string => {
-	let hash: string;
+	let hash = '';
 	for (let i = 0; i < idx; i++) {
 		hash += '#'
 	}
