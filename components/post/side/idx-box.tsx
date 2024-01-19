@@ -9,8 +9,22 @@ type IdxType = {
 }
 
 export default function IdxBox({ content, id }: { content: string, id: number }) {
-	const result: IdxType[] = [];
+	const result = getIdxList(content);
 
+	return <div className={styles.idxWrapper}>
+		<Typography variant="h6" color="gray">목차</Typography>
+		{result.map((item, idx) => {
+			return <Typography key={idx} color="gray" className={`ml-${item.idx * 2}`}>
+				<Link href={`${process.env.NEXT_PUBLIC_WWW_URL}/develop/blog/${id}/${item.link}`}>
+					{item.line}
+				</Link>
+			</Typography>;
+		})}
+	</div>;
+}
+
+const getIdxList = (content: string): IdxType[] => {
+	const result: IdxType[] = [];
 	const contentByLine: string[] = getPlainContent(content);
 	contentByLine.map((line) => {
 		const first = firstMatch(line);
@@ -28,15 +42,7 @@ export default function IdxBox({ content, id }: { content: string, id: number })
 			result.push(insert);
 		}
 	});
-
-	return <div className={styles.idxWrapper}>
-		<Typography variant="h6" color="gray">목차</Typography>
-		{result.map((item, idx) => {
-			return <Typography key={idx} color="gray" className={`ml-${item.idx * 2}`}>
-				<Link href={`https://www.hannah-log.site/develop/blog/${id}/${item.link}`}>{item.line}</Link>
-			</Typography>;
-		})}
-	</div>;
+	return result;
 }
 
 const getPlainContent = (content: string): string[] => {
@@ -46,7 +52,7 @@ const getPlainContent = (content: string): string[] => {
 		.replace(/\*(.*)\*/gim, '')
 		.replace(/!\[(.*?)]\((.*?)\)/gim, '')
 		.replace(/\[(.*?)]\((.*?)\)/gim, '')
-		.replace(/```(.*)```/gim, '')
+		.replace(/^([A-Za-z \t]*)```([A-Za-z]*)?\n([\s\S]*?)```([A-Za-z \t]*)*$/gm, '')
 		.split('\n');
 }
 
