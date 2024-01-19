@@ -11,30 +11,21 @@ type IdxType = {
 export default function IdxBox({ content, id }: { content: string, id: number }) {
 	const result: IdxType[] = [];
 
-	const contentByLine = content.split('\n');
+	const contentByLine = getPlainContent(content);
 	contentByLine.map((line) => {
-		const first = line.match(/^# (.*$)/gim);
-		const second = line.match(/^## (.*$)/gim);
-		const third = line.match(/^### (.*$)/gim);
+		const first = firstMatch(line);
+		const second = secondMatch(line);
+		const third = thirdMatch(line);
 
 		if (first) {
-			result.push({
-				idx: 1,
-				line: first[0].slice(2),
-				link: first[0].replace(/#/g, '').replace(/^ /g, '#').replace(/ /g, '-').replace(/\?/g, '').replace(/\./g, '').toLowerCase()
-			});
+			const insert: IdxType = getIdx(1, first[0]);
+			result.push(insert);
 		} else if (second) {
-			result.push({
-				idx: 2,
-				line: second[0].slice(3),
-				link: second[0].replace(/#/g, '').replace(/^ /g, '#').replace(/ /g, '-').replace(/\?/g, '').replace(/\./g, '').toLowerCase()
-			});
+			const insert: IdxType = getIdx(2, second[0]);
+			result.push(insert);
 		} else if (third) {
-			result.push({
-				idx: 3,
-				line: third[0].slice(4),
-				link: third[0].replace(/#/g, '').replace(/^ /g, '#').replace(/ /g, '-').replace(/\?/g, '').replace(/\./g, '').toLowerCase()
-			});
+			const insert: IdxType = getIdx(3, third[0]);
+			result.push(insert);
 		}
 	});
 
@@ -46,4 +37,54 @@ export default function IdxBox({ content, id }: { content: string, id: number })
 			</Typography>;
 		})}
 	</div>;
+}
+
+const getPlainContent = (content: string): string => {
+	return content
+		.replace(/^> (.*$)/gim, '')
+		.replace(/\*\*(.*)\*\*/gim, '')
+		.replace(/\*(.*)\*/gim, '')
+		.replace(/!\[(.*?)]\((.*?)\)/gim, '')
+		.replace(/\[(.*?)]\((.*?)\)/gim, '')
+		.replace(/```(.*)```/gim, '')
+		.split('\n');
+}
+
+const firstMatch = (str: string): string[] => {
+	return str.match(/^# (.*$)/gim);
+}
+
+const secondMatch = (str: string): string[] => {
+	return str.match(/^## (.*$)/gim);
+}
+
+const thirdMatch = (str: string): string[] => {
+	return str.match(/^### (.*$)/gim);
+}
+
+const getIdx = (idx: number, str: string): IdxType => {
+	const hash = getHash(idx);
+	return {
+		idx: idx,
+		line: str.slice(idx + 1),
+		link: formatLink(str, hash)
+	}
+}
+
+const getHash = (idx: number): string => {
+	let hash: string;
+	for (let i = 0; i < idx; i++) {
+		hash += '#'
+	}
+	return hash
+}
+
+const formatLink = (str: string, hash: string): string => {
+	return str
+		.replace(hash, '')
+		.replace(/^ /g, '#')
+		.replace(/ /g, '-')
+		.replace(/\?/g, '')
+		.replace(/\./g, '')
+		.toLowerCase()
 }

@@ -44,6 +44,7 @@ function parseMarkdown(markdownText: string) {
     .replace(/\*(.*)\*/gim, '')
     .replace(/!\[(.*?)]\((.*?)\)/gim, '')
     .replace(/\[(.*?)]\((.*?)\)/gim, '')
+    .replace(/```/gim, '')
     .replace(/\n$/gim, '')
 
   return htmlText.trim()
