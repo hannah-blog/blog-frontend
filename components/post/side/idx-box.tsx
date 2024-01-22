@@ -12,14 +12,16 @@ export default function IdxBox({ content, id }: { content: string, id: number })
 	const result = getIdxList(content);
 
 	return <div className={styles.idxWrapper}>
-		<Typography variant="h6" color="gray">목차</Typography>
-		{result.map((item, idx) => {
-			return <Typography key={idx} color="gray" className={`${styles[`idxTap${item.idx}`]} ${styles.idx}`}>
-				<Link href={`${process.env.NEXT_PUBLIC_WWW_URL}/develop/blog/${id}/${item.link}`}>
-					{item.line}
-				</Link>
-			</Typography>;
-		})}
+		{ result.length != 0 && <>
+      <Typography variant="h6" color="gray">목차</Typography>
+			{ result.map((item, idx) => {
+				return <Typography key={idx} color="gray" className={`${styles[`idxTap${item.idx}`]} ${styles.idx}`}>
+					<Link href={`${process.env.NEXT_PUBLIC_WWW_URL}/develop/blog/${id}/${item.link}`}>
+						{item.line}
+					</Link>
+				</Typography>;
+			})}
+    </> }
 	</div>;
 }
 
