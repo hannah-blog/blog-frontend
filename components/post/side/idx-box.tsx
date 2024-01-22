@@ -14,7 +14,7 @@ export default function IdxBox({ content, id }: { content: string, id: number })
 	return <div className={styles.idxWrapper}>
 		<Typography variant="h6" color="gray">목차</Typography>
 		{result.map((item, idx) => {
-			return <Typography key={idx} color="gray" className={`ml-${item.idx * 2}`}>
+			return <Typography key={idx} color="gray" className={`${styles[`idxTap${item.idx}`]} ${styles.idx}`}>
 				<Link href={`${process.env.NEXT_PUBLIC_WWW_URL}/develop/blog/${id}/${item.link}`}>
 					{item.line}
 				</Link>
@@ -88,9 +88,13 @@ const getHash = (idx: number): string => {
 const formatLink = (str: string, hash: string): string => {
 	return str
 		.replace(hash, '')
+		.replace(/\(/g, ' ')
+		.replace(/\)/g, ' ')
 		.replace(/^ /g, '#')
 		.replace(/ /g, '-')
 		.replace(/\?/g, '')
 		.replace(/\./g, '')
+		.replace(/--/g, '-')
+		.replace(/-$/g, '')
 		.toLowerCase()
 }

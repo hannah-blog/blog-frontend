@@ -12,11 +12,34 @@
 
 .idxWrapper {
   position: fixed;
-  width: 100%;
+  width: 25%;
   height: auto;
   display: grid;
   justify-content: start;
   align-content: start;
   text-align: start;
   padding: 10em 0 0 3em;
+}
+
+.idxTap1 {
+  margin: 0;
+}
+
+.idxTap2 {
+  margin-left: 1em;
+}
+
+.idxTap3 {
+  margin-left: 2em;
+}
+
+.idx {
+  transition: all 0.3s linear;
+}
+
+.idx:hover {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: large;
+  transition: all 0.3s linear;
 }
