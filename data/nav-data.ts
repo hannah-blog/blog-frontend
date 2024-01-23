@@ -18,10 +18,10 @@ export const navData: NavData[] = [
     link: "/introduce",
     icon: docsIcon,
     children: [
-      // {
-      //   "title": "Profile",
-      //   "cLink": "/profile",
-      // },
+      {
+        "title": "Profile",
+        "cLink": "/profile",
+      },
       {
         "title": "Contact",
         "cLink": "/contact",
