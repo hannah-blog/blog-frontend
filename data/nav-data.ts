@@ -39,7 +39,7 @@ export const navData: NavData[] = [
     children: [
       {
         "title": "Blog",
-        "cLink": "/blog",
+        "cLink": "/blogs",
       },
       {
         "title": "Series",

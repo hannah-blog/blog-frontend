@@ -51,7 +51,7 @@ export default function Profile() {
                       <li>NestJS - 학습 및 휴리스틱 공유</li>
                       <li>NestJS API 개발 (인증, 마이그레이션 등)</li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/1">기술 스택 조사 및 선정 (Spring boot)</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolioss/1">기술 스택 조사 및 선정 (Spring boot)</Link>
                         {/*<div onClick={ () => {*/}
                         {/*  handleOpen();*/}
                         {/*  handlePortfolioId(1);*/}
@@ -65,16 +65,16 @@ export default function Profile() {
                     <ul className={styles.list}>
                       <li>프로젝트 구조 설계</li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/2">Package 구조 제시 및 프로젝트 도입</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/2">Package 구조 제시 및 프로젝트 도입</Link>
                       </li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/3">Java Exception의 간소화 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/3">Java Exception의 간소화 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>
                       </li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/4">RESTful API의 HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/4">RESTful API의 HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발</Link>
                       </li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/5">Spring 테스트의 간소화 가이드 작성 및 공통된 테스트 환경 구축</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/5">Spring 테스트의 간소화 가이드 작성 및 공통된 테스트 환경 구축</Link>
                       </li>
                       <li className={styles.inline}>
                         코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 도입 및 적용
@@ -109,20 +109,20 @@ export default function Profile() {
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/6">Youtube 동시 송출 서비스 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/6">Youtube 동시 송출 서비스 개발</Link>
                       </li>
                       <li>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">비디오 트랜스코딩 작업 개발</Link>*/}
+                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolios/7">비디오 트랜스코딩 작업 개발</Link>*/}
                         비디오 트랜스코딩 작업 개발
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/7">Open API 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/7">Open API 개발</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/8">방문자 통계 서비스 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/8">방문자 통계 서비스 개발</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolio/9">경매 서비스 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/9">경매 서비스 개발</Link>
                       </li>
                       <li>입점 신청 Discord WebHook</li>
                       <li>AntMedia 송출 서버 구축</li>
@@ -319,7 +319,7 @@ export default function Profile() {
                     </li>
                     <li>Blog</li>
                     <li className={styles.inline}>
-                      <Link className={styles.link} href="https://www.hannah-log.site/portfolio/10">LivePulse 발표 자료</Link>
+                      <Link className={styles.link} href="https://www.hannah-log.site/portfolios/10">LivePulse 발표 자료</Link>
                     </li>
                     {/*<li className={styles.inline}>*/}
                     {/*  <Link className={styles.link} href="https://www.hannah-log.site/blog/1">개인 서버로 CDN 서버 구축하기</Link>*/}
@@ -373,7 +373,7 @@ export default function Profile() {
                     </li>
                     <li>Blog</li>
                     <li className={styles.inline}>
-                      <Link className={styles.link} href="https://www.hannah-log.site/portfolio/11/">Education 프로젝트 발표 자료</Link>
+                      <Link className={styles.link} href="https://www.hannah-log.site/portfolios/11/">Education 프로젝트 발표 자료</Link>
                     </li>
                     <li className={styles.inline}>
                       <Link className={styles.link} href="https://www.hannah-log.site/develop/blog/10/">Spring Boot - 메일 인증 구현하기</Link>
