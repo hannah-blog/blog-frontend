@@ -48,6 +48,7 @@ export type Series = {
 	title: string,
 	thumbnailUrl: string,
 	createdDate: string,
+	blogs: Post[],
 }
 
 export type CreateSeries = {
@@ -58,6 +59,10 @@ export type CreateSeries = {
 
 export const fetchBlogs = async (): Promise<Post[]> => {
 	return actions(RequestUrl.BLOG, HttpMethod.GET, null);
+}
+
+export const fetchBlogsBySeries = async (id: number): Promise<Series> => {
+	return await actions(`${RequestUrl.SERIES}/${id}`, HttpMethod.GET, null);
 }
 
 export const fetchBlog = async (id: number): Promise<Post> => {

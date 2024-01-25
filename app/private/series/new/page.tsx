@@ -61,8 +61,18 @@ export default function Series() {
 	}
 
 	useEffect(() => {
-		fetchBlogs().then(setBlogs);
-	}, []);
+		fetchBlogs().then((data) => {
+			const blog = blogCheck(data);
+			setDefaultBlogs(blog);
+		});
+	}, [blogs]);
+
+	const blogCheck = (data: Post[]) => {
+		const blogIds = blogs.map(blog => blog.id);
+		return data.filter(blog => {
+			return !blogIds.includes(blog.id)
+		});
+	}
 
 	return <div className={styles.wrapper}>
 		<Typography variant="h1">Create Series</Typography>

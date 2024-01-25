@@ -2,7 +2,7 @@
 
 import styles from '@/styles/app/private/page.module.css'
 import { useRouter } from 'next/navigation'
-import { ChangeEvent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchDeletePortfolio, fetchPortfolio, fetchUpdatePortfolio, Portfolio } from '@/api/caller'
 import { imageActions } from '@/api/fetch-formatter'
 import { Button, Typography } from '@/components/tailwind/client-components'

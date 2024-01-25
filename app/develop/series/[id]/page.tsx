@@ -1,8 +1,7 @@
 import styles from '@/styles/app/blog/page.module.css'
-import Series from '@/components/series/series'
-import Link from 'next/link'
+import { Post } from '@/components/post'
 import { formatMetadata } from '@/components/utils/meta-head'
-import { fetchSeries } from '@/api/caller'
+import { fetchBlogsBySeries, Post as PostType } from '@/api/caller'
 
 export async function generateMetadata() {
 	return formatMetadata({
@@ -11,16 +10,18 @@ export async function generateMetadata() {
 	});
 }
 
-export default async function DevelopSeries() {
-	const series = await fetchSeries();
+export default async function SeriesBlog({
+	params: { id },
+}: {
+	params: { id: number }
+}) {
+	const { blogs } = await fetchBlogsBySeries(id);
 
 	return <div className={styles.main}>
 		<div className={styles.titleText}>Develop Series</div>
 		<div className={styles.blogListBox}>
-			{series.map((series, idx) => {
-				return <Link href={`/develop/series/${series.id}`}>
-					<Series key={idx} series={series}/>
-				</Link>;
+			{blogs.map((post, idx) => {
+				return <Post key={idx} post={post} />;
 			})}
 		</div>
 	</div>;
