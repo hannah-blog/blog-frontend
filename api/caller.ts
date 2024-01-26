@@ -117,6 +117,10 @@ export const fetchSeries = async (): Promise<Series[]> => {
 	return actions(RequestUrl.SERIES, HttpMethod.GET, null);
 }
 
+export const fetchSeriesById = async (id: number): Promise<Series> => {
+	return actions(`${RequestUrl.SERIES}/${id}`, HttpMethod.GET, null);
+}
+
 export const fetchCreateSeries = async (request: CreateSeries): Promise<Series> => {
 	return actions(RequestUrl.SERIES, HttpMethod.POST, request);
 }

@@ -4,7 +4,14 @@ import styles from '@/styles/app/private/page.module.css'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { imageActions } from '@/api/fetch-formatter'
-import { fetchBlogs, fetchDeleteSeries, fetchSeries, fetchUpdateSeries, Post, Series } from '@/api/caller'
+import {
+	fetchBlogs,
+	fetchDeleteSeries,
+	fetchSeriesById,
+	fetchUpdateSeries,
+	Post,
+	Series
+} from '@/api/caller'
 import { Button, Typography } from '@/components/tailwind/client-components'
 import Image from 'next/image'
 
@@ -80,9 +87,9 @@ export default function SeriesDetail({
 	}
 
 	useEffect(() => {
-		fetchSeries(id).then((data) => {
+		fetchSeriesById(id).then((data) => {
 			setSeries(data);
-			setBlogs(data.posts);
+			setBlogs(data.blogs);
 		});
 	}, []);
 
@@ -114,7 +121,6 @@ export default function SeriesDetail({
 			<Button onClick={uploadImage}>업로드</Button>
 			<Image alt={series.thumbnailUrl} src={series.thumbnailUrl} width={300} height={300} />
 			<Typography variant="h5">추가할 블로그</Typography>
-			<Typography variant="h5">blogs</Typography>
 			{ blogs.map((blog, idx) => {
 				return <Button key={idx} onClick={() => onBlog(blog)} value={blog.id}>
 					{blog.title}
