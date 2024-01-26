@@ -12,12 +12,14 @@ export default function Series({ series }: { series: Series }) {
 			color="transparent"
 			className={styles.seriesHeader}
 		>
+			<div className={styles.seriesThumbnail}>
 			<Image
 				src={series.thumbnailUrl}
 				alt={series.title}
-				layout="fill"
-				objectFit="cover"
+				width={200}
+				height={200}
 			/>
+			</div>
 			<div className={styles.headerGradient} />
 		</CardHeader>
 		<CardBody className={styles.seriesBody}>

@@ -12,6 +12,7 @@
   display: grid;
   position: relative;
   transition: transform .2s;
+  margin-bottom: 2em;
 }
 
 .series:hover {
@@ -35,7 +36,7 @@
 }
 
 .headerGradient {
-  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-to: rgba(0, 0, 0, 0.24) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
   --tw-gradient-from: rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
@@ -51,21 +52,31 @@
 }
 
 .seriesTitle {
-  -webkit-font-smoothing: antialiased;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   letter-spacing: 0;
   line-height: 1.5;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 2.25rem;
   font-family: Roboto, sans-serif;
   padding-top: 2.5rem;
   display: block;
-  margin-bottom: 1.5rem;
 }
 
 .seriesDate {
   --tw-text-opacity: 1;
   color: rgb(189 189 189 / var(--tw-text-opacity));
   margin-bottom: 1rem;
+}
+
+.seriesThumbnail {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.seriesThumbnail img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
