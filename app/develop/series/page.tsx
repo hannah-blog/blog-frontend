@@ -18,7 +18,7 @@ export default async function DevelopSeries() {
 		<div className={styles.titleText}>Develop Series</div>
 		<div className={styles.blogListBox}>
 			{series.map((series, idx) => {
-				return <Link href={`/develop/series/${series.id}`}>
+				return <Link key={idx} href={`/develop/series/${series.id}`}>
 					<Series key={idx} series={series}/>
 				</Link>;
 			})}

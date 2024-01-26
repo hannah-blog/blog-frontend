@@ -56,7 +56,7 @@ export default function SeriesDetail({
 
 		const result = await imageActions(file);
 		if (result) {
-			series.thumbnailUrl = result.data;
+			series!.thumbnailUrl = result.data;
 		}
 	}
 
