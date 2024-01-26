@@ -98,5 +98,6 @@ const formatLink = (str: string, hash: string): string => {
 		.replace(/\./g, '')
 		.replace(/--/g, '-')
 		.replace(/-$/g, '')
+		.replace(/:/g, '')
 		.toLowerCase()
 }
