@@ -23,7 +23,7 @@ export const navData = [
 		children: [
 			{
 				"title": "Blog",
-				"cLink": "/blog",
+				"cLink": "/blogs",
 			},
 			{
 				"title": "Series",

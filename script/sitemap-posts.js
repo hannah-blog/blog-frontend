@@ -16,8 +16,8 @@ const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
     .map(post => {
       return `
         <url>
-          <loc>${`${DOMAIN}/develop/blog/${post.id}`}</loc>
-          <lastmod>${getDate}</lastmod>
+          <loc>${`${DOMAIN}/develop/blogs/${post.id}`}</loc>
+          <lastmod>${post.createdDate}</lastmod>
         </url>`
     })
     .join('')}
