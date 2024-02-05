@@ -126,6 +126,12 @@ export default function Profile() {
                       </li>
                       <li>입점 신청 Discord WebHook</li>
                       <li>AntMedia 송출 서버 구축</li>
+                      <li>
+                        (유지보수) 레거시 프로젝트의 테스트 서버와 실서버의 분리 여정기
+                      </li>
+                      <li>
+                        (유지보수) !short url 프로젝트를 엎어보자
+                      </li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
