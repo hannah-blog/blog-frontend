@@ -31,7 +31,6 @@
 }
 
 .titleText {
-  -webkit-font-smoothing: antialiased;
   letter-spacing: 0;
   line-height: 1.25;
   font-weight: 600;
@@ -40,6 +39,8 @@
   display: block;
   margin-top: 2rem;
   color: rgb(26 35 126);
+  width: 800px;
+  text-align: center;
 }
 
 .postWrapper {

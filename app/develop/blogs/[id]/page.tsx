@@ -20,7 +20,7 @@ export default async function BlogDetail({
 			title={post.title}
 			description={post.content.substring(0, 100)}
 			image={post.thumbnailUrl}
-			url={"/develop/blog/" + post.id}
+			url={"/develop/blogs/" + post.id}
 			tags={post.tags.map(tag => tag.name)}
 		/>
 		<IdxBox id={id} content={post.content} />
