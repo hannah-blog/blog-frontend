@@ -51,7 +51,7 @@ export default function Profile() {
                       <li>NestJS - 학습 및 휴리스틱 공유</li>
                       <li>NestJS API 개발 (인증, 마이그레이션 등)</li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolioss/1">기술 스택 조사 및 선정 (Spring boot)</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/1">기술 스택 조사 및 선정 (Spring boot)</Link>
                         {/*<div onClick={ () => {*/}
                         {/*  handleOpen();*/}
                         {/*  handlePortfolioId(1);*/}
