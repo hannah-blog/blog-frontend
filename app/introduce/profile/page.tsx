@@ -60,18 +60,15 @@ export default function Profile() {
                   <Typography variant="lead">Description</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>노코드 디자인 에디터 프로젝트입니다.</li>
+                      <li>메이크샵 노코드 디자인 에디터 프로젝트입니다.</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">What I did</Typography>
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-
-                      </li>
-                      <li>
                         <Link className={styles.link} href="https://www.notion.so/log-hannah/NestJS-5c2534cc77664698b30a70199d92417c">
-                          NestJS - 학습 및 휴리스틱 공유
+                          NestJS 학습 및 휴리스틱 공유
                         </Link>
                       </li>
                       <li>NestJS API 개발 (인증, 마이그레이션 등)</li>
@@ -88,29 +85,32 @@ export default function Profile() {
                   </Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>프로젝트 구조 설계</li>
-                      <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/2">Package 구조 제시 및 프로젝트 도입</Link>
+                      <li>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/2">Spring Package 구조 설계</Link>
                       </li>
-                      <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/3">Java Exception의 간소화 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>
+                      <li>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/3">Java Exception 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>
                       </li>
-                      <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/4">RESTful API의 HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발</Link>
+                      <li>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/4">HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발</Link>
                       </li>
-                      <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/5">Spring 테스트의 간소화 가이드 작성 및 공통된 테스트 환경 구축</Link>
+                      <li>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/5">Spring 테스트 가이드 작성 및 공통된 테스트 환경 구축</Link>
                       </li>
-                      <li className={styles.inline}>
-                        코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 도입 및 적용
+                      <li>
+                        코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 적용
                       </li>
-                      <li>DB 마이그레이션 flyway 적용</li>
+                      <li>Spring DB 마이그레이션 flyway 적용</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
                   <div className={styles.chipBox}>
-                    <Chip variant="ghost" value="Java 17" />
-                    <Chip variant="ghost" value="Spring Boot 3" />
+                    <Chip variant="outlined" size="sm" value="TypeScript" />
+                    <Chip variant="outlined" size="sm" value="NestJS" />
+                    <Chip variant="outlined" size="sm" value="Java 17" />
+                    <Chip variant="outlined" size="sm" value="Spring Boot 3" />
+                    <Chip variant="outlined" size="sm" value="MySQL" />
+                    <Chip variant="outlined" size="sm" value="Docker" />
                   </div>
                   {/*<Typography>*/}
                   {/*  <ul className={styles.list}>*/}
@@ -131,7 +131,7 @@ export default function Profile() {
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-                        <Link className={styles.link} href="https://www.nalbang.tv/">Live-Commerce 플랫폼입니다.</Link> 주로 메이크샵 상점들과 연동하여 서비스를 운영하였습니다.
+                        <Link className={styles.link} href="https://www.nalbang.tv/">Live-Commerce 플랫폼입니다.</Link> 신규 기능 개발, 유지보수 업무를 담당하였습니다.
                       </li>
                     </ul>
                   </Typography>
@@ -142,7 +142,6 @@ export default function Profile() {
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolios/6">Youtube 동시 송출 서비스 개발</Link>
                       </li>
                       <li>
-                        {/*<Link className={styles.link} href="https://www.hannah-log.site/portfolios/7">비디오 트랜스코딩 작업 개발</Link>*/}
                         비디오 트랜스코딩 작업 개발
                       </li>
                       <li>
@@ -152,24 +151,27 @@ export default function Profile() {
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolios/8">방문자 통계 서비스 개발</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/9">경매 서비스 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/9">경매 서비스 시스템 구축 및 개발</Link>
                       </li>
                       <li>입점 신청 Discord WebHook</li>
                       <li>AntMedia 송출 서버 구축</li>
                       <li>
-                        (유지보수) 레거시 프로젝트의 테스트 서버와 실서버의 분리 여정기
+                        레거시 프로젝트의 테스트 서버와 실서버의 분리
                       </li>
                       <li>
-                        (유지보수) !short url 프로젝트를 엎어보자
+                        short url 프로젝트 리팩터링
                       </li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
-                  <Typography>
-                    <ul className={styles.list}>
-                      <li>Java 11, Spring Boot 2, MariaDB, JPA, QueryDSL, Redis, Haproxy, Socket.io, Docker...</li>
-                    </ul>
-                  </Typography>
+                  <div className={styles.chipBox}>
+                    <Chip variant="outlined" size="sm" value="Java 11" />
+                    <Chip variant="outlined" size="sm" value="Spring Boot 2" />
+                    <Chip variant="outlined" size="sm" value="MariaDB" />
+                    <Chip variant="outlined" size="sm" value="Redis" />
+                    <Chip variant="outlined" size="sm" value="Socket.io" />
+                    <Chip variant="outlined" size="sm" value="Docker" />
+                  </div>
                 </TimelineBody>
               </TimelineItem>
               <TimelineItem className="pb-5">
@@ -197,40 +199,42 @@ export default function Profile() {
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
-                  <Typography>
-                    <ul className={styles.list}>
-                      <li>Java 11, Spring Boot 2, MariaDB, Thymeleaf, MyBatis...</li>
-                    </ul>
-                  </Typography>
+                  <div className={styles.chipBox}>
+                    <Chip variant="outlined" size="sm" value="Java 11" />
+                    <Chip variant="outlined" size="sm" value="Spring Boot 2" />
+                    <Chip variant="outlined" size="sm" value="MariaDB" />
+                    <Chip variant="outlined" size="sm" value="Thymeleaf" />
+                    <Chip variant="outlined" size="sm" value="MyBatis" />
+                  </div>
                 </TimelineBody>
               </TimelineItem>
-              <TimelineItem>
-                <TimelineConnector/>
-                <TimelineHeader className="h-3">
-                  <TimelineIcon/>
-                  <Typography variant="h4">잇톡</Typography>
-                </TimelineHeader>
-                <TimelineBody className="m-2">
-                  <Typography variant="lead">Description</Typography>
-                  <Typography>
-                    <ul className={styles.list}>
-                      <li>상품을 실시간으로 반응하고 참여할 수 있는 서비스입니다.(미오픈)</li>
-                    </ul>
-                  </Typography>
-                  <Typography variant="lead">What I did</Typography>
-                  <Typography>
-                    <ul className={styles.list}>
-                      <li>쿠버네티스 환경의 오토 스케일링 클라우드 서버 구축</li>
-                    </ul>
-                  </Typography>
-                  <Typography variant="lead">Stack</Typography>
-                  <Typography>
-                    <ul className={styles.list}>
-                      <li>Java 17, Spring Boot 3, Kubernetes, Docker, Cloud...</li>
-                    </ul>
-                  </Typography>
-                </TimelineBody>
-              </TimelineItem>
+              {/*<TimelineItem>*/}
+              {/*  <TimelineConnector/>*/}
+              {/*  <TimelineHeader className="h-3">*/}
+              {/*    <TimelineIcon/>*/}
+              {/*    <Typography variant="h4">잇톡</Typography>*/}
+              {/*  </TimelineHeader>*/}
+              {/*  <TimelineBody className="m-2">*/}
+              {/*    <Typography variant="lead">Description</Typography>*/}
+              {/*    <Typography>*/}
+              {/*      <ul className={styles.list}>*/}
+              {/*        <li>상품을 실시간으로 반응하고 참여할 수 있는 서비스입니다.(미오픈)</li>*/}
+              {/*      </ul>*/}
+              {/*    </Typography>*/}
+              {/*    <Typography variant="lead">What I did</Typography>*/}
+              {/*    <Typography>*/}
+              {/*      <ul className={styles.list}>*/}
+              {/*        <li>쿠버네티스 환경의 오토 스케일링 클라우드 서버 구축</li>*/}
+              {/*      </ul>*/}
+              {/*    </Typography>*/}
+              {/*    <Typography variant="lead">Stack</Typography>*/}
+              {/*    <Typography>*/}
+              {/*      <ul className={styles.list}>*/}
+              {/*        <li>Java 17, Spring Boot 3, Kubernetes, Docker, Cloud...</li>*/}
+              {/*      </ul>*/}
+              {/*    </Typography>*/}
+              {/*  </TimelineBody>*/}
+              {/*</TimelineItem>*/}
             </Timeline>
           </div>
           <div>
@@ -264,11 +268,17 @@ export default function Profile() {
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
-                  <Typography>
-                    <ul className={styles.list}>
-                      <li>Spring Framework, MyBatis, EGov(전자정부프레임워크), SVN, JSP, JQuery...</li>
-                    </ul>
-                  </Typography>
+                  <div className={styles.chipBox}>
+                    <Chip variant="outlined" size="sm" value="Spring Framework" />
+                    <Chip variant="outlined" size="sm" value="MyBatis" />
+                    <Chip variant="outlined" size="sm" value="EGov(전자정부프레임워크)" />
+                    <Chip variant="outlined" size="sm" value="SVN" />
+                    <Chip variant="outlined" size="sm" value="JSP" />
+                    <Chip variant="outlined" size="sm" value="JQuery" />
+                  </div>
+                    {/*<ul className={styles.list}>*/}
+                    {/*  <li>Spring Framework, MyBatis, EGov(전자정부프레임워크), SVN, JSP, JQuery...</li>*/}
+                    {/*</ul>*/}
                 </TimelineBody>
               </TimelineItem>
               <TimelineItem>
@@ -292,11 +302,19 @@ export default function Profile() {
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
-                  <Typography>
-                    <ul className={styles.list}>
-                      <li>Spring Framework, MyBatis, EGov(전자정부프레임워크), SVN, JSP, JQuery...</li>
-                    </ul>
-                  </Typography>
+                  <div className={styles.chipBox}>
+                    <Chip variant="outlined" size="sm" value="Spring Framework" />
+                    <Chip variant="outlined" size="sm" value="MyBatis" />
+                    <Chip variant="outlined" size="sm" value="EGov(전자정부프레임워크)" />
+                    <Chip variant="outlined" size="sm" value="SVN" />
+                    <Chip variant="outlined" size="sm" value="JSP" />
+                    <Chip variant="outlined" size="sm" value="JQuery" />
+                  </div>
+                  {/*<Typography>*/}
+                  {/*  <ul className={styles.list}>*/}
+                  {/*    <li>Spring Framework, MyBatis, EGov(전자정부프레임워크), SVN, JSP, JQuery...</li>*/}
+                  {/*  </ul>*/}
+                  {/*</Typography>*/}
                 </TimelineBody>
               </TimelineItem>
             </Timeline>
