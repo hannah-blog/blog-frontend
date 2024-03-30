@@ -16,7 +16,7 @@
 .list .inline {
   display: list-item;
   margin-left: 2.5rem;
-  list-style-type: disclosure-closed;
+  list-style-type: circle;
 }
 
 .mainWrapper {
@@ -66,4 +66,16 @@
 
 .indexing {
   z-index: 3;
+}
+
+.chipBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.introduce {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 3rem;
 }

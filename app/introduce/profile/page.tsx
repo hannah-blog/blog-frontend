@@ -2,6 +2,7 @@ import styles from '@/styles/app/introduce/profile/page.module.css'
 import ProgressBar from '@/components/motion/progress-bar'
 import Link from 'next/link'
 import {
+  Chip,
   Timeline, TimelineBody,
   TimelineConnector,
   TimelineHeader, TimelineIcon,
@@ -24,11 +25,28 @@ export default function Profile() {
         <Typography variant="h1">반갑습니다, 저는 홍채민입니다.</Typography>
         <ul className={styles.list}>
           <li><Typography variant="h4">3년차 백엔드 개발자로 일하고 있으며 비지니스 도메인의 가치를 궁극적으로 이해하고 풀어나가는 것을 좋아합니다.</Typography></li>
-          <li><Typography variant="h4">각 요소들이 균형있고 조화롭게 결합되어 완성도있는 작품을 그리는 예술가와 같은 개발자가 되는 것이 목표입니다.</Typography></li>
+          <li><Typography variant="h4">각 요소들이 균형있고 조화롭게 결합되어 있는 작품을 그리고 만드는, 예술가와 같은 개발자가 되는 것이 목표입니다.</Typography></li>
         </ul>
       </div>
       <div className={styles.section}>
-        <Typography variant="h2">Career</Typography>
+        <Typography variant="h2">Introduce.</Typography>
+				<div className={styles.introduce}>
+          <span>
+            21년 8월부터 현재까지 3년차 백엔드 개발자로 일하고 있습니다. 주로 Java, Spring, TypeScript, NestJS를 사용하여 개발합니다.
+          </span>
+					<span>
+            저는 개발 일을 하기 전, 외식업 회사의 직원으로 들어가서 홍대에 있는 매장을 돌아다니며 근무를 했었습니다.
+            외식업을 했었을 때 다른 가게에 가서 분위기와 시스템, 메뉴 구성 등을 보고 더 좋은 시스템을 적용시키며 매장의 환경을 개선하고 매출을 향상시켰습니다.
+            이 경험을 바탕으로 새로운 기술이 나오면 장점과 단점을 이해하고 더 좋은 시스템을 만들기 위해 노력할 수 있습니다.
+          </span>
+          <span>
+            Software 직무에 가장 필요한 역량은 스펀지같이 기술을 습득하는 능력이 중요하다고 생각합니다.
+            변화하는 웹 개발, 더 나아가 IT 분야에서는 새로운 기술뿐 아니라 여러 기술 스택을 쌓아 적재적소에 알맞은 기술을 적용하는 것이 중요합니다.
+            때문에 기술을 잘 활용하기 위해선 기술의 특징과 어떻게 활용할 수 있는지 알아야 합니다.
+            그래서 저는 여러 프로젝트를 경험하며 여러 기술 스택을 쌓기 위해 노력했습니다.
+          </span>
+				</div>
+        <Typography variant="h2">Career.</Typography>
         <div className={`${styles.block} mt-3`}>
           <div className={styles.predicate}>
             <Timeline>
@@ -42,13 +60,20 @@ export default function Profile() {
                   <Typography variant="lead">Description</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>메이크샵의 새로운 기능인 노코드 디자인 에디터 프로젝트입니다.</li>
+                      <li>노코드 디자인 에디터 프로젝트입니다.</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">What I did</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>NestJS - 학습 및 휴리스틱 공유</li>
+                      <li>
+
+                      </li>
+                      <li>
+                        <Link className={styles.link} href="https://www.notion.so/log-hannah/NestJS-5c2534cc77664698b30a70199d92417c">
+                          NestJS - 학습 및 휴리스틱 공유
+                        </Link>
+                      </li>
                       <li>NestJS API 개발 (인증, 마이그레이션 등)</li>
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolios/1">기술 스택 조사 및 선정 (Spring boot)</Link>
@@ -83,11 +108,16 @@ export default function Profile() {
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
-                  <Typography>
-                    <ul className={styles.list}>
-                      <li>Java 17, Spring Boot 3, MySQL, JPA, JUnit, TypeScript, NestJS, Gitlab...</li>
-                    </ul>
-                  </Typography>
+                  <div className={styles.chipBox}>
+                    <Chip variant="ghost" value="Java 17" />
+                    <Chip variant="ghost" value="Spring Boot 3" />
+                  </div>
+                  {/*<Typography>*/}
+                  {/*  <ul className={styles.list}>*/}
+
+                  {/*    <li>Java 17, Spring Boot 3, MySQL, JPA, JUnit, TypeScript, NestJS, Gitlab...</li>*/}
+                  {/*  </ul>*/}
+                  {/*</Typography>*/}
                 </TimelineBody>
               </TimelineItem>
               <TimelineItem className="pb-5">
@@ -279,7 +309,7 @@ export default function Profile() {
         </div>
       </div>
       <div className={styles.section}>
-        <Typography variant="h2">Side Project</Typography>
+        <Typography variant="h2">Side Project.</Typography>
         <div className={`${styles.block} mt-3`}>
           <Timeline>
             <TimelineItem className="pb-5">
@@ -439,7 +469,7 @@ export default function Profile() {
       </div>
       <hr className="my-8 border-blue-gray-50"/>
       <div className={styles.section}>
-        <Typography variant="h2">Contact</Typography>
+        <Typography variant="h2">Contact.</Typography>
         <div className={styles.sideBlock}>
           <Image
             className={`${styles.img} rounded-full object-cover object-center shadow-xl shadow-blue-gray-900/50`}
