@@ -23,7 +23,7 @@ export default async function BlogDetail({
 			url={"/develop/blogs/" + post.id}
 			tags={post.tags.map(tag => tag.name)}
 		/>
-		<IdxBox id={id} content={post.content} />
+		<IdxBox id={id} content={post.content} url={"develop/blogs"} />
 		<TagBox tags={post.tags} />
 		<div className={styles.blogWrapper}>
 			<ProgressBar/>

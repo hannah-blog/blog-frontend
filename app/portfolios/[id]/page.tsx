@@ -3,6 +3,7 @@ import HeadMeta from '@/components/utils/meta-head'
 import Markdown from '@/components/utils/markdown'
 import ProgressBar from '@/components/motion/progress-bar'
 import { Portfolio, fetchPortfolio } from '@/api/caller'
+import { IdxBox } from '@/components/post'
 
 export default async function PortfolioDetail({
 	params: { id },
@@ -18,6 +19,7 @@ export default async function PortfolioDetail({
 			image={portfolio.thumbnailUrl}
 			url={`/portfolio/${portfolio.id}`}
 		/>
+		<IdxBox id={id} content={portfolio.content} url={"portfolios"} />
 		<div className={styles.blogWrapper}>
 			<ProgressBar/>
 			<div className={styles.titleText}>{portfolio.title}</div>
