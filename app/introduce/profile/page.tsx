@@ -238,7 +238,7 @@ export default function Profile() {
             <Typography variant="h6">2022.01 ~ 현재</Typography>
           </div>
         </div>
-        <hr className="my-8 border-blue-gray-50"/>
+        <hr className="my-8 border-blue-gray-50" />
         <div className={styles.block}>
           <div className={styles.predicate}>
             <Timeline>
@@ -480,7 +480,41 @@ export default function Profile() {
           </Timeline>
         </div>
       </div>
-      <hr className="my-8 border-blue-gray-50"/>
+      <hr className="my-8 border-blue-gray-50" />
+      <div className={styles.section}>
+        <Typography variant="h2">Education.</Typography>
+        <div className={`${styles.block} mt-3`}>
+          <div className={styles.predicate}>
+            <Timeline>
+              <TimelineItem className="pb-5">
+                <TimelineConnector/>
+                <TimelineHeader className="h-3">
+                  <TimelineIcon/>
+                  <Typography variant="h4">동양미래대학교</Typography>
+                </TimelineHeader>
+                <TimelineBody className="m-2">
+                  <span>
+                    컴퓨터정보공학과(재작자전형) 2022.03 ~ 2024.02
+                  </span>
+                </TimelineBody>
+              </TimelineItem>
+              <TimelineItem>
+                <TimelineConnector/>
+                <TimelineHeader className="h-3">
+                  <TimelineIcon/>
+                  <Typography variant="h4">고등학교졸업학력검정고시</Typography>
+                </TimelineHeader>
+                <TimelineBody className="m-2">
+                  <span>
+                    2021.08
+                  </span>
+                </TimelineBody>
+              </TimelineItem>
+            </Timeline>
+          </div>
+        </div>
+      </div>
+      <hr className="my-8 border-blue-gray-50" />
       <div className={styles.section}>
         <Typography variant="h2">Contact.</Typography>
         <div className={styles.sideBlock}>
