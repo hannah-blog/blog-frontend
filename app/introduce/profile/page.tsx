@@ -112,12 +112,6 @@ export default function Profile() {
                     <Chip variant="outlined" size="sm" value="MySQL" />
                     <Chip variant="outlined" size="sm" value="Docker" />
                   </div>
-                  {/*<Typography>*/}
-                  {/*  <ul className={styles.list}>*/}
-
-                  {/*    <li>Java 17, Spring Boot 3, MySQL, JPA, JUnit, TypeScript, NestJS, Gitlab...</li>*/}
-                  {/*  </ul>*/}
-                  {/*</Typography>*/}
                 </TimelineBody>
               </TimelineItem>
               <TimelineItem className="pb-5">
@@ -276,9 +270,6 @@ export default function Profile() {
                     <Chip variant="outlined" size="sm" value="JSP" />
                     <Chip variant="outlined" size="sm" value="JQuery" />
                   </div>
-                    {/*<ul className={styles.list}>*/}
-                    {/*  <li>Spring Framework, MyBatis, EGov(전자정부프레임워크), SVN, JSP, JQuery...</li>*/}
-                    {/*</ul>*/}
                 </TimelineBody>
               </TimelineItem>
               <TimelineItem>
@@ -310,11 +301,6 @@ export default function Profile() {
                     <Chip variant="outlined" size="sm" value="JSP" />
                     <Chip variant="outlined" size="sm" value="JQuery" />
                   </div>
-                  {/*<Typography>*/}
-                  {/*  <ul className={styles.list}>*/}
-                  {/*    <li>Spring Framework, MyBatis, EGov(전자정부프레임워크), SVN, JSP, JQuery...</li>*/}
-                  {/*  </ul>*/}
-                  {/*</Typography>*/}
                 </TimelineBody>
               </TimelineItem>
             </Timeline>
