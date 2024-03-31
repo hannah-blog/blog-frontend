@@ -34,18 +34,23 @@ export default function Profile() {
           <span>
             21년 8월부터 현재까지 3년차 백엔드 개발자로 일하고 있습니다. 주로 Java, Spring, TypeScript, NestJS를 사용하여 개발합니다.
           </span>
-					<span>
-            저는 개발 일을 하기 전, 외식업 회사의 직원으로 들어가서 홍대에 있는 매장을 돌아다니며 근무를 했었습니다.
-            외식업을 했었을 때 다른 가게에 가서 분위기와 시스템, 메뉴 구성 등을 보고 더 좋은 시스템을 적용시키며 매장의 환경을 개선하고 매출을 향상시켰습니다.
-            이 경험을 바탕으로 새로운 기술이 나오면 장점과 단점을 이해하고 더 좋은 시스템을 만들기 위해 노력할 수 있습니다.
-          </span>
           <span>
             Software 직무에 가장 필요한 역량은 스펀지같이 기술을 습득하는 능력이 중요하다고 생각합니다.
             변화하는 웹 개발, 더 나아가 IT 분야에서는 새로운 기술뿐 아니라 여러 기술 스택을 쌓아 적재적소에 알맞은 기술을 적용하는 것이 중요합니다.
             때문에 기술을 잘 활용하기 위해선 기술의 특징과 어떻게 활용할 수 있는지 알아야 합니다.
             그래서 저는 여러 프로젝트를 경험하며 여러 기술 스택을 쌓기 위해 노력했습니다.
           </span>
-				</div>
+          <span>
+            저에게는 특이한 이력이 있습니다.
+            저는 개발 일을 하기 전, 외식업 회사의 직원으로 들어가서 홍대에 있는 매장을 돌아다니며 근무를 했었습니다.
+            홍대에 위치한 매장에서 근무하면서 다른 음식점을 방문하여 그들의 운영 시스템, 메뉴 구성, 분위기 등을 관찰하고 분석하여 매장 환경을 개선하고 매출을 증대시켰습니다.
+            <br />
+            이 경험을 통해 기술적인 측면에서의 장단점을 이해하고, 현실적인 문제를 해결하는 방법을 익혔습니다.
+            <br />
+            또한 시스템 개발 과정에서 사용자 경험을 개선하고, 실제 사용 환경에서 발생할 수 있는 문제를 예측하고 대비할 수 있습니다.
+            다양한 관점에서의 문제 해결 능력을 갖추어 효율적인 솔루션을 제시할 수 있습니다.
+          </span>
+        </div>
         <Typography variant="h2">Career.</Typography>
         <div className={`${styles.block} mt-3`}>
           <div className={styles.predicate}>
@@ -135,19 +140,19 @@ export default function Profile() {
                       </li>
                       <li>비디오 트랜스코딩 작업 개발 (가변 비트레이트)</li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/7">Open API 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/7">날방 Open API 개발</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/8">방문자 통계 서비스 개발</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/8">방문자 통계(성별, 나이) 서비스 개발</Link>
                       </li>
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolios/9">경매 서비스 시스템 구축 및 개발</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/12/">short url 프로젝트 리팩터링</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/12/">레거시 short url 프로젝트 스팩 개선 및 구조, 프로세스 재설계</Link>
                       </li>
                       <li>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/13/">레거시 프로젝트의 테스트 서버와 실서버의 분리</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/13/">레거시 프로젝트 이미지 기능 - 테스트 서버, 실서버의 분리</Link>
                       </li>
                       <li>입점 신청 Discord WebHook</li>
                       <li>AntMedia 송출 서버 구축</li>
@@ -182,10 +187,10 @@ export default function Profile() {
                   <Typography variant="lead">What I did</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>쿼리 튜닝 5-6s -&gt; 0.1s</li>
-                      <li>월별 매출 현황 서비스 개발</li>
-                      <li>KSNET 정산을 위한 결제 데이터 조회 서비스 개발</li>
-                      <li>서비스 리뉴얼 참여 - API, 팜케이션 서비스 에디터 적용</li>
+                      <li>사용자 경험 개선을 위한 쿼리 튜닝 5-6s -&gt; 0.1s / 페이지 로드 시간 7-8s -> 1-2s</li>
+                      <li>일별 매출 현황(표) 가시성 개선을 위한 월별 매출 현황(그래프) 서비스 개발 - chart.js</li>
+                      <li>주기적으로 요청오던 데이터 수집 업무를 최소화하기 위해 KSNET 정산 결제 데이터 조회 서비스 개발</li>
+                      <li>서비스 리뉴얼 참여 - 할인 민박 순위 API, 팜케이션 작성을 위한 에디터(naver smart editor2) 적용</li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
@@ -329,8 +334,8 @@ export default function Profile() {
                 <Typography variant="lead">What I did</Typography>
                 <Typography>
                   <ul className={styles.list}>
-                    <li>AntMedia 오픈 소스를 활용한 WebRTC 송출</li>
-                    <li>hls.js 라이브러리를 활용한 HLS 재생</li>
+                    <li>AntMedia 오픈 소스를 활용한 WebRTC 송출 서버 구축</li>
+                    <li>hls.js 라이브러리를 활용한 HLS 영상 재생 기능 개발</li>
                     <li>NestJS Socket Gateway 라이브러리를 통한 소켓 서버 구축</li>
                     <li>Redis를 통한 채팅 적재 및 실시간 시청자 수 기능 개발</li>
                     <li>Github Action CI/CD 파이프라인 구축</li>
