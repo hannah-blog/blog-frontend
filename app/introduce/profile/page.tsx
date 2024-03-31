@@ -97,9 +97,7 @@ export default function Profile() {
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolios/5">Spring 테스트 가이드 작성 및 공통된 테스트 환경 구축</Link>
                       </li>
-                      <li>
-                        코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 적용
-                      </li>
+                      <li>코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 적용</li>
                       <li>Spring DB 마이그레이션 flyway 적용</li>
                     </ul>
                   </Typography>
@@ -135,9 +133,7 @@ export default function Profile() {
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolios/6">Youtube 동시 송출 서비스 개발</Link>
                       </li>
-                      <li>
-                        비디오 트랜스코딩 작업 개발
-                      </li>
+                      <li>비디오 트랜스코딩 작업 개발 (가변 비트레이트)</li>
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolios/7">Open API 개발</Link>
                       </li>
@@ -147,14 +143,14 @@ export default function Profile() {
                       <li>
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolios/9">경매 서비스 시스템 구축 및 개발</Link>
                       </li>
+                      <li>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/12/">short url 프로젝트 리팩터링</Link>
+                      </li>
+                      <li>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/13/">레거시 프로젝트의 테스트 서버와 실서버의 분리</Link>
+                      </li>
                       <li>입점 신청 Discord WebHook</li>
                       <li>AntMedia 송출 서버 구축</li>
-                      <li>
-                        레거시 프로젝트의 테스트 서버와 실서버의 분리
-                      </li>
-                      <li>
-                        short url 프로젝트 리팩터링
-                      </li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
@@ -179,7 +175,7 @@ export default function Profile() {
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-                        <Link className={styles.link} href="https://www.g-justgo.com/">강원도 숙박 서비스앱입니다.</Link> 주로 반복 작업을 최소화 시키는 작업이나, 유지보수 업무를 담당하였습니다.
+                        <Link className={styles.link} href="https://www.g-justgo.com/">강원도 숙박 서비스앱입니다.</Link> 주로 반복 작업을 최소화 시키는 작업이나 리뉴얼 개발 참여, 유지보수 업무를 담당하였습니다.
                       </li>
                     </ul>
                   </Typography>
@@ -370,11 +366,16 @@ export default function Profile() {
                   </ul>
                 </Typography>
                 <Typography variant="lead">Stack</Typography>
-                <Typography>
-                  <ul className={styles.list}>
-                    <li>Kotlin, Spring Boot3, TypeScript 5, NestJS 9, Docker, Github Actions, NextJS, his.js...</li>
-                  </ul>
-                </Typography>
+                <div className={styles.chipBox}>
+                  <Chip variant="outlined" size="sm" value="Kotlin" />
+                  <Chip variant="outlined" size="sm" value="Spring Boot 3" />
+                  <Chip variant="outlined" size="sm" value="TypeScript" />
+                  <Chip variant="outlined" size="sm" value="NestJS" />
+                  <Chip variant="outlined" size="sm" value="Docker" />
+                  <Chip variant="outlined" size="sm" value="Github Actions" />
+                  <Chip variant="outlined" size="sm" value="NextJS" />
+                  <Chip variant="outlined" size="sm" value="his.js" />
+                </div>
               </TimelineBody>
             </TimelineItem>
             <TimelineItem className="pb-5">
@@ -421,11 +422,15 @@ export default function Profile() {
                   </ul>
                 </Typography>
                 <Typography variant="lead">Stack</Typography>
-                <Typography>
-                  <ul className={styles.list}>
-                    <li>Kotlin, Spring Boot3, JPA, QueryDSL, AWS S3, AWS EC2, React 16...</li>
-                  </ul>
-                </Typography>
+                <div className={styles.chipBox}>
+                  <Chip variant="outlined" size="sm" value="Kotlin" />
+                  <Chip variant="outlined" size="sm" value="Spring Boot 3" />
+                  <Chip variant="outlined" size="sm" value="Spring Data JPA" />
+                  <Chip variant="outlined" size="sm" value="QueryDSL" />
+                  <Chip variant="outlined" size="sm" value="AWS S3" />
+                  <Chip variant="outlined" size="sm" value="AWS EC2" />
+                  <Chip variant="outlined" size="sm" value="React 16" />
+                </div>
               </TimelineBody>
             </TimelineItem>
             <TimelineItem>
@@ -461,11 +466,11 @@ export default function Profile() {
                   </ul>
                 </Typography>
                 <Typography variant="lead">Stack</Typography>
-                <Typography>
-                  <ul className={styles.list}>
-                    <li>Kotlin, Spring Boot, JDA...</li>
-                  </ul>
-                </Typography>
+                <div className={styles.chipBox}>
+                  <Chip variant="outlined" size="sm" value="Kotlin" />
+                  <Chip variant="outlined" size="sm" value="Spring Boot" />
+                  <Chip variant="outlined" size="sm" value="JDA" />
+                </div>
               </TimelineBody>
             </TimelineItem>
           </Timeline>
