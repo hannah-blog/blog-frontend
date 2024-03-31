@@ -388,8 +388,7 @@ export default function Profile() {
                 <Typography variant="lead">Description</Typography>
                 <Typography>
                   <ul className={styles.list}>
-                    <li>유명한 강의 플랫폼인 인프런은 동영상 위주로 강의를 수강합니다.</li>
-                    <li>인프런에서 강의를 보다가 다른 블로그나 문서처럼 글로 설명된 형식의 강의가 있었으면 좋겠다라는 생각이 들어서 프로젝트를 진행하게 되었습니다.</li>
+                    <li>유명한 강의 플랫폼인 인프런은 동영상 위주로 강의를 수강합니다. 인프런에서 강의를 보다가 다른 블로그나 문서처럼 글로 설명된 형식의 강의가 있었으면 좋겠다라는 생각이 들어서 프로젝트를 진행하게 되었습니다.</li>
                   </ul>
                 </Typography>
                 <Typography variant="lead">What I did</Typography>
@@ -498,6 +497,10 @@ export default function Profile() {
           </div>
         </div>
       </div>
+      <hr className="my-8 border-blue-gray-50"/>
+      <Typography>
+        자세한 포트폴리오는 <Link className={styles.link} href={"https://www.hannah-log.site/introduce/profile"}>여기 (https://www.hannah-log.site/introduce/profile)</Link>에서 확인해주세요.
+      </Typography>
       {/*<PortfolioModal isOpen={isOpen} handleOpen={handleOpen} portfolioId={portfolioId} />*/}
     </div>
   </div>;
