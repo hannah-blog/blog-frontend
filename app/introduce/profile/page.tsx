@@ -187,7 +187,7 @@ export default function Profile() {
                   <Typography variant="lead">What I did</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>사용자 경험 개선을 위한 쿼리 튜닝 5-6s -&gt; 0.1s / 페이지 로드 시간 7-8s -> 1-2s</li>
+                      <li>사용자 경험 개선을 위한 쿼리 튜닝 5-6s -&gt; 0.1s / 페이지 로드 시간 7-8s -&gt; 1-2s</li>
                       <li>일별 매출 현황(표) 가시성 개선을 위한 월별 매출 현황(그래프) 서비스 개발 - chart.js</li>
                       <li>주기적으로 요청오던 데이터 수집 업무를 최소화하기 위해 KSNET 정산 결제 데이터 조회 서비스 개발</li>
                       <li>서비스 리뉴얼 참여 - 할인 민박 순위 API, 팜케이션 작성을 위한 에디터(naver smart editor2) 적용</li>
