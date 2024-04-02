@@ -29,7 +29,7 @@ export default async function BlogDetail({
 			<ProgressBar/>
 			<div className={styles.titleText}>{post.title}</div>
 			<div className={styles.dateWrapper}>
-				<Typography>Created Date {dateKoFormat(post.createdDate)} {timeFormat(post.createdDate)}</Typography>
+				<Typography>{dateKoFormat(post.createdDate)} {timeFormat(post.createdDate)}</Typography>
 			</div>
 			<Image
 				className={styles.thumbnail}

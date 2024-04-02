@@ -46,6 +46,14 @@
   background: linear-gradient(to right, rgba(255, 255, 255, 0) 93%, #ffffff);
 }
 
+.plainTagList {
+  display: flex;
+  width: 72%;
+  overflow: hidden;
+  line-height: 1.5;
+  position: relative;
+}
+
 .span {
   font-weight: 700;
   font-size: .75rem;

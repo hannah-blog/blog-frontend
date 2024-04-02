@@ -6,6 +6,8 @@ import { CardBody, CardFooter, CardHeader, Chip } from '@/components/tailwind/cl
 import { dateFormat } from '@/components/utils/dateUtils'
 
 export default function Post({ post }: { post: PostType }) {
+  const tags = post.tags.map(tag => tag.name).join(' ');
+  const tagsStyle = tags.length > 19 ? styles.tagList : styles.plainTagList;
   return (
     <Link href={`/develop/blogs/${post.id}`}>
       <div className={styles.card}>
@@ -21,7 +23,7 @@ export default function Post({ post }: { post: PostType }) {
         </CardHeader>
         <CardBody className="text-center">{post.title}</CardBody>
         <CardFooter divider className={styles.tagWrapper}>
-          <div className={styles.tagList}>
+          <div className={tagsStyle}>
             {post.tags.map((tag, idx) => {
               return <Chip
                 size="md"
