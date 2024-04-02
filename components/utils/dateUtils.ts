@@ -1,7 +1,7 @@
 export const pad = (n: number) => { return n < 10 ? '0' + n : n }
 
 export const dateKoFormat = (date: string) => {
-	const dateObject = new Date(date);
+	const dateObject = getKstDate(date);
 	return `${dateObject.getFullYear()}년 ${dateObject.getMonth() + 1}월 ${dateObject.getDate()}일`
 }
 
@@ -13,6 +13,11 @@ export const dateFormat = (date: string) => {
 }
 
 export const timeFormat = (date: string) => {
-	const dateObject = new Date(date);
+	const dateObject = getKstDate(date);
 	return `${pad(dateObject.getHours())}:${pad(dateObject.getMinutes())}`
+}
+
+export const getKstDate = (date: string) => {
+	const dateObject = new Date(date);
+	return new Date(dateObject.getTime() + (9 * 60 * 60 * 1000));
 }
