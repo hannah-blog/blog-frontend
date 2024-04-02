@@ -424,7 +424,7 @@ export default function Profile() {
                         <Link className={styles.link} href="https://www.hannah-log.site/portfolios/11/">Education 프로젝트 발표 자료</Link>
                       </li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/develop/blog/10/">Spring Boot - 메일 인증 구현하기</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/develop/blogs/10/">Spring Boot - 메일 인증 구현하기</Link>
                       </li>
                     </ul>
                   </Typography>
