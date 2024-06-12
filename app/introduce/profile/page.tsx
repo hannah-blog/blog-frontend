@@ -47,14 +47,56 @@ export default function Profile() {
               저에게는 특이한 이력이 있습니다.
               저는 개발 일을 하기 전, 외식업 회사의 직원으로 들어가서 홍대에 있는 매장을 돌아다니며 근무를 했었습니다.
               홍대에 위치한 매장에서 근무하면서 다른 음식점을 방문하여 그들의 운영 시스템, 메뉴 구성, 분위기 등을 관찰하고 분석하여 매장 환경을 개선하고 매출을 증대시켰습니다.
-              <br />
+              <br/>
               이 경험을 통해 기술적인 측면에서의 장단점을 이해하고, 현실적인 문제를 해결하는 방법을 익혔습니다.
-              <br />
+              <br/>
               또한 시스템 개발 과정에서 사용자 경험을 개선하고, 실제 사용 환경에서 발생할 수 있는 문제를 예측하고 대비할 수 있습니다.
               다양한 관점에서의 문제 해결 능력을 갖추어 효율적인 솔루션을 제시할 수 있습니다.
             </span>
           </div>
           <Typography variant="h2">Career.</Typography>
+          <div className={`${styles.block} mt-6`}>
+            <div className={styles.predicate}>
+              <Timeline>
+                <TimelineItem className="pb-5">
+                  <TimelineConnector/>
+                  <TimelineHeader className="h-3">
+                    <TimelineIcon/>
+                    <Typography variant="h4">Buybly</Typography>
+                  </TimelineHeader>
+                  <TimelineBody className="m-2">
+                    <Typography variant="lead">Description</Typography>
+                    <Typography>
+                      <ul className={styles.list}>
+                        <li>글로벌 오픈마켓 서비스입니다.</li>
+                      </ul>
+                    </Typography>
+                    <Typography variant="lead">What I did</Typography>
+                    <Typography>
+                      <ul className={styles.list}>
+                        <li>NestJS 프로젝트 구조 설계</li>
+                        <li>NestJS API 개발</li>
+                      </ul>
+                    </Typography>
+                    <Typography variant="lead">Stack</Typography>
+                    <div className={styles.chipBox}>
+                      <Chip variant="outlined" size="sm" value="TypeScript"/>
+                      <Chip variant="outlined" size="sm" value="NestJS"/>
+                      <Chip variant="outlined" size="sm" value="MariaDB"/>
+                      <Chip variant="outlined" size="sm" value="AWS"/>
+                      <Chip variant="outlined" size="sm" value="S3"/>
+                    </div>
+                  </TimelineBody>
+                </TimelineItem>
+              </Timeline>
+            </div>
+            <div>
+              <Typography variant="h4">(주) 레인디어스</Typography>
+              <Typography variant="h6">Backend Developer</Typography>
+              <Typography variant="h6">2024.05 ~ 현재</Typography>
+            </div>
+          </div>
+          <hr className="my-8 border-blue-gray-50"/>
           <div className={`${styles.block} mt-3`}>
             <div className={styles.predicate}>
               <Timeline>
@@ -75,13 +117,15 @@ export default function Profile() {
                     <Typography>
                       <ul className={styles.list}>
                         <li>
-                          <Link className={styles.link} href="https://www.notion.so/log-hannah/NestJS-5c2534cc77664698b30a70199d92417c">
+                          <Link className={styles.link}
+                                href="https://www.notion.so/log-hannah/NestJS-5c2534cc77664698b30a70199d92417c">
                             NestJS 학습 및 휴리스틱 공유
                           </Link>
                         </li>
                         <li>NestJS API 개발 (인증, 마이그레이션 등)</li>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/1">기술 스택 조사 및 선정 (Spring boot)</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/1">기술 스택 조사 및 선정
+                            (Spring boot)</Link>
                           {/*<div onClick={ () => {*/}
                           {/*  handleOpen();*/}
                           {/*  handlePortfolioId(1);*/}
@@ -94,16 +138,20 @@ export default function Profile() {
                     <Typography>
                       <ul className={styles.list}>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/2">Spring Package 구조 설계</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/2">Spring Package
+                            구조 설계</Link>
                         </li>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/3">Java Exception 가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/3">Java Exception
+                            가이드 작성 및 프로젝트 내부의 공통 Exception 구조 개발</Link>
                         </li>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/4">HTTP 응답 형태 설계 및 프로젝트 내부의 API Response 공통 처리기 개발</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/4">HTTP 응답 형태 설계 및
+                            프로젝트 내부의 API Response 공통 처리기 개발</Link>
                         </li>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/5">Spring 테스트 가이드 작성 및 공통된 테스트 환경 구축</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/5">Spring 테스트 가이드
+                            작성 및 공통된 테스트 환경 구축</Link>
                         </li>
                         <li>코드 리뷰 문화를 꾸리기 위한 Gitlab Merge Request Template 적용</li>
                         <li>Spring DB 마이그레이션 flyway 적용</li>
@@ -111,12 +159,12 @@ export default function Profile() {
                     </Typography>
                     <Typography variant="lead">Stack</Typography>
                     <div className={styles.chipBox}>
-                      <Chip variant="outlined" size="sm" value="TypeScript" />
-                      <Chip variant="outlined" size="sm" value="NestJS" />
-                      <Chip variant="outlined" size="sm" value="Java 17" />
-                      <Chip variant="outlined" size="sm" value="Spring Boot 3" />
-                      <Chip variant="outlined" size="sm" value="MySQL" />
-                      <Chip variant="outlined" size="sm" value="Docker" />
+                      <Chip variant="outlined" size="sm" value="TypeScript"/>
+                      <Chip variant="outlined" size="sm" value="NestJS"/>
+                      <Chip variant="outlined" size="sm" value="Java 17"/>
+                      <Chip variant="outlined" size="sm" value="Spring Boot 3"/>
+                      <Chip variant="outlined" size="sm" value="MySQL"/>
+                      <Chip variant="outlined" size="sm" value="Docker"/>
                     </div>
                   </TimelineBody>
                 </TimelineItem>
@@ -131,7 +179,8 @@ export default function Profile() {
                     <Typography>
                       <ul className={styles.list}>
                         <li>
-                          <Link className={styles.link} href="https://www.nalbang.tv/">Live-Commerce 플랫폼입니다.</Link> 신규 기능 개발, 유지보수 업무를 담당하였습니다.
+                          <Link className={styles.link} href="https://www.nalbang.tv/">Live-Commerce 플랫폼입니다.</Link> 신규
+                          기능 개발, 유지보수 업무를 담당하였습니다.
                         </li>
                       </ul>
                     </Typography>
@@ -139,23 +188,29 @@ export default function Profile() {
                     <Typography>
                       <ul className={styles.list}>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/6">Youtube 동시 송출 서비스 개발</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/6">Youtube 동시 송출
+                            서비스 개발</Link>
                         </li>
                         <li>비디오 트랜스코딩 작업 개발 (가변 비트레이트)</li>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/7">날방 Open API 개발</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/7">날방 Open API
+                            개발</Link>
                         </li>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/8">방문자 통계(성별, 나이) 서비스 개발</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/8">방문자 통계(성별, 나이)
+                            서비스 개발</Link>
                         </li>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/9">경매 서비스 시스템 구축 및 개발</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/9">경매 서비스 시스템 구축 및
+                            개발</Link>
                         </li>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/12/">레거시 short url 프로젝트 스팩 개선 및 구조, 프로세스 재설계</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/12/">레거시 short url
+                            프로젝트 스팩 개선 및 구조, 프로세스 재설계</Link>
                         </li>
                         <li>
-                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/13/">레거시 프로젝트 이미지 기능 - 테스트 서버, 실서버의 분리</Link>
+                          <Link className={styles.link} href="https://www.hannah-log.site/portfolios/13/">레거시 프로젝트 이미지
+                            기능 - 테스트 서버, 실서버의 분리</Link>
                         </li>
                         <li>입점 신청 Discord WebHook</li>
                         <li>AntMedia 송출 서버 구축</li>
@@ -163,12 +218,12 @@ export default function Profile() {
                     </Typography>
                     <Typography variant="lead">Stack</Typography>
                     <div className={styles.chipBox}>
-                      <Chip variant="outlined" size="sm" value="Java 11" />
-                      <Chip variant="outlined" size="sm" value="Spring Boot 2" />
-                      <Chip variant="outlined" size="sm" value="MariaDB" />
-                      <Chip variant="outlined" size="sm" value="Redis" />
-                      <Chip variant="outlined" size="sm" value="Socket.io" />
-                      <Chip variant="outlined" size="sm" value="Docker" />
+                      <Chip variant="outlined" size="sm" value="Java 11"/>
+                      <Chip variant="outlined" size="sm" value="Spring Boot 2"/>
+                      <Chip variant="outlined" size="sm" value="MariaDB"/>
+                      <Chip variant="outlined" size="sm" value="Redis"/>
+                      <Chip variant="outlined" size="sm" value="Socket.io"/>
+                      <Chip variant="outlined" size="sm" value="Docker"/>
                     </div>
                   </TimelineBody>
                 </TimelineItem>
@@ -183,7 +238,8 @@ export default function Profile() {
                     <Typography>
                       <ul className={styles.list}>
                         <li>
-                          <Link className={styles.link} href="https://www.g-justgo.com/">강원도 숙박 서비스앱입니다.</Link> 주로 반복 작업을 최소화 시키는 작업이나 리뉴얼 개발 참여, 유지보수 업무를 담당하였습니다.
+                          <Link className={styles.link} href="https://www.g-justgo.com/">강원도 숙박 서비스앱입니다.</Link> 주로 반복
+                          작업을 최소화 시키는 작업이나 리뉴얼 개발 참여, 유지보수 업무를 담당하였습니다.
                         </li>
                       </ul>
                     </Typography>
@@ -198,11 +254,11 @@ export default function Profile() {
                     </Typography>
                     <Typography variant="lead">Stack</Typography>
                     <div className={styles.chipBox}>
-                      <Chip variant="outlined" size="sm" value="Java 11" />
-                      <Chip variant="outlined" size="sm" value="Spring Boot 2" />
-                      <Chip variant="outlined" size="sm" value="MariaDB" />
-                      <Chip variant="outlined" size="sm" value="Thymeleaf" />
-                      <Chip variant="outlined" size="sm" value="MyBatis" />
+                      <Chip variant="outlined" size="sm" value="Java 11"/>
+                      <Chip variant="outlined" size="sm" value="Spring Boot 2"/>
+                      <Chip variant="outlined" size="sm" value="MariaDB"/>
+                      <Chip variant="outlined" size="sm" value="Thymeleaf"/>
+                      <Chip variant="outlined" size="sm" value="MyBatis"/>
                     </div>
                   </TimelineBody>
                 </TimelineItem>
@@ -238,10 +294,10 @@ export default function Profile() {
             <div>
               <Typography variant="h4">(주) 커넥트웨이브</Typography>
               <Typography variant="h6">Backend Developer</Typography>
-              <Typography variant="h6">2022.01 ~ 현재</Typography>
+              <Typography variant="h6">2022.01 ~ 2024.04</Typography>
             </div>
           </div>
-          <hr className="my-8 border-blue-gray-50" />
+          <hr className="my-8 border-blue-gray-50"/>
           <div className={styles.block}>
             <div className={styles.predicate}>
               <Timeline>
@@ -267,12 +323,12 @@ export default function Profile() {
                     </Typography>
                     <Typography variant="lead">Stack</Typography>
                     <div className={styles.chipBox}>
-                      <Chip variant="outlined" size="sm" value="Spring Framework" />
-                      <Chip variant="outlined" size="sm" value="MyBatis" />
-                      <Chip variant="outlined" size="sm" value="EGov(전자정부프레임워크)" />
-                      <Chip variant="outlined" size="sm" value="SVN" />
-                      <Chip variant="outlined" size="sm" value="JSP" />
-                      <Chip variant="outlined" size="sm" value="JQuery" />
+                      <Chip variant="outlined" size="sm" value="Spring Framework"/>
+                      <Chip variant="outlined" size="sm" value="MyBatis"/>
+                      <Chip variant="outlined" size="sm" value="EGov(전자정부프레임워크)"/>
+                      <Chip variant="outlined" size="sm" value="SVN"/>
+                      <Chip variant="outlined" size="sm" value="JSP"/>
+                      <Chip variant="outlined" size="sm" value="JQuery"/>
                     </div>
                   </TimelineBody>
                 </TimelineItem>
@@ -298,12 +354,12 @@ export default function Profile() {
                     </Typography>
                     <Typography variant="lead">Stack</Typography>
                     <div className={styles.chipBox}>
-                      <Chip variant="outlined" size="sm" value="Spring Framework" />
-                      <Chip variant="outlined" size="sm" value="MyBatis" />
-                      <Chip variant="outlined" size="sm" value="EGov(전자정부프레임워크)" />
-                      <Chip variant="outlined" size="sm" value="SVN" />
-                      <Chip variant="outlined" size="sm" value="JSP" />
-                      <Chip variant="outlined" size="sm" value="JQuery" />
+                      <Chip variant="outlined" size="sm" value="Spring Framework"/>
+                      <Chip variant="outlined" size="sm" value="MyBatis"/>
+                      <Chip variant="outlined" size="sm" value="EGov(전자정부프레임워크)"/>
+                      <Chip variant="outlined" size="sm" value="SVN"/>
+                      <Chip variant="outlined" size="sm" value="JSP"/>
+                      <Chip variant="outlined" size="sm" value="JQuery"/>
                     </div>
                   </TimelineBody>
                 </TimelineItem>
@@ -317,7 +373,7 @@ export default function Profile() {
           </div>
         </div>
         <div className={styles.section}>
-          <Typography variant="h2">Side Project.</Typography>
+        <Typography variant="h2">Side Project.</Typography>
           <div className={`${styles.block} mt-3`}>
             <Timeline>
               <TimelineItem className="pb-5">
@@ -330,7 +386,9 @@ export default function Profile() {
                   <Typography variant="lead">Description</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li><Link className={styles.link} href="https://live-pulse.hannah-log.site/">Live Pulse</Link>는 WebSocket, WebRTC를 이용한 송출 서버 구성 및 HLS 재생 방송 플랫폼입니다.</li>
+                      <li><Link className={styles.link} href="https://live-pulse.hannah-log.site/">Live Pulse</Link>는
+                        WebSocket, WebRTC를 이용한 송출 서버 구성 및 HLS 재생 방송 플랫폼입니다.
+                      </li>
                       <li>날방 프로젝트를 하며 배웠던 점을 녹여내고 날방에서 경험한 것을 완전히 제 기술을 만들기 위한 프로젝트입니다.</li>
                     </ul>
                   </Typography>
@@ -349,21 +407,26 @@ export default function Profile() {
                   <Typography>
                     <ul className={styles.list}>
                       <li>
-                        <Link className={styles.link} href="https://live-pulse.hannah-log.site/">https://live-pulse.hannah-log.site</Link>
+                        <Link className={styles.link}
+                              href="https://live-pulse.hannah-log.site/">https://live-pulse.hannah-log.site</Link>
                       </li>
                       <li>GitHib</li>
                       <li className={styles.inline}>
-                        Frontend Service - <Link className={styles.link} href="https://github.com/live-pulse/user-front">https://github.com/live-pulse/user-front</Link>
+                        Frontend Service - <Link className={styles.link}
+                                                 href="https://github.com/live-pulse/user-front">https://github.com/live-pulse/user-front</Link>
                       </li>
                       <li className={styles.inline}>
-                        Backend & Socket Service - <Link className={styles.link} href="https://github.com/live-pulse/nestjs-api">https://github.com/live-pulse/nestjs-api</Link>
+                        Backend & Socket Service - <Link className={styles.link}
+                                                         href="https://github.com/live-pulse/nestjs-api">https://github.com/live-pulse/nestjs-api</Link>
                       </li>
                       <li className={styles.inline}>
-                        Image Service - <Link className={styles.link} href="https://github.com/live-pulse/image-server-api">https://github.com/live-pulse/image-server-api</Link>
+                        Image Service - <Link className={styles.link}
+                                              href="https://github.com/live-pulse/image-server-api">https://github.com/live-pulse/image-server-api</Link>
                       </li>
                       <li>Blog</li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/10">LivePulse 발표 자료</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/10">LivePulse 발표
+                          자료</Link>
                       </li>
                       {/*<li className={styles.inline}>*/}
                       {/*  <Link className={styles.link} href="https://www.hannah-log.site/blog/1">개인 서버로 CDN 서버 구축하기</Link>*/}
@@ -375,14 +438,14 @@ export default function Profile() {
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
                   <div className={styles.chipBox}>
-                    <Chip variant="outlined" size="sm" value="Kotlin" />
-                    <Chip variant="outlined" size="sm" value="Spring Boot 3" />
-                    <Chip variant="outlined" size="sm" value="TypeScript" />
-                    <Chip variant="outlined" size="sm" value="NestJS" />
-                    <Chip variant="outlined" size="sm" value="Docker" />
-                    <Chip variant="outlined" size="sm" value="Github Actions" />
-                    <Chip variant="outlined" size="sm" value="NextJS" />
-                    <Chip variant="outlined" size="sm" value="his.js" />
+                    <Chip variant="outlined" size="sm" value="Kotlin"/>
+                    <Chip variant="outlined" size="sm" value="Spring Boot 3"/>
+                    <Chip variant="outlined" size="sm" value="TypeScript"/>
+                    <Chip variant="outlined" size="sm" value="NestJS"/>
+                    <Chip variant="outlined" size="sm" value="Docker"/>
+                    <Chip variant="outlined" size="sm" value="Github Actions"/>
+                    <Chip variant="outlined" size="sm" value="NextJS"/>
+                    <Chip variant="outlined" size="sm" value="his.js"/>
                   </div>
                 </TimelineBody>
               </TimelineItem>
@@ -396,7 +459,9 @@ export default function Profile() {
                   <Typography variant="lead">Description</Typography>
                   <Typography>
                     <ul className={styles.list}>
-                      <li>유명한 강의 플랫폼인 인프런은 동영상 위주로 강의를 수강합니다. 인프런에서 강의를 보다가 다른 블로그나 문서처럼 글로 설명된 형식의 강의가 있었으면 좋겠다라는 생각이 들어서 프로젝트를 진행하게 되었습니다.</li>
+                      <li>유명한 강의 플랫폼인 인프런은 동영상 위주로 강의를 수강합니다. 인프런에서 강의를 보다가 다른 블로그나 문서처럼 글로 설명된 형식의 강의가 있었으면 좋겠다라는 생각이
+                        들어서 프로젝트를 진행하게 되었습니다.
+                      </li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">What I did</Typography>
@@ -411,32 +476,37 @@ export default function Profile() {
                     <ul className={styles.list}>
                       <li>GitHib</li>
                       <li className={styles.inline}>
-                        Backend - <Link className={styles.link} href="https://github.com/works-hook/hannah-education-backend">https://github.com/works-hook/hannah-education-backend</Link>
+                        Backend - <Link className={styles.link}
+                                        href="https://github.com/works-hook/hannah-education-backend">https://github.com/works-hook/hannah-education-backend</Link>
                       </li>
                       <li className={styles.inline}>
-                        Student Front - <Link className={styles.link} href="https://github.com/works-hook/hannah-education-user-front">https://github.com/works-hook/hannah-education-user-front</Link>
+                        Student Front - <Link className={styles.link}
+                                              href="https://github.com/works-hook/hannah-education-user-front">https://github.com/works-hook/hannah-education-user-front</Link>
                       </li>
                       <li className={styles.inline}>
-                        Teacher Front - <Link className={styles.link} href="https://github.com/works-hook/hannah-education-admin-front">https://github.com/works-hook/hannah-education-admin-front</Link>
+                        Teacher Front - <Link className={styles.link}
+                                              href="https://github.com/works-hook/hannah-education-admin-front">https://github.com/works-hook/hannah-education-admin-front</Link>
                       </li>
                       <li>Blog</li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/11/">Education 프로젝트 발표 자료</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/portfolios/11/">Education 프로젝트
+                          발표 자료</Link>
                       </li>
                       <li className={styles.inline}>
-                        <Link className={styles.link} href="https://www.hannah-log.site/develop/blogs/10/">Spring Boot - 메일 인증 구현하기</Link>
+                        <Link className={styles.link} href="https://www.hannah-log.site/develop/blogs/10/">Spring Boot -
+                          메일 인증 구현하기</Link>
                       </li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
                   <div className={styles.chipBox}>
-                    <Chip variant="outlined" size="sm" value="Kotlin" />
-                    <Chip variant="outlined" size="sm" value="Spring Boot 3" />
-                    <Chip variant="outlined" size="sm" value="Spring Data JPA" />
-                    <Chip variant="outlined" size="sm" value="QueryDSL" />
-                    <Chip variant="outlined" size="sm" value="AWS S3" />
-                    <Chip variant="outlined" size="sm" value="AWS EC2" />
-                    <Chip variant="outlined" size="sm" value="React 16" />
+                    <Chip variant="outlined" size="sm" value="Kotlin"/>
+                    <Chip variant="outlined" size="sm" value="Spring Boot 3"/>
+                    <Chip variant="outlined" size="sm" value="Spring Data JPA"/>
+                    <Chip variant="outlined" size="sm" value="QueryDSL"/>
+                    <Chip variant="outlined" size="sm" value="AWS S3"/>
+                    <Chip variant="outlined" size="sm" value="AWS EC2"/>
+                    <Chip variant="outlined" size="sm" value="React 16"/>
                   </div>
                 </TimelineBody>
               </TimelineItem>
@@ -465,25 +535,27 @@ export default function Profile() {
                     <ul className={styles.list}>
                       <li>GitHib</li>
                       <li className={styles.inline}>
-                        Discord - <Link className={styles.link} href="https://github.com/works-hook/discord-stock-bot">https://github.com/works-hook/discord-stock-bot</Link>
+                        Discord - <Link className={styles.link}
+                                        href="https://github.com/works-hook/discord-stock-bot">https://github.com/works-hook/discord-stock-bot</Link>
                       </li>
                       <li className={styles.inline}>
-                        Slack - <Link className={styles.link} href="https://github.com/works-hook/spring-works-hook">https://github.com/works-hook/spring-works-hook</Link>
+                        Slack - <Link className={styles.link}
+                                      href="https://github.com/works-hook/spring-works-hook">https://github.com/works-hook/spring-works-hook</Link>
                       </li>
                     </ul>
                   </Typography>
                   <Typography variant="lead">Stack</Typography>
                   <div className={styles.chipBox}>
-                    <Chip variant="outlined" size="sm" value="Kotlin" />
-                    <Chip variant="outlined" size="sm" value="Spring Boot" />
-                    <Chip variant="outlined" size="sm" value="JDA" />
+                    <Chip variant="outlined" size="sm" value="Kotlin"/>
+                    <Chip variant="outlined" size="sm" value="Spring Boot"/>
+                    <Chip variant="outlined" size="sm" value="JDA"/>
                   </div>
                 </TimelineBody>
               </TimelineItem>
             </Timeline>
           </div>
         </div>
-        <hr className="my-8 border-blue-gray-50" />
+        <hr className="my-8 border-blue-gray-50"/>
         <div className={styles.section}>
           <Typography variant="h2">Education.</Typography>
           <div className={`${styles.block} mt-3`}>
