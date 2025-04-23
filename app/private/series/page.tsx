@@ -1,9 +1,11 @@
-import styles from '@/styles/app/private/page.module.css'
-import Link from 'next/link'
+import styles from '@/styles/app/private/page.module.css';
+import Link from 'next/link';
 
-import { Table } from '@/components/utils/table'
-import { Button, Typography } from '@/components/tailwind/client-components'
-import { fetchSeries } from '@/api/caller'
+import { Table } from '@/components/utils/table';
+import { Button, Typography } from '@/components/tailwind/client-components';
+import { fetchSeries } from '@/api/caller';
+
+export const dynamic = 'force-dynamic';
 
 export default async function Series() {
 	const series = await fetchSeries();

@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import styles from '@/styles/app/private/page.module.css'
-import { useRouter } from 'next/navigation'
-import { ChangeEvent, useState } from 'react'
-import { fetchCreateTag } from '@/api/caller'
-import { Button, Typography } from '@/components/tailwind/client-components'
+import styles from '@/styles/app/private/page.module.css';
+import { useRouter } from 'next/navigation';
+import { ChangeEvent, useState } from 'react';
+import { fetchCreateTag } from '@/api/caller';
+import { Button, Typography } from '@/components/tailwind/client-components';
 
 export default function Tag() {
 	const router = useRouter();

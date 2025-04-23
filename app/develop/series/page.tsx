@@ -1,8 +1,8 @@
-import styles from '@/styles/app/blog/page.module.css'
-import Series from '@/components/series/series'
-import Link from 'next/link'
-import { formatMetadata } from '@/components/utils/meta-head'
-import { fetchSeries } from '@/api/caller'
+import styles from '@/styles/app/blog/page.module.css';
+import Series from '@/components/series/series';
+import Link from 'next/link';
+import { formatMetadata } from '@/components/utils/meta-head';
+import { fetchSeries } from '@/api/caller';
 
 export async function generateMetadata() {
 	return formatMetadata({
@@ -10,6 +10,8 @@ export async function generateMetadata() {
 		description: "Hannah Develop Series"
 	});
 }
+
+export const dynamic = 'force-dynamic';
 
 export default async function DevelopSeries() {
 	const series = await fetchSeries();

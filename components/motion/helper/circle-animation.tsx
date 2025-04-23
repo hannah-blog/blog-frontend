@@ -6,7 +6,7 @@ export default function CircleAnimation() {
 	return  <div className={styles.animationWrapper}>
 		{ Array.from({length: 10}).map((_, i) => {
 			const size = getRandomInt(20, 200);
-			return <>
+			return <div key={i}>
 				<Keyframes
 					name={`svg-animation-${i}`}
 					delay={`${getRandomInt(100, 200) / 100}s`}
@@ -23,7 +23,7 @@ export default function CircleAnimation() {
 				>
 					<Circle key={i} className={`svg-animation-${i}`} width={size} height={size} fill={getRandomColor()} />
 				</Tooltip>
-			</>;
+			</div>;
 		})}
 	</div>
 }

@@ -1,9 +1,11 @@
-import styles from '@/styles/app/private/page.module.css'
-import Link from 'next/link'
+import styles from '@/styles/app/private/page.module.css';
+import Link from 'next/link';
 
-import { fetchPortfolios } from '@/api/caller'
-import { Button, Typography } from '@/components/tailwind/client-components'
-import { Table } from '@/components/utils/table'
+import { fetchPortfolios } from '@/api/caller';
+import { Button, Typography } from '@/components/tailwind/client-components';
+import { Table } from '@/components/utils/table';
+
+export const dynamic = 'force-dynamic';
 
 export default async function Portfolio() {
 	const portfolios = await fetchPortfolios();

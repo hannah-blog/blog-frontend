@@ -1,21 +1,18 @@
-'use client'
+'use client';
 
-import styles from '@/styles/app/private/page.module.css'
-import MDEditor from '@uiw/react-md-editor'
-import { Button, Typography } from '@/components/tailwind/client-components'
-import { fetchBlog, fetchDeleteBlog, fetchTags, fetchUpdateBlog, Post, Tag } from '@/api/caller'
-import { useEffect, useState } from 'react'
-import { imageActions } from '@/api/fetch-formatter'
-import { useRouter } from 'next/navigation'
-import onImagePasted from '@/components/utils/on-image-pasted'
-import Image from 'next/image'
-import Load from '@/components/utils/load'
+import styles from '@/styles/app/private/page.module.css';
+import MDEditor from '@uiw/react-md-editor';
+import { Button, Typography } from '@/components/tailwind/client-components';
+import { fetchBlog, fetchDeleteBlog, fetchTags, fetchUpdateBlog, Post, Tag } from '@/api/caller';
+import { useEffect, useState } from 'react';
+import { imageActions } from '@/api/fetch-formatter';
+import { useParams, useRouter } from 'next/navigation';
+import onImagePasted from '@/components/utils/on-image-pasted';
+import Image from 'next/image';
+import Load from '@/components/utils/load';
 
-export default function BlogDetail({
-	 params: { id },
- }: {
-	params: { id: number }
-}) {
+export default function BlogDetail() {
+	const params = useParams<{ id: string }>();
 	const router = useRouter();
 
 	const [post, setPost] = useState<Post | null>(null);
@@ -31,18 +28,24 @@ export default function BlogDetail({
 	const deleteDefaultTags = (deleteTag: Tag) => setDefaultTags(defaultTags.filter(tag => tag !== deleteTag));
 
 	useEffect(() => {
-		fetchBlog(id).then((data) => {
+		const fetch = async () => {
+			if (!params || !params.id) return;
+			const data = await fetchBlog(+params.id);
 			setPost(data);
 			setTags(data.tags);
 			setContent(data.content);
-		});
+		}
+		fetch();
 	}, []);
 
 	useEffect(() => {
-		fetchTags().then((data) => {
+		const fetch = async () => {
+			if (!params || !params.id) return;
+			const data = await fetchTags();
 			const tag = tagCheck(data);
 			setDefaultTags(tag);
-		});
+		}
+		fetch();
 	}, [tags]);
 
 	const tagCheck = (data: Tag[]) => {

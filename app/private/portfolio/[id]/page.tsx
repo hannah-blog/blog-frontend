@@ -1,22 +1,18 @@
-'use client'
+'use client';
 
-import styles from '@/styles/app/private/page.module.css'
-import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
-import { fetchDeletePortfolio, fetchPortfolio, fetchUpdatePortfolio, Portfolio } from '@/api/caller'
-import { imageActions } from '@/api/fetch-formatter'
-import { Button, Typography } from '@/components/tailwind/client-components'
-import onImagePasted from '@/components/utils/on-image-pasted'
-import MDEditor from '@uiw/react-md-editor'
-import Image from 'next/image'
-import Load from '@/components/utils/load'
+import styles from '@/styles/app/private/page.module.css';
+import { useParams, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { fetchDeletePortfolio, fetchPortfolio, fetchUpdatePortfolio, Portfolio } from '@/api/caller';
+import { imageActions } from '@/api/fetch-formatter';
+import { Button, Typography } from '@/components/tailwind/client-components';
+import onImagePasted from '@/components/utils/on-image-pasted';
+import MDEditor from '@uiw/react-md-editor';
+import Image from 'next/image';
+import Load from '@/components/utils/load';
 
-export default function PortfolioDetail({
- params: { id },
-}: {
-	params: { id: number }
-}) {
-
+export default function PortfolioDetail() {
+	const params = useParams<{ id: string }>();
 	const router = useRouter();
 
 	const [portfolio, setPortfolio] = useState<Portfolio | null>(null);
@@ -24,10 +20,13 @@ export default function PortfolioDetail({
 	const [file, setFile] = useState<File | null>(null);
 
 	useEffect(() => {
-		fetchPortfolio(id).then((data) => {
+		const fetch = async () => {
+			if (!params || !params.id) return;
+			const data = await fetchPortfolio(+params.id);
 			setPortfolio(data);
 			setContent(data.content);
-		});
+		}
+		fetch();
 	}, []);
 
 	const uploadImage = async () => {

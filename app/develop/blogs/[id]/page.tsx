@@ -1,19 +1,17 @@
-import styles from '@/styles/app/blog/id/page.module.css'
-import Image from 'next/image'
-import ProgressBar from '@/components/motion/progress-bar'
-import Markdown from '@/components/utils/markdown'
-import HeadMeta from '@/components/utils/meta-head'
-import { Typography } from '@/components/tailwind/client-components'
-import { fetchBlog, Post } from '@/api/caller'
-import { dateKoFormat, timeFormat } from '@/components/utils/dateUtils'
-import { IdxBox, TagBox } from '@/components/post/index'
+import styles from '@/styles/app/blog/id/page.module.css';
+import Image from 'next/image';
+import ProgressBar from '@/components/motion/progress-bar';
+import Markdown from '@/components/utils/markdown';
+import HeadMeta from '@/components/utils/meta-head';
+import { Typography } from '@/components/tailwind/client-components';
+import { fetchBlog, Post } from '@/api/caller';
+import { dateKoFormat, timeFormat } from '@/components/utils/dateUtils';
+import { IdxBox, TagBox } from '@/components/post/index';
+import { IndexProps } from '@/types/index-type';
 
-export default async function BlogDetail({
-  params: { id },
-}: {
-	params: { id: number }
-}) {
-	const post: Post = await fetchBlog(id);
+export default async function BlogDetail(props: IndexProps) {
+	const params = await props.params;
+	const post: Post = await fetchBlog(params.id);
 
 	return <>
 		<HeadMeta
@@ -23,7 +21,7 @@ export default async function BlogDetail({
 			url={"/develop/blogs/" + post.id}
 			tags={post.tags.map(tag => tag.name)}
 		/>
-		<IdxBox id={id} content={post.content} url={"develop/blogs"} />
+		<IdxBox id={params.id} content={post.content} url={"develop/blogs"} />
 		<TagBox tags={post.tags} />
 		<div className={styles.blogWrapper}>
 			<ProgressBar/>

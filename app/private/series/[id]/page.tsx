@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
-import styles from '@/styles/app/private/page.module.css'
-import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
-import { imageActions } from '@/api/fetch-formatter'
+import styles from '@/styles/app/private/page.module.css';
+import { useParams, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { imageActions } from '@/api/fetch-formatter';
 import {
 	fetchBlogs,
 	fetchDeleteSeries,
@@ -11,16 +11,12 @@ import {
 	fetchUpdateSeries,
 	Post,
 	Series
-} from '@/api/caller'
-import { Button, Typography } from '@/components/tailwind/client-components'
-import Image from 'next/image'
+} from '@/api/caller';
+import { Button, Typography } from '@/components/tailwind/client-components';
+import Image from 'next/image';
 
-
-export default function SeriesDetail({
-	params: { id },
-}: {
-	params: { id: number }
-}) {
+export default function SeriesDetail() {
+	const params = useParams<{ id: string }>();
 	const router = useRouter();
 
 	const [series, setSeries] = useState<Series | null>(null);
@@ -87,17 +83,23 @@ export default function SeriesDetail({
 	}
 
 	useEffect(() => {
-		fetchSeriesById(id).then((data) => {
+		const fetch = async () => {
+			if (!params || !params.id) return;
+			const data = await fetchSeriesById(+params.id);
 			setSeries(data);
 			setBlogs(data.blogs);
-		});
+		}
+		fetch();
 	}, []);
 
 	useEffect(() => {
-		fetchBlogs().then((data) => {
-			const blogs = blogCheck(data);
-			setDefaultBlogs(blogs);
-		});
+		const fetch = async () => {
+			if (!params || !params.id) return;
+			const data = await fetchBlogs();
+			const blog = blogCheck(data);
+			setDefaultBlogs(blog);
+		}
+		fetch();
 	}, [blogs]);
 
 	return <>

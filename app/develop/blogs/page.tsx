@@ -1,7 +1,7 @@
-import styles from '@/styles/app/blog/page.module.css'
-import Post from '@/components/post/post'
-import { formatMetadata } from '@/components/utils/meta-head'
-import { fetchBlogs } from '@/api/caller'
+import styles from '@/styles/app/blog/page.module.css';
+import Post from '@/components/post/post';
+import { formatMetadata } from '@/components/utils/meta-head';
+import { fetchBlogs } from '@/api/caller';
 
 export async function generateMetadata() {
   return formatMetadata({
@@ -9,6 +9,8 @@ export async function generateMetadata() {
     description: "Hannah Develop Blog"
   });
 }
+
+export const dynamic = 'force-dynamic';
 
 export default async function Blog() {
   const posts = await fetchBlogs();

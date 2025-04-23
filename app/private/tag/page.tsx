@@ -1,14 +1,16 @@
-import styles from '@/styles/app/private/page.module.css'
-import Link from 'next/link'
+import styles from '@/styles/app/private/page.module.css';
+import Link from 'next/link';
 
-import { fetchTags } from '@/api/caller'
-import { Button, Card, Typography } from '@/components/tailwind/client-components'
-import { OnClickButton } from '@/app/private/tag/custom-button'
+import { fetchTags } from '@/api/caller';
+import { Button, Card, Typography } from '@/components/tailwind/client-components';
+import { OnClickButton } from '@/app/private/tag/custom-button';
 
-const cardClassName = "h-full w-full overflow-scroll"
-const tableClassName = "w-full min-w-max table-auto text-left"
-const thClassName = "border-b border-blue-gray-100 bg-blue-gray-50 p-4"
-const thTypographyClassName = "font-normal leading-none opacity-70"
+const cardClassName = 'h-full w-full overflow-scroll';
+const tableClassName = 'w-full min-w-max table-auto text-left';
+const thClassName = 'border-b border-blue-gray-100 bg-blue-gray-50 p-4';
+const thTypographyClassName = 'font-normal leading-none opacity-70';
+
+export const dynamic = 'force-dynamic';
 
 export default async function Tag() {
 	const tags = await fetchTags();

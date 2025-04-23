@@ -1,7 +1,7 @@
 import * as process from 'process'
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
-const imageBaseUrl = new URL(String(process.env.NEXT_PUBLIC_IMAGE_BASE_URL));
+const imageBaseUrl = String(process.env.NEXT_PUBLIC_IMAGE_BASE_URL);
 
 export enum HttpMethod {
 	GET = 'GET',
