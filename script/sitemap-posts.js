@@ -1,7 +1,6 @@
 import fs from 'fs';
 import prettier from 'prettier';
 
-const getDate = new Date().toISOString()
 const DOMAIN = 'https://www.hannah-log.site'
 
 const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
@@ -17,7 +16,7 @@ const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
       return `
         <url>
           <loc>${`${DOMAIN}/develop/blogs/${post.id}`}</loc>
-          <lastmod>${post.createdDate}</lastmod>
+          <lastmod>${post.updatedDate}</lastmod>
         </url>`
     })
     .join('')}
