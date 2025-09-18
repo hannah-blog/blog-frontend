@@ -3,7 +3,13 @@ import { globby } from 'globby';
 import fs from 'fs';
 import prettier from 'prettier';
 
-const getDate = new Date().toISOString();
+const today = new Date();
+
+const year = today.getFullYear();
+const month = (today.getMonth() + 1).toString().padStart(2, '0');
+const day = today.getDate().toString().padStart(2, '0');
+const dateString = year + '-' + month + '-' + day;
+
 const DOMAIN = 'https://www.hannah-log.site'
 
 const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
@@ -18,7 +24,7 @@ const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
       return `
           <sitemap>
             <loc>${`${DOMAIN}/${path}`}</loc>
-            <lastmod>${getDate}</lastmod>
+            <lastmod>${dateString}</lastmod>
           </sitemap>`;
     })
     .join('')}
