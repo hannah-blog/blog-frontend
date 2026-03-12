@@ -11,7 +11,7 @@ type IdxType = {
 export default function IdxBox({ content, id, url }: { content: string, id: number, url: string, }) {
 	const result = getIdxList(content);
 
-	return <div className={styles.idxWrapper}>
+	return <div className={`${styles.idxWrapper} hidden md:block`}>
 		{ result.length != 0 && <>
       <Typography variant="h6" color="gray">목차</Typography>
 			{ result.map((item, idx) => {
