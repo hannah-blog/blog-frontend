@@ -1,22 +1,35 @@
 .blogWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 1rem;
   min-height: 100vh;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .blogWrapper {
+    padding: 3rem 2rem;
+  }
 }
 
 .dateWrapper {
   display: flex;
   justify-content: flex-end;
-  width: 50%;
+  width: 100%;
 }
 
 .thumbnail {
   border-radius: 0.5rem;
-  width: 50%;
+  width: 100%;
   margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .thumbnail {
+    width: 50%;
+  }
 }
 
 .progressBarWrapper .progressBar {
@@ -34,18 +47,24 @@
   letter-spacing: 0;
   line-height: 1.25;
   font-weight: 600;
-  font-size: 3rem;
-  font-family: Roboto, sans-serif;
+  font-size: 2rem;
   display: block;
   margin-top: 2rem;
   color: rgb(26 35 126);
-  width: 800px;
+  width: 100%;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .titleText {
+    font-size: 3rem;
+  }
 }
 
 .postWrapper {
   margin-top: 3rem;
-  width: 50em;
+  width: 100%;
+  max-width: 50em;
 }
 
 .postWrapper ul, .postWrapper ol {
