@@ -1,106 +1,119 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import {
-  Avatar,
-  Collapse,
-  IconButton,
-  Menu,
-  MenuHandler,
-  MenuItem,
-  MenuList,
-  MTNavbar
-} from '@/components/tailwind/client-components'
-import styles from '@/styles/components/layout/navbar.module.css'
 import Link from 'next/link'
 import { navData } from '@/data/nav-data'
 import { menuCloseIcon, menuOpenIcon } from '@/components/svg/icons'
 import { logo } from '@/components/font/google'
+import styles from '@/styles/components/layout/navbar.module.css'
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const [hide, setHide] = useState(false);
-  const [pageY, setPageY] = useState(0);
-
-  const navbarItemClasses =
-    "flex items-center px-1 py-2 font-normal transition-all duration-250 text-size-sm text-current font-light lg:px-2 cursor-pointer";
+  const [open, setOpen] = useState(false)
+  const [hide, setHide] = useState(false)
+  const [pageY, setPageY] = useState(0)
+  const [openMenuIdx, setOpenMenuIdx] = useState<number | null>(null)
 
   const handleScroll = () => {
-    const {pageYOffset} = window;
-    const deltaY = pageYOffset - pageY;
-    const hide = pageYOffset !== 0 && deltaY >= 0;
-    setHide(hide);
-    setPageY(pageYOffset);
-  };
-  const throttleScroll = throttle(handleScroll, 50);
+    const { pageYOffset } = window
+    const deltaY = pageYOffset - pageY
+    setHide(pageYOffset !== 0 && deltaY >= 0)
+    setPageY(pageYOffset)
+  }
+
+  const throttleScroll = throttle(handleScroll, 50)
 
   useEffect(() => {
-    window.addEventListener('scroll', throttleScroll);
-    return () => window.removeEventListener('scroll', throttleScroll);
-  }, [pageY, throttleScroll]);
+    window.addEventListener('scroll', throttleScroll)
+    return () => window.removeEventListener('scroll', throttleScroll)
+  }, [pageY, throttleScroll])
 
-  const navbarMenu = <div className="flex w-full flex-col lg:flex-row xl:ml-40">
-    <ul
-      className={`${open ? "mt-4" : ""} mb-0 flex list-none flex-col gap-2 pl-0 text-inherit transition-all lg:ml-auto lg:flex-row lg:gap-4`}>
-      {navData.map((nav, index) => {
-        return <Menu placement="bottom" offset={-2.5} key={index}>
-          <MenuHandler>
-            <li>
-              <span className={navbarItemClasses}>
-                {nav.icon}
-                <span className="ml-2">{nav.mainTitle}</span>
-              </span>
-            </li>
-          </MenuHandler>
-          <MenuList>
-            {nav.children.map((cNav, index) => {
-              return <MenuItem className="!p-0" key={index}>
-                <Link href={`${nav.link}${cNav.cLink}`} className={`${navbarItemClasses} lg:px-3`}>
-                  {cNav.title}
-                </Link>
-              </MenuItem>;
-            })}
-          </MenuList>
-        </Menu>;
-      })}
-    </ul>
-  </div>;
+  const navItemClass = 'flex items-center px-3 py-2 text-sm font-medium text-slate-700 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer'
 
   return (
     <div className={styles.navWrapper}>
-      <MTNavbar className={`${hide && styles.hide} ${!hide && styles.false} py-4 pl-6 pr-2 lg:py-2.5 shadow-2xl shadow-blue-gray-500/10`}>
-        <div className={styles.webNav}>
-          <Link href="/" className="py-2.375 text-size-sm mr-4 whitespace-nowrap font-bold text-inherit lg:ml-0">
-            <div className={styles.profileImage}>
-              <Avatar alt="Hannah github profile image" src="https://avatars.githubusercontent.com/u/57277976?v=4"/>
-              <h1 style={logo.style}>Hannah Blog</h1>
-            </div>
+      <nav className={`${hide ? styles.hide : ''} w-full bg-white/90 backdrop-blur-sm border-b border-slate-200 shadow-sm px-4 lg:px-6 py-3 transition-transform duration-300`}>
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 shrink-0">
+            <img
+              alt="Hannah github profile image"
+              src="https://avatars.githubusercontent.com/u/57277976?v=4"
+              className="w-8 h-8 rounded-full object-cover"
+            />
+            <h1 style={logo.style} className="text-base font-bold text-slate-800 hidden sm:block">Hannah Blog</h1>
           </Link>
-          <IconButton
-            variant="text"
-            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-            ripple={false}
+
+          {/* Desktop menu */}
+          <ul className="hidden lg:flex items-center gap-1 ml-auto">
+            {navData.map((nav, idx) => (
+              <li key={idx} className="relative">
+                <button
+                  className={navItemClass}
+                  onClick={() => setOpenMenuIdx(openMenuIdx === idx ? null : idx)}
+                  onBlur={() => setTimeout(() => setOpenMenuIdx(null), 150)}
+                >
+                  {nav.icon}
+                  <span className="ml-2">{nav.mainTitle}</span>
+                </button>
+                {openMenuIdx === idx && (
+                  <div className="absolute right-0 top-full mt-1 min-w-max rounded-lg border border-slate-200 bg-white py-1 shadow-lg z-50">
+                    {nav.children.map((cNav, cIdx) => (
+                      <Link
+                        key={cIdx}
+                        href={`${nav.link}${cNav.cLink}`}
+                        className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50"
+                        onClick={() => setOpenMenuIdx(null)}
+                      >
+                        {cNav.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile hamburger */}
+          <button
+            className="lg:hidden p-1 rounded-lg hover:bg-slate-100 transition-colors"
             onClick={() => setOpen(!open)}
           >
             {open ? menuCloseIcon : menuOpenIcon}
-          </IconButton>
-          <div className={styles.menuWrapper}>{navbarMenu}</div>
+          </button>
         </div>
-        <Collapse open={open} className="text-[#1A237E]">
-          {navbarMenu}
-        </Collapse>
-      </MTNavbar>
+
+        {/* Mobile menu */}
+        <div className={`overflow-hidden transition-all duration-300 lg:hidden ${open ? 'max-h-screen opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
+          <ul className="flex flex-col gap-1 pb-2">
+            {navData.map((nav, idx) => (
+              <li key={idx}>
+                <div className="px-2 py-1 text-xs font-semibold text-slate-400 uppercase tracking-wider mt-2">{nav.mainTitle}</div>
+                {nav.children.map((cNav, cIdx) => (
+                  <Link
+                    key={cIdx}
+                    href={`${nav.link}${cNav.cLink}`}
+                    className="block px-3 py-2 text-sm text-slate-700 rounded-lg hover:bg-slate-100"
+                    onClick={() => setOpen(false)}
+                  >
+                    {cNav.title}
+                  </Link>
+                ))}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
     </div>
-  );
+  )
 }
 
-const throttle = (callback: any, waitTime: number) => {
-  let timerId: NodeJS.Timeout | null;
-  return (event: any) => {
-    if (timerId) return;
+const throttle = (callback: (...args: unknown[]) => void, waitTime: number) => {
+  let timerId: NodeJS.Timeout | null = null
+  return (...args: unknown[]) => {
+    if (timerId) return
     timerId = setTimeout(() => {
-      callback.call(this, event);
-      timerId = null;
-    }, waitTime);
-  };
-};
+      callback(...args)
+      timerId = null
+    }, waitTime)
+  }
+}
