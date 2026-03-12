@@ -51,8 +51,17 @@
 - `postcss.config.js` 업데이트 (`@tailwindcss/postcss` 플러그인)
 
 **@material-tailwind 제거**
+- `components/tailwind/client-components.tsx`: @material-tailwind 컴포넌트를 재export하는 배럴 파일. **26개 파일이 이 파일에 의존** → 이 파일을 순수 Tailwind 기반 컴포넌트로 교체하는 것이 MT 제거 작업의 핵심
+  - 교체 대상 컴포넌트: `Typography`, `Button`, `Card`, `Chip`, `Tooltip`, `Spinner`, `Input`, `Menu`, `Avatar`, `Collapse`, `ThemeProvider`, `Timeline*`, `Dialog*` 등
+- `app/layout.tsx`: `<ThemeProvider>` 제거 (앱 루트 래퍼)
+- `components/modal/portfolio-modal.tsx`: `Button`, `Dialog`, `DialogBody`, `DialogFooter`, `DialogHeader` 교체
+- `components/utils/load.tsx`: `Spinner` 교체
+- `components/utils/table.tsx`: `Card`, `Button`, `Typography` 교체
+- `components/utils/timer.tsx`: `Typography` 교체
+- `app/private/tag/custom-button.tsx`: 직접 import 교체
 - `Navbar.tsx`: Material Tailwind 컴포넌트 → 순수 Tailwind + 상태 관리로 재작성
 - `withMT` 래퍼 제거
+- **Tailwind v4 색상 주의**: 기존 `blue-gray-*` 클래스(@material-tailwind 기본 팔레트)는 v4에서 사라짐 → `slate-*`로 교체하거나 `@theme`에 직접 정의
 
 ## Phase 2 — 반응형 레이아웃
 
@@ -120,9 +129,17 @@
 - `app/globals.css`
 
 ### 레이아웃
-- `app/layout.tsx`
+- `app/layout.tsx` (ThemeProvider 제거 포함)
 - `components/layout/Navbar.tsx`
 - `components/layout/Footer.tsx`
+
+### @material-tailwind 제거 핵심
+- `components/tailwind/client-components.tsx` (배럴 파일 — 26개 파일 의존)
+- `components/modal/portfolio-modal.tsx`
+- `components/utils/load.tsx`
+- `components/utils/table.tsx`
+- `components/utils/timer.tsx`
+- `app/private/tag/custom-button.tsx`
 
 ### 페이지 (params async 처리)
 - `app/develop/blogs/[id]/page.tsx`
@@ -144,11 +161,21 @@
 - `components/post/side/idx-box.tsx`
 - `components/post/side/tag-box.tsx`
 - `components/utils/pagination.tsx`
+- `components/motion/progress-bar.tsx` (framer-motion → motion import 변경)
+
+### 스코프 외 (MT 제거만 필요, 반응형 불필요)
+- `app/private/blog/page.tsx`
+- `app/private/series/page.tsx`
+- `app/private/portfolio/page.tsx`
+- `app/private/tag/page.tsx`
+- `app/private/page.tsx`
+- `pages/404.tsx` (Pages Router 파일 — Next.js 15 호환성 확인 필요)
 
 ## Success Criteria
 
 - [ ] `npm run build` 에러 없음
 - [ ] 768px(태블릿) 뷰포트에서 레이아웃 깨짐 없음
 - [ ] 1280px(데스크탑) 뷰포트에서 기존 디자인 유지
-- [ ] @material-tailwind 의존성 없음
+- [ ] `@material-tailwind` 의존성 없음 (`package.json` + 모든 `.tsx` import 없음)
 - [ ] Next.js 15 dynamic params 모두 async 처리
+- [ ] `blue-gray-*` 클래스 없음 (v4에서 제거됨)
