@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from 'react'
 // ── Typography ──────────────────────────────────────────────────────────────
 
 type TypographyVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'lead' | 'paragraph' | 'small'
-type TypographyColor = 'inherit' | 'current' | 'indigo' | 'blue-gray' | 'red' | 'white'
+type TypographyColor = 'inherit' | 'current' | 'indigo' | 'blue-gray' | 'red' | 'white' | 'gray'
 
 const variantTag: Record<TypographyVariant, keyof React.JSX.IntrinsicElements> = {
   h1: 'h1', h2: 'h2', h3: 'h3', h4: 'h4', h5: 'h5', h6: 'h6',
@@ -29,6 +29,7 @@ const colorClass: Record<TypographyColor, string> = {
   'blue-gray': 'text-slate-700',
   red: 'text-red-600',
   white: 'text-white',
+  gray: 'text-slate-500',
 }
 
 interface TypographyProps extends React.HTMLAttributes<HTMLElement> {
@@ -71,17 +72,19 @@ export function IconButton({ variant: _variant, ripple: _ripple, className = '',
 
 // ── Card ─────────────────────────────────────────────────────────────────────
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {}
-export function Card({ className = '', children, ...props }: CardProps) {
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> { shadow?: boolean }
+export function Card({ className = '', shadow: _shadow, children, ...props }: CardProps) {
   return <div className={`rounded-xl border border-slate-200 bg-white shadow-sm ${className}`} {...props}>{children}</div>
 }
-export function CardHeader({ className = '', children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> { floated?: boolean; shadow?: boolean; color?: string }
+export function CardHeader({ className = '', floated: _f, shadow: _s, color: _c, children, ...props }: CardHeaderProps) {
   return <div className={`p-4 border-b border-slate-200 ${className}`} {...props}>{children}</div>
 }
 export function CardBody({ className = '', children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return <div className={`p-4 ${className}`} {...props}>{children}</div>
 }
-export function CardFooter({ className = '', children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+interface CardFooterProps extends React.HTMLAttributes<HTMLDivElement> { divider?: boolean }
+export function CardFooter({ className = '', divider: _d, children, ...props }: CardFooterProps) {
   return <div className={`p-4 border-t border-slate-200 ${className}`} {...props}>{children}</div>
 }
 
@@ -91,8 +94,9 @@ interface ChipProps extends React.HTMLAttributes<HTMLSpanElement> {
   value?: string
   variant?: 'filled' | 'outlined'
   size?: 'sm' | 'md'
+  color?: string
 }
-export function Chip({ value, variant = 'filled', size = 'md', className = '', children, ...props }: ChipProps) {
+export function Chip({ value, variant = 'filled', size = 'md', color: _color, className = '', children, ...props }: ChipProps) {
   const sizeClass = { sm: 'px-2 py-0.5 text-xs', md: 'px-3 py-1 text-sm' }[size]
   const variantClass = variant === 'outlined'
     ? 'border border-slate-400 text-slate-600 bg-transparent'
@@ -145,7 +149,12 @@ export function Menu({ children }: MenuProps) {
 }
 export function MenuHandler({ children }: { children: React.ReactElement }) {
   const { setOpen, open } = React.useContext(MenuContext)
-  return React.cloneElement(children, { onClick: () => setOpen(!open) })
+  return React.cloneElement(children, {
+    onClick: (e: React.MouseEvent) => {
+      children.props.onClick?.(e)
+      setOpen(!open)
+    },
+  })
 }
 export function MenuList({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const { open } = React.useContext(MenuContext)
