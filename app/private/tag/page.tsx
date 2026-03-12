@@ -7,7 +7,7 @@ import { OnClickButton } from '@/app/private/tag/custom-button'
 
 const cardClassName = "h-full w-full overflow-scroll"
 const tableClassName = "w-full min-w-max table-auto text-left"
-const thClassName = "border-b border-blue-gray-100 bg-blue-gray-50 p-4"
+const thClassName = "border-b border-slate-100 bg-slate-50 p-4"
 const thTypographyClassName = "font-normal leading-none opacity-70"
 
 export default async function Tag() {
@@ -22,17 +22,17 @@ export default async function Tag() {
 			<table className={tableClassName}>
 				<thead>
 				<th className={thClassName}>
-					<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
+					<Typography variant="small" className={`text-slate-600 ${thTypographyClassName}`}>
 						No.
 					</Typography>
 				</th>
 				<th className={thClassName}>
-					<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
+					<Typography variant="small" className={`text-slate-600 ${thTypographyClassName}`}>
 						Title
 					</Typography>
 				</th>
 				<th className={thClassName}>
-					<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
+					<Typography variant="small" className={`text-slate-600 ${thTypographyClassName}`}>
 						Delete
 					</Typography>
 				</th>
@@ -42,12 +42,12 @@ export default async function Tag() {
 					? tags.map((it, index) => {
 						return <tr key={index}>
 							<td>
-								<Typography variant="small" color="blue-gray" className="font-normal">
+								<Typography variant="small" className="text-slate-600" className="font-normal">
 									{it.id}
 								</Typography>
 							</td>
 							<td>
-								<Typography variant="small" color="blue-gray" className="font-normal">
+								<Typography variant="small" className="text-slate-600" className="font-normal">
 									{it.name}
 								</Typography>
 							</td>
