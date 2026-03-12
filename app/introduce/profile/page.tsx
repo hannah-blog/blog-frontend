@@ -21,9 +21,9 @@ export default function Profile() {
 
   return <>
     <HeadMeta title="Resume" description="프로필 페이지입니다." />
-    <div className={styles.mainWrapper}>
+    <div className="w-full">
       <ProgressBar />
-      <div className={`${styles.subWrapper} ${styles.indexing}`}>
+      <div className={`max-w-4xl w-full mx-auto px-4 py-12 md:px-8 md:py-20 ${styles.indexing}`}>
         <div className={styles.section}>
           <Typography variant="h1">반갑습니다, 저는 홍채민입니다.</Typography>
           <ul className={styles.list}>
@@ -55,8 +55,8 @@ export default function Profile() {
             </span>
           </div>
           <Typography variant="h2">Career.</Typography>
-          <div className={`${styles.block} mt-6`}>
-            <div className={styles.predicate}>
+          <div className="flex flex-col lg:flex-row gap-8 mt-6">
+            <div className="w-full lg:w-3/4">
               <Timeline>
                 <TimelineItem className="pb-5">
                   <TimelineConnector/>
@@ -97,8 +97,8 @@ export default function Profile() {
             </div>
           </div>
           <hr className="my-8 border-slate-100"/>
-          <div className={`${styles.block} mt-3`}>
-            <div className={styles.predicate}>
+          <div className="flex flex-col lg:flex-row gap-8 mt-3">
+            <div className="w-full lg:w-3/4">
               <Timeline>
                 <TimelineItem className="pb-5">
                   <TimelineConnector/>
@@ -298,8 +298,8 @@ export default function Profile() {
             </div>
           </div>
           <hr className="my-8 border-slate-100"/>
-          <div className={styles.block}>
-            <div className={styles.predicate}>
+          <div className="flex flex-col lg:flex-row gap-8">
+            <div className="w-full lg:w-3/4">
               <Timeline>
                 <TimelineItem className="pb-5">
                   <TimelineConnector/>
@@ -374,7 +374,7 @@ export default function Profile() {
         </div>
         <div className={styles.section}>
         <Typography variant="h2">Side Project.</Typography>
-          <div className={`${styles.block} mt-3`}>
+          <div className="flex flex-col lg:flex-row gap-8 mt-3">
             <Timeline>
               <TimelineItem className="pb-5">
                 <TimelineConnector/>
@@ -558,8 +558,8 @@ export default function Profile() {
         <hr className="my-8 border-slate-100"/>
         <div className={styles.section}>
           <Typography variant="h2">Education.</Typography>
-          <div className={`${styles.block} mt-3`}>
-            <div className={styles.predicate}>
+          <div className="flex flex-col lg:flex-row gap-8 mt-3">
+            <div className="w-full lg:w-3/4">
               <Timeline>
                 <TimelineItem className="pb-5">
                   <TimelineConnector/>
@@ -592,15 +592,15 @@ export default function Profile() {
         <hr className="my-8 border-slate-100" />
         <div className={styles.section}>
           <Typography variant="h2">Contact.</Typography>
-          <div className={styles.sideBlock}>
+          <div className="flex flex-col md:flex-row gap-8 items-start">
             <Image
-              className={`${styles.img} rounded-full object-cover object-center shadow-xl shadow-slate-900/50`}
+              className="rounded-full object-cover object-center shadow-xl shadow-slate-900/50 w-40 h-40 md:w-64 md:h-64"
               src="https://cdn.hannah-log.site/cdn/blog/profile.png"
               width={260}
               height={260}
               alt="profile"
             />
-            <div className={styles.predicate}>
+            <div className="w-full lg:w-3/4">
               <Typography variant="lead" className="p-1">Name. 홍채민</Typography>
               <Typography variant="lead" className="p-1">Brith. 2003.03.29</Typography>
               <Typography variant="lead" className="p-1">H.P. 010-6667-4359</Typography>
