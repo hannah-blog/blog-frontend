@@ -13,23 +13,21 @@ export default function Pagination({ total, limit, page, setPage }: pageInfo) {
   const numPages = Math.ceil(total / limit);
 
   return <div className={styles.paginationWrapper}>
-    <Button color="blue-gray" variant="text" disabled={ page === 1 } onClick={() => setPage(page - 1)}>
+    <Button variant="text" className="text-slate-600" disabled={page === 1} onClick={() => setPage(page - 1)}>
       &lt; Previous
     </Button>
     <div className="flex items-center gap-2">
-      { Array.from({length: numPages}).map((_, i) => (
+      {Array.from({length: numPages}).map((_, i) => (
         <IconButton
-          color={ page === i + 1 ? "deep-purple" : "blue-gray"}
-          variant={ page === i + 1 ? "filled" : "text"}
           key={i}
           onClick={() => setPage(i + 1)}
-          className="rounded-full"
+          className={`rounded-full ${page === i + 1 ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}
         >
-          { i + 1 }
+          {i + 1}
         </IconButton>
       ))}
     </div>
-    <Button color="blue-gray" variant="text" disabled={ page === numPages } onClick={() => setPage(page + 1)}>
+    <Button variant="text" className="text-slate-600" disabled={page === numPages} onClick={() => setPage(page + 1)}>
       Next &gt;
     </Button>
   </div>;

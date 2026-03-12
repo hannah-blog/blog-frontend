@@ -96,7 +96,7 @@ export default function Profile() {
               <Typography variant="h6">2024.05 ~ 현재</Typography>
             </div>
           </div>
-          <hr className="my-8 border-blue-gray-50"/>
+          <hr className="my-8 border-slate-100"/>
           <div className={`${styles.block} mt-3`}>
             <div className={styles.predicate}>
               <Timeline>
@@ -297,7 +297,7 @@ export default function Profile() {
               <Typography variant="h6">2022.01 ~ 2024.04</Typography>
             </div>
           </div>
-          <hr className="my-8 border-blue-gray-50"/>
+          <hr className="my-8 border-slate-100"/>
           <div className={styles.block}>
             <div className={styles.predicate}>
               <Timeline>
@@ -555,7 +555,7 @@ export default function Profile() {
             </Timeline>
           </div>
         </div>
-        <hr className="my-8 border-blue-gray-50"/>
+        <hr className="my-8 border-slate-100"/>
         <div className={styles.section}>
           <Typography variant="h2">Education.</Typography>
           <div className={`${styles.block} mt-3`}>
@@ -589,12 +589,12 @@ export default function Profile() {
             </div>
           </div>
         </div>
-        <hr className="my-8 border-blue-gray-50" />
+        <hr className="my-8 border-slate-100" />
         <div className={styles.section}>
           <Typography variant="h2">Contact.</Typography>
           <div className={styles.sideBlock}>
             <Image
-              className={`${styles.img} rounded-full object-cover object-center shadow-xl shadow-blue-gray-900/50`}
+              className={`${styles.img} rounded-full object-cover object-center shadow-xl shadow-slate-900/50`}
               src="https://cdn.hannah-log.site/cdn/blog/profile.png"
               width={260}
               height={260}
@@ -611,7 +611,7 @@ export default function Profile() {
             </div>
           </div>
         </div>
-        <hr className="my-8 border-blue-gray-50"/>
+        <hr className="my-8 border-slate-100"/>
         <Typography>
           자세한 포트폴리오는 <Link className={styles.link} href={"https://www.hannah-log.site/introduce/profile"}>여기 (https://www.hannah-log.site/introduce/profile)</Link>에서 확인해주세요.
         </Typography>

@@ -1,7 +1,7 @@
 'use client'
 
 import { fetchDeleteTag } from '@/api/caller'
-import { Button } from '@material-tailwind/react'
+import { Button } from '@/components/tailwind/client-components'
 
 export function OnClickButton({ tagId }: { tagId: number }) {
 	const tagDelete = async (id: number) => {

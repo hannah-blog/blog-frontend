@@ -1,7 +1,7 @@
 'use client'
 
 import styles from '@/styles/components/modal/portfolio-modal.module.css'
-import { Button, Dialog, DialogBody, DialogFooter, DialogHeader } from '@material-tailwind/react'
+import { Button, Dialog, DialogBody, DialogFooter, DialogHeader } from '@/components/tailwind/client-components'
 import { useEffect, useState } from 'react'
 import { fetchPortfolio } from '@/api/caller'
 import Markdown from '@/components/utils/markdown'

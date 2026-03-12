@@ -14,7 +14,7 @@ interface TableProps {
 
 const cardClassName = "h-full w-full overflow-scroll"
 const tableClassName = "w-full min-w-max table-auto text-left"
-const thClassName = "border-b border-blue-gray-100 bg-blue-gray-50 p-4"
+const thClassName = "border-b border-slate-100 bg-slate-50 p-4"
 const thTypographyClassName = "font-normal leading-none opacity-70"
 
 export function Table({ data, detailPath }: TableProps) {
@@ -22,22 +22,22 @@ export function Table({ data, detailPath }: TableProps) {
 		<table className={tableClassName}>
 			<thead>
 			<th className={thClassName}>
-				<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
+				<Typography variant="small" className={`text-slate-600 ${thTypographyClassName}`}>
 					No.
 				</Typography>
 			</th>
 			<th className={thClassName}>
-				<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
+				<Typography variant="small" className={`text-slate-600 ${thTypographyClassName}`}>
 					Title
 				</Typography>
 			</th>
 			<th className={thClassName}>
-				<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
+				<Typography variant="small" className={`text-slate-600 ${thTypographyClassName}`}>
 					Created Date
 				</Typography>
 			</th>
 			<th className={thClassName}>
-				<Typography variant="small" color="blue-gray" className={thTypographyClassName}>
+				<Typography variant="small" className={`text-slate-600 ${thTypographyClassName}`}>
 					Update
 				</Typography>
 			</th>
@@ -46,17 +46,17 @@ export function Table({ data, detailPath }: TableProps) {
 			{data.map((it, index) => {
 				return <tr key={index}>
 					<td>
-						<Typography variant="small" color="blue-gray" className="font-normal">
+						<Typography variant="small" className="text-slate-600 font-normal">
 							{it.id}
 						</Typography>
 					</td>
 					<td>
-						<Typography variant="small" color="blue-gray" className="font-normal">
+						<Typography variant="small" className="text-slate-600 font-normal">
 							{it.title}
 						</Typography>
 					</td>
 					<td>
-						<Typography variant="small" color="blue-gray" className="font-normal">
+						<Typography variant="small" className="text-slate-600 font-normal">
 							{it.createdDate}
 						</Typography>
 					</td>
