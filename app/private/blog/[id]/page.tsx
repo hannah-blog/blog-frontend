@@ -4,7 +4,7 @@ import styles from '@/styles/app/private/page.module.css'
 import MDEditor from '@uiw/react-md-editor'
 import { Button, Typography } from '@/components/tailwind/client-components'
 import { fetchBlog, fetchDeleteBlog, fetchTags, fetchUpdateBlog, Post, Tag } from '@/api/caller'
-import { useEffect, useState } from 'react'
+import { use, useEffect, useState } from 'react'
 import { imageActions } from '@/api/fetch-formatter'
 import { useRouter } from 'next/navigation'
 import onImagePasted from '@/components/utils/on-image-pasted'
@@ -12,10 +12,11 @@ import Image from 'next/image'
 import Load from '@/components/utils/load'
 
 export default function BlogDetail({
-	 params: { id },
+	 params,
  }: {
-	params: { id: number }
+	params: Promise<{ id: string }>
 }) {
+	const { id } = use(params)
 	const router = useRouter();
 
 	const [post, setPost] = useState<Post | null>(null);

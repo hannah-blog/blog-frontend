@@ -2,7 +2,7 @@
 
 import styles from '@/styles/app/private/page.module.css'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { use, useEffect, useState } from 'react'
 import { imageActions } from '@/api/fetch-formatter'
 import {
 	fetchBlogs,
@@ -17,10 +17,11 @@ import Image from 'next/image'
 
 
 export default function SeriesDetail({
-	params: { id },
+	params,
 }: {
-	params: { id: number }
+	params: Promise<{ id: string }>
 }) {
+	const { id } = use(params)
 	const router = useRouter();
 
 	const [series, setSeries] = useState<Series | null>(null);

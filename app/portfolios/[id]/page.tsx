@@ -6,10 +6,11 @@ import { Portfolio, fetchPortfolio } from '@/api/caller'
 import { IdxBox } from '@/components/post'
 
 export default async function PortfolioDetail({
-	params: { id },
+	params,
 }: {
-	params: { id: number }
+	params: Promise<{ id: string }>
 }) {
+	const { id } = await params
 	const portfolio: Portfolio = await fetchPortfolio(id);
 
 	return <>

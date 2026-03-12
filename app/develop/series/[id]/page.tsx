@@ -11,10 +11,11 @@ export async function generateMetadata() {
 }
 
 export default async function SeriesBlog({
-	params: { id },
+	params,
 }: {
-	params: { id: number }
+	params: Promise<{ id: string }>
 }) {
+	const { id } = await params
 	const { blogs } = await fetchBlogsBySeries(id);
 
 	return <div className={styles.main}>

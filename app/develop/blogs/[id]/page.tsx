@@ -9,10 +9,11 @@ import { dateKoFormat, timeFormat } from '@/components/utils/dateUtils'
 import { IdxBox, TagBox } from '@/components/post/index'
 
 export default async function BlogDetail({
-  params: { id },
+  params,
 }: {
-	params: { id: number }
+	params: Promise<{ id: string }>
 }) {
+	const { id } = await params
 	const post: Post = await fetchBlog(id);
 
 	return <>

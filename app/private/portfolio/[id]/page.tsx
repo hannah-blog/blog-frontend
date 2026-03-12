@@ -2,7 +2,7 @@
 
 import styles from '@/styles/app/private/page.module.css'
 import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { use, useEffect, useState } from 'react'
 import { fetchDeletePortfolio, fetchPortfolio, fetchUpdatePortfolio, Portfolio } from '@/api/caller'
 import { imageActions } from '@/api/fetch-formatter'
 import { Button, Typography } from '@/components/tailwind/client-components'
@@ -12,10 +12,11 @@ import Image from 'next/image'
 import Load from '@/components/utils/load'
 
 export default function PortfolioDetail({
- params: { id },
+ params,
 }: {
-	params: { id: number }
+	params: Promise<{ id: string }>
 }) {
+	const { id } = use(params)
 
 	const router = useRouter();
 
