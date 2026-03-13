@@ -1,24 +1,42 @@
 .tagWrapper {
+  display: none;
   position: fixed;
-  width: 100%;
+  top: 0;
+  right: 0;
+  width: auto;
+  max-width: 15%;
   height: auto;
   justify-content: end;
-  display: grid;
   align-content: end;
   text-align: end;
   padding: 10em 3em 0 0;
   z-index: -1;
 }
 
+@media (min-width: 768px) {
+  .tagWrapper {
+    display: grid;
+  }
+}
+
 .idxWrapper {
+  display: none;
   position: fixed;
-  width: 20%;
+  top: 0;
+  left: 0;
+  width: auto;
+  max-width: 20%;
   height: auto;
-  display: grid;
   justify-content: start;
   align-content: start;
   text-align: start;
   padding: 10em 0 0 3em;
+}
+
+@media (min-width: 768px) {
+  .idxWrapper {
+    display: grid;
+  }
 }
 
 .idxTap1 {
