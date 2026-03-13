@@ -3,3 +3,15 @@
   margin-bottom: 0;
   padding-left: 0 !important;
 }
+
+.wmde-markdown {
+  background-color: transparent !important;
+}
+
+.w-md-editor {
+  background-color: #fff !important;
+}
+
+.w-md-editor-content .w-md-editor-preview .wmde-markdown {
+  background-color: #fff !important;
+}
