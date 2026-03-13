@@ -1,11 +1,22 @@
 import styles from '@/styles/components/post/side.module.css'
 import Link from 'next/link'
 import { Typography } from '@/components/tailwind/client-components'
+import GithubSlugger from 'github-slugger'
 
 type IdxType = {
 	idx: number
 	line: string
 	link: string
+}
+
+function renderInlineCode(text: string) {
+	const parts = text.split(/(`[^`]+`)/g);
+	return parts.map((part, i) => {
+		if (part.startsWith('`') && part.endsWith('`')) {
+			return <code key={i} className="bg-surface-200 text-primary-700 px-1 py-0.5 rounded text-xs font-mono">{part.slice(1, -1)}</code>;
+		}
+		return part;
+	});
 }
 
 export default function IdxBox({ content, id, url }: { content: string, id: number, url: string, }) {
@@ -16,8 +27,8 @@ export default function IdxBox({ content, id, url }: { content: string, id: numb
       <Typography variant="h6" color="gray">목차</Typography>
 			{ result.map((item, idx) => {
 				return <Typography key={idx} color="gray" className={`${styles[`idxTap${item.idx}`]} ${styles.idx}`}>
-					<Link href={`${process.env.NEXT_PUBLIC_WWW_URL}/${url}/${id}/${item.link}`}>
-						{item.line}
+					<Link href={`/${url}/${id}/#${item.link}`}>
+						{renderInlineCode(item.line)}
 					</Link>
 				</Typography>;
 			})}
@@ -26,6 +37,7 @@ export default function IdxBox({ content, id, url }: { content: string, id: numb
 }
 
 const getIdxList = (content: string): IdxType[] => {
+	const slugger = new GithubSlugger();
 	const result: IdxType[] = [];
 	const contentByLine: string[] = getPlainContent(content);
 	contentByLine.map((line) => {
@@ -34,14 +46,14 @@ const getIdxList = (content: string): IdxType[] => {
 		const third = thirdMatch(line);
 
 		if (first) {
-			const insert: IdxType = getIdx(1, first[0]);
-			result.push(insert);
+			const text = first[0].replace(/^# /, '');
+			result.push({ idx: 1, line: text, link: slugger.slug(text) });
 		} else if (second) {
-			const insert: IdxType = getIdx(2, second[0]);
-			result.push(insert);
+			const text = second[0].replace(/^## /, '');
+			result.push({ idx: 2, line: text, link: slugger.slug(text) });
 		} else if (third) {
-			const insert: IdxType = getIdx(3, third[0]);
-			result.push(insert);
+			const text = third[0].replace(/^### /, '');
+			result.push({ idx: 3, line: text, link: slugger.slug(text) });
 		}
 	});
 	return result;
@@ -50,8 +62,6 @@ const getIdxList = (content: string): IdxType[] => {
 const getPlainContent = (content: string): string[] => {
 	return content
 		.replace(/^> (.*$)/gim, '')
-		.replace(/\*\*(.*)\*\*/gim, '')
-		.replace(/\*(.*)\*/gim, '')
 		.replace(/!\[(.*?)]\((.*?)\)/gim, '')
 		.replace(/\[(.*?)]\((.*?)\)/gim, '')
 		.replace(/^([A-Za-z \t]*)```([A-Za-z]*)?\n([\s\S]*?)```([A-Za-z \t]*)*$/gm, '')
@@ -68,36 +78,4 @@ const secondMatch = (str: string) => {
 
 const thirdMatch = (str: string) => {
 	return str.match(/^### (.*$)/gim);
-}
-
-const getIdx = (idx: number, str: string): IdxType => {
-	const hash = getHash(idx);
-	return {
-		idx: idx,
-		line: str.slice(idx + 1),
-		link: formatLink(str, hash)
-	}
-}
-
-const getHash = (idx: number): string => {
-	let hash = '';
-	for (let i = 0; i < idx; i++) {
-		hash += '#'
-	}
-	return hash
-}
-
-const formatLink = (str: string, hash: string): string => {
-	return str
-		.replace(hash, '')
-		.replace(/\(/g, ' ')
-		.replace(/\)/g, ' ')
-		.replace(/^ /g, '#')
-		.replace(/ /g, '-')
-		.replace(/\?/g, '')
-		.replace(/\./g, '')
-		.replace(/--/g, '-')
-		.replace(/-$/g, '')
-		.replace(/:/g, '')
-		.toLowerCase()
 }
