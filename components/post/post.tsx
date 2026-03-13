@@ -21,7 +21,7 @@ export default function Post({ post }: { post: PostType }) {
             {post.title}
           </h3>
           <div className="mt-3 flex flex-wrap items-center gap-1.5">
-            {post.tags.slice(0, 3).map((tag, idx) => (
+            {post.tags.map((tag, idx) => (
               <Chip key={idx} size="sm" value={`#${tag.name}`} />
             ))}
           </div>
