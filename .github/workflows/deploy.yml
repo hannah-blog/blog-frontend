@@ -37,8 +37,5 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            docker stop blog-front || true
-            docker rm blog-front || true
-            docker rmi ${{ secrets.DOCKER_USERNAME }}/blog-front:latest || true
-            docker pull ${{ secrets.DOCKER_USERNAME }}/blog-front:latest
-            docker run -d --name blog-front -p 12345:3000 ${{ secrets.DOCKER_USERNAME }}/blog-front:latest
+            cd /home/services/blog
+            ./front-service-deploy.sh
