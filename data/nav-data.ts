@@ -1,3 +1,4 @@
+import React from 'react'
 import { blockIcon, docsIcon, drawerIcon } from '@/components/svg/icons'
 
 type NavChildren = {
@@ -8,7 +9,7 @@ type NavChildren = {
 type NavData = {
   mainTitle: string,
   link: string,
-  icon: JSX.Element,
+  icon: React.JSX.Element,
   children: NavChildren[],
 }
 

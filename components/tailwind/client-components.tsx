@@ -53,9 +53,9 @@ export function Button({ variant = 'filled', color = 'indigo', size = 'md', clas
   const sizeClass = { sm: 'px-3 py-1.5 text-sm', md: 'px-4 py-2 text-sm', lg: 'px-6 py-3 text-base' }[size]
   const base = 'inline-flex items-center justify-center font-medium rounded-lg transition-colors focus:outline-none disabled:opacity-50 cursor-pointer'
   const variants: Record<string, Record<string, string>> = {
-    filled: { indigo: 'bg-indigo-600 text-white hover:bg-indigo-700', red: 'bg-red-600 text-white hover:bg-red-700', 'blue-gray': 'bg-slate-600 text-white hover:bg-slate-700', white: 'bg-white text-slate-800 hover:bg-slate-100' },
-    outlined: { indigo: 'border border-indigo-600 text-indigo-600 hover:bg-indigo-50', red: 'border border-red-600 text-red-600 hover:bg-red-50', 'blue-gray': 'border border-slate-400 text-slate-600 hover:bg-slate-50', white: 'border border-white text-white hover:bg-white/10' },
-    text: { indigo: 'text-indigo-600 hover:bg-indigo-50', red: 'text-red-600 hover:bg-red-50', 'blue-gray': 'text-slate-600 hover:bg-slate-50', white: 'text-white hover:bg-white/10' },
+    filled: { indigo: 'bg-primary-600 text-white hover:bg-primary-700', red: 'bg-red-600 text-white hover:bg-red-700', 'blue-gray': 'bg-slate-600 text-white hover:bg-slate-700', white: 'bg-white text-slate-800 hover:bg-slate-100' },
+    outlined: { indigo: 'border border-primary-600 text-primary-600 hover:bg-primary-50', red: 'border border-red-600 text-red-600 hover:bg-red-50', 'blue-gray': 'border border-slate-400 text-slate-600 hover:bg-slate-50', white: 'border border-white text-white hover:bg-white/10' },
+    text: { indigo: 'text-primary-600 hover:bg-primary-50', red: 'text-red-600 hover:bg-red-50', 'blue-gray': 'text-slate-600 hover:bg-slate-50', white: 'text-white hover:bg-white/10' },
   }
   return <button className={`${base} ${sizeClass} ${variants[variant][color] ?? ''} ${className}`} {...props}>{children}</button>
 }
@@ -99,8 +99,8 @@ interface ChipProps extends React.HTMLAttributes<HTMLSpanElement> {
 export function Chip({ value, variant = 'filled', size = 'md', color: _color, className = '', children, ...props }: ChipProps) {
   const sizeClass = { sm: 'px-2 py-0.5 text-xs', md: 'px-3 py-1 text-sm' }[size]
   const variantClass = variant === 'outlined'
-    ? 'border border-slate-400 text-slate-600 bg-transparent'
-    : 'bg-slate-100 text-slate-700'
+    ? 'border border-primary-200 text-primary-600 bg-transparent'
+    : 'bg-primary-50 text-primary-600'
   return <span className={`inline-flex items-center rounded-full font-medium ${sizeClass} ${variantClass} ${className}`} {...props}>{value ?? children}</span>
 }
 
@@ -147,7 +147,7 @@ export function Menu({ children }: MenuProps) {
     </MenuContext.Provider>
   )
 }
-export function MenuHandler({ children }: { children: React.ReactElement }) {
+export function MenuHandler({ children }: { children: React.ReactElement<{ onClick?: (e: React.MouseEvent) => void }> }) {
   const { setOpen, open } = React.useContext(MenuContext)
   return React.cloneElement(children, {
     onClick: (e: React.MouseEvent) => {
@@ -205,7 +205,7 @@ export function Timeline({ children, className = '' }: React.HTMLAttributes<HTML
   return <div className={`flex flex-col ${className}`}>{children}</div>
 }
 export function TimelineItem({ children, className = '' }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={`relative flex gap-4 ${className}`}>{children}</div>
+  return <div className={`relative flex flex-col ${className}`}>{children}</div>
 }
 export function TimelineConnector({ className = '' }: React.HTMLAttributes<HTMLDivElement>) {
   return <div className={`absolute left-[7px] top-4 h-full w-0.5 bg-slate-200 ${className}`} />
@@ -214,7 +214,7 @@ export function TimelineHeader({ children, className = '' }: React.HTMLAttribute
   return <div className={`flex items-center gap-3 ${className}`}>{children}</div>
 }
 export function TimelineIcon({ className = '' }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={`z-10 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-indigo-600 ${className}`} />
+  return <div className={`z-10 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary-500 ${className}`} />
 }
 export function TimelineBody({ children, className = '' }: React.HTMLAttributes<HTMLDivElement>) {
   return <div className={`ml-7 ${className}`}>{children}</div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { navData } from '@/data/nav-data'
 import { menuCloseIcon, menuOpenIcon } from '@/components/svg/icons'
@@ -8,60 +8,67 @@ import { logo } from '@/components/font/google'
 import styles from '@/styles/components/layout/navbar.module.css'
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
   const [hide, setHide] = useState(false)
   const [pageY, setPageY] = useState(0)
   const [openMenuIdx, setOpenMenuIdx] = useState<number | null>(null)
+  const menuRef = useRef<HTMLUListElement>(null)
 
-  const handleScroll = () => {
-    const { pageYOffset } = window
-    const deltaY = pageYOffset - pageY
-    setHide(pageYOffset !== 0 && deltaY >= 0)
-    setPageY(pageYOffset)
-  }
-
-  const throttleScroll = throttle(handleScroll, 50)
+  const handleScroll = useCallback(() => {
+    const y = window.scrollY
+    setHide(y > 60 && y > pageY)
+    setPageY(y)
+  }, [pageY])
 
   useEffect(() => {
-    window.addEventListener('scroll', throttleScroll)
-    return () => window.removeEventListener('scroll', throttleScroll)
-  }, [pageY, throttleScroll])
+    let ticking = false
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => { handleScroll(); ticking = false })
+        ticking = true
+      }
+    }
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [handleScroll])
 
-  const navItemClass = 'flex items-center px-3 py-2 text-sm font-medium text-slate-700 rounded-lg hover:bg-slate-100 transition-colors cursor-pointer'
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setOpenMenuIdx(null)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
 
   return (
     <div className={styles.navWrapper}>
-      <nav className={`${hide ? styles.hide : ''} w-full bg-white/90 backdrop-blur-sm border-b border-slate-200 shadow-sm px-4 lg:px-6 py-3 transition-transform duration-300`}>
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
+      <nav className={`${hide ? styles.hide : ''} w-full bg-white/80 backdrop-blur-md border-b border-surface-200/50 px-5 lg:px-8 py-3.5 transition-transform duration-300`}>
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
             <img
-              alt="Hannah github profile image"
+              alt="profile"
               src="https://avatars.githubusercontent.com/u/57277976?v=4"
-              className="w-8 h-8 rounded-full object-cover"
+              className="w-8 h-8 rounded-full object-cover ring-2 ring-primary-100 group-hover:ring-primary-300 transition-all"
             />
-            <h1 style={logo.style} className="text-base font-bold text-slate-800 hidden sm:block">Hannah Blog</h1>
+            <span style={logo.style} className="text-xl font-bold text-primary-950 hidden sm:block">Hannah</span>
           </Link>
 
-          {/* Desktop menu */}
-          <ul className="hidden lg:flex items-center gap-1 ml-auto">
+          <ul ref={menuRef} className="hidden lg:flex items-center gap-0.5">
             {navData.map((nav, idx) => (
               <li key={idx} className="relative">
                 <button
-                  className={navItemClass}
+                  className="px-4 py-2 text-sm font-medium text-surface-600 rounded-full hover:text-primary-700 hover:bg-primary-50 transition-all cursor-pointer"
                   onClick={() => setOpenMenuIdx(openMenuIdx === idx ? null : idx)}
-                  onBlur={() => setTimeout(() => setOpenMenuIdx(null), 150)}
                 >
-                  {nav.icon}
-                  <span className="ml-2">{nav.mainTitle}</span>
+                  {nav.mainTitle}
                 </button>
                 {openMenuIdx === idx && (
-                  <div className="absolute right-0 top-full mt-1 min-w-max rounded-lg border border-slate-200 bg-white py-1 shadow-lg z-50">
+                  <div className="absolute right-0 top-full mt-2 w-52 rounded-2xl bg-white border border-surface-100 py-2 shadow-lg shadow-surface-200/50 z-50">
                     {nav.children.map((cNav, cIdx) => (
                       <Link
                         key={cIdx}
                         href={`${nav.link}${cNav.cLink}`}
-                        className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50"
+                        className="flex items-center gap-2 px-4 py-2.5 text-sm text-surface-600 hover:text-primary-700 hover:bg-primary-50/60 transition-colors"
                         onClick={() => setOpenMenuIdx(null)}
                       >
                         {cNav.title}
@@ -73,47 +80,34 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-1 rounded-lg hover:bg-slate-100 transition-colors"
-            onClick={() => setOpen(!open)}
+            className="lg:hidden p-2 rounded-full hover:bg-surface-100 transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
           >
-            {open ? menuCloseIcon : menuOpenIcon}
+            {mobileOpen ? menuCloseIcon : menuOpenIcon}
           </button>
         </div>
 
-        {/* Mobile menu */}
-        <div className={`overflow-hidden transition-all duration-300 lg:hidden ${open ? 'max-h-screen opacity-100 mt-3' : 'max-h-0 opacity-0'}`}>
-          <ul className="flex flex-col gap-1 pb-2">
+        <div className={`overflow-hidden transition-all duration-300 lg:hidden max-w-6xl mx-auto ${mobileOpen ? 'max-h-screen opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+          <div className="flex flex-col gap-1 pb-3">
             {navData.map((nav, idx) => (
-              <li key={idx}>
-                <div className="px-2 py-1 text-xs font-semibold text-slate-400 uppercase tracking-wider mt-2">{nav.mainTitle}</div>
+              <div key={idx}>
+                <div className="px-3 py-1.5 text-[11px] font-semibold text-surface-400 uppercase tracking-widest">{nav.mainTitle}</div>
                 {nav.children.map((cNav, cIdx) => (
                   <Link
                     key={cIdx}
                     href={`${nav.link}${cNav.cLink}`}
-                    className="block px-3 py-2 text-sm text-slate-700 rounded-lg hover:bg-slate-100"
-                    onClick={() => setOpen(false)}
+                    className="block px-3 py-2 text-sm text-surface-700 rounded-xl hover:bg-primary-50 transition-colors"
+                    onClick={() => setMobileOpen(false)}
                   >
                     {cNav.title}
                   </Link>
                 ))}
-              </li>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </nav>
     </div>
   )
-}
-
-const throttle = (callback: (...args: unknown[]) => void, waitTime: number) => {
-  let timerId: NodeJS.Timeout | null = null
-  return (...args: unknown[]) => {
-    if (timerId) return
-    timerId = setTimeout(() => {
-      callback(...args)
-      timerId = null
-    }, waitTime)
-  }
 }

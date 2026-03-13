@@ -1,30 +1,42 @@
-FROM oven/bun:1.0.7 AS base
+FROM node:22-slim AS base
 
 # Install dependencies only when needed
 FROM base AS deps
-WORKDIR /usr/src/app
+WORKDIR /app
+COPY package.json package-lock.json ./
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
+RUN npm config set strict-ssl false && npm ci
 
-# Install dependencies based on the preferred package manager
-COPY package.json bun.lockb ./
-RUN bun install
-
-# Rebuild the source code only when needed
-FROM deps AS builder
-WORKDIR /usr/src/app
-COPY --from=deps /usr/src/app/node_modules node_modules
+# Build the source code
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules node_modules
 COPY . .
 
 ENV NODE_ENV=production
-RUN sh script/generate-sitemap.sh
-RUN bun run build
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
 
-# copy production dependencies and source code into final image
-FROM base AS release
-COPY --from=builder /usr/src/app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /usr/src/app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /usr/src/app/.next/static ./.next/static
+# Generate sitemap (use node instead of bun)
+RUN sed -i 's/bun /node /g' script/generate-sitemap.sh \
+    && sh script/generate-sitemap.sh
 
-# run the app
-USER bun
-EXPOSE 3000/tcp
-ENTRYPOINT [ "bun", "run", "server.js" ]
+RUN npx next build --webpack
+
+# Production image
+FROM base AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+
+RUN addgroup --system --gid 1001 nodejs \
+    && adduser --system --uid 1001 nextjs
+
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+USER nextjs
+EXPOSE 3000
+ENV PORT=3000
+ENV HOSTNAME="0.0.0.0"
+
+CMD ["node", "server.js"]

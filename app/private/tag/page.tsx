@@ -42,12 +42,12 @@ export default async function Tag() {
 					? tags.map((it, index) => {
 						return <tr key={index}>
 							<td>
-								<Typography variant="small" className="text-slate-600" className="font-normal">
+								<Typography variant="small" className="text-slate-600 font-normal">
 									{it.id}
 								</Typography>
 							</td>
 							<td>
-								<Typography variant="small" className="text-slate-600" className="font-normal">
+								<Typography variant="small" className="text-slate-600 font-normal">
 									{it.name}
 								</Typography>
 							</td>

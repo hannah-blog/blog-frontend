@@ -14,6 +14,7 @@ export default function HeadMeta({ title, description, url, image, tags }: MetaP
   return <>
     <head>
       <title>{ title ? `${title} | Hannah` : "Archiving for Hannah" }</title>
+      <link rel="icon" href="/icon.ico" />
       <meta name="description" content={ description ? parseMarkdown(description) : defaultDescription } />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta name="author" content={ tags ? tags.toString() : '' } />

@@ -1,5 +1,6 @@
 import Series from '@/components/series/series'
 import Link from 'next/link'
+import InfiniteGrid from '@/components/utils/infinite-grid'
 import { formatMetadata } from '@/components/utils/meta-head'
 import { fetchSeries } from '@/api/caller'
 
@@ -13,14 +14,17 @@ export async function generateMetadata() {
 export default async function DevelopSeries() {
 	const series = await fetchSeries();
 
-	return <div className="min-h-screen px-4 py-12 md:px-8 md:py-20">
-		<h1 className="text-3xl md:text-5xl font-bold text-slate-800 mb-8 md:mb-12">Develop Series</h1>
-		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{series && series.map((s, idx) => {
-				return <Link key={idx} href={`/develop/series/${s.id}`}>
-					<Series series={s}/>
-				</Link>;
-			})}
+	return <div className="min-h-screen max-w-6xl mx-auto px-5 py-12 md:px-8 md:py-20">
+		<div className="mb-10 md:mb-14">
+			<h1 className="text-3xl md:text-4xl font-bold text-surface-900 tracking-tight">Series</h1>
+			<p className="mt-2 text-surface-400">주제별로 묶은 시리즈 글 모음입니다.</p>
 		</div>
+		<InfiniteGrid columns={2}>
+			{series ? series.map((s, idx) => (
+				<Link key={idx} href={`/develop/series/${s.id}`}>
+					<Series series={s}/>
+				</Link>
+			)) : []}
+		</InfiniteGrid>
 	</div>;
 }

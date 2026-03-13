@@ -14,7 +14,7 @@ export default async function BlogDetail({
 	params: Promise<{ id: string }>
 }) {
 	const { id } = await params
-	const post: Post = await fetchBlog(id);
+	const post: Post = await fetchBlog(Number(id));
 
 	return <>
 		<HeadMeta
@@ -24,7 +24,7 @@ export default async function BlogDetail({
 			url={"/develop/blogs/" + post.id}
 			tags={post.tags.map(tag => tag.name)}
 		/>
-		<IdxBox id={id} content={post.content} url={"develop/blogs"} />
+		<IdxBox id={Number(id)} content={post.content} url={"develop/blogs"} />
 		<TagBox tags={post.tags} />
 		<div className={styles.blogWrapper}>
 			<ProgressBar/>

@@ -4,25 +4,21 @@ import { dateFormat } from '@/components/utils/dateUtils'
 import type { Series } from '@/api/caller'
 
 export default function Series({ series }: { series: Series }) {
-	return <div className={`${styles.series} rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer`}>
+	return <article className={`${styles.series} group shadow-sm shadow-surface-200/50 hover:shadow-xl hover:shadow-surface-300/60 transition-all duration-300 hover:-translate-y-1 cursor-pointer border border-surface-100`}>
 		<div className={styles.seriesHeader}>
 			<div className={styles.seriesThumbnail}>
 				<Image
 					src={series.thumbnailUrl}
 					alt={series.title}
-					width={200}
-					height={200}
+					fill
+					className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
 				/>
 			</div>
 			<div className={styles.headerGradient} />
 		</div>
 		<div className={styles.seriesBody}>
-			<h2 className={`${styles.seriesTitle} text-xl font-bold`}>
-				{series.title}
-			</h2>
-			<p className={styles.seriesDate}>
-				마지막 업데이트 : {dateFormat(series.createdDate)}
-			</p>
+			<h2 className={styles.seriesTitle}>{series.title}</h2>
+			<p className={styles.seriesDate}>{dateFormat(series.createdDate)}</p>
 		</div>
-	</div>
+	</article>
 }

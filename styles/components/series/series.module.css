@@ -1,82 +1,51 @@
 .series {
-  --tw-text-opacity: 1;
-  color: rgb(97 97 97 / var(--tw-text-opacity));
-  text-align: center;
-  background-clip: border-box;
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  border-radius: 0.75rem;
-  overflow: hidden;
-  justify-content: center;
-  align-items:flex-end;
-  display: grid;
   position: relative;
-  transition: transform .2s;
-  margin-bottom: 2em;
-}
-
-.series:hover {
-  transform: scale(1.05);
-  cursor: pointer;
+  overflow: hidden;
+  border-radius: 1rem;
+  min-height: 240px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .seriesHeader {
-  --tw-text-opacity: 1;
-  background-position: center;
-  background-clip: border-box;
-  background-size: cover;
-  background-color: transparent;
-  border-radius: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  inset: 0;
   position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 
 .headerGradient {
-  --tw-gradient-to: rgba(0, 0, 0, 0.24) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), rgb(0 0 0 / 0.5) var(--tw-gradient-via-position), var(--tw-gradient-to);
-  --tw-gradient-from: rgb(0 0 0 / 0.8) var(--tw-gradient-from-position);
-  background-image: linear-gradient(to top, var(--tw-gradient-stops));
-  width: 100%;
-  height: 100%;
-  inset: 0;
   position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.05) 100%);
 }
 
 .seriesBody {
-  padding: 3.5rem 3rem;
   position: relative;
+  padding: 1.5rem;
+  width: 100%;
 }
 
 .seriesTitle {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  letter-spacing: 0;
-  line-height: 1.5;
+  color: #fff;
+  font-size: 1.25rem;
   font-weight: 700;
-  font-size: 2.25rem;
-  font-family: Roboto, sans-serif;
-  padding-top: 2.5rem;
-  display: block;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
 }
 
 .seriesDate {
-  --tw-text-opacity: 1;
-  color: rgb(189 189 189 / var(--tw-text-opacity));
-  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
 }
 
 .seriesThumbnail {
-  object-fit: cover;
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .seriesThumbnail img {
   object-fit: cover;
-  height: 100%;
   width: 100%;
+  height: 100%;
 }

@@ -25,7 +25,7 @@ export default function PortfolioDetail({
 	const [file, setFile] = useState<File | null>(null);
 
 	useEffect(() => {
-		fetchPortfolio(id).then((data) => {
+		fetchPortfolio(Number(id)).then((data) => {
 			setPortfolio(data);
 			setContent(data.content);
 		});

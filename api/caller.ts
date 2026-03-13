@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { actions, HttpMethod } from './fetch-formatter'
 
 enum RequestUrl {

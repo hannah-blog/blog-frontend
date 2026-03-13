@@ -21,7 +21,7 @@ export default function Pagination({ total, limit, page, setPage }: pageInfo) {
         <IconButton
           key={i}
           onClick={() => setPage(i + 1)}
-          className={`rounded-full ${page === i + 1 ? 'bg-indigo-600 text-white' : 'text-slate-600 hover:bg-slate-100'}`}
+          className={`rounded-full ${page === i + 1 ? 'bg-primary-500 text-white' : 'text-slate-600 hover:bg-slate-100'}`}
         >
           {i + 1}
         </IconButton>

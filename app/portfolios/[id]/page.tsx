@@ -11,7 +11,7 @@ export default async function PortfolioDetail({
 	params: Promise<{ id: string }>
 }) {
 	const { id } = await params
-	const portfolio: Portfolio = await fetchPortfolio(id);
+	const portfolio: Portfolio = await fetchPortfolio(Number(id));
 
 	return <>
 		<HeadMeta
@@ -20,7 +20,7 @@ export default async function PortfolioDetail({
 			image={portfolio.thumbnailUrl}
 			url={`/portfolio/${portfolio.id}`}
 		/>
-		<IdxBox id={id} content={portfolio.content} url={"portfolios"} />
+		<IdxBox id={Number(id)} content={portfolio.content} url={"portfolios"} />
 		<div className={styles.blogWrapper}>
 			<ProgressBar/>
 			<div className={styles.titleText}>{portfolio.title}</div>

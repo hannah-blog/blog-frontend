@@ -1,3 +1,4 @@
+import React from 'react'
 import styles from '@/styles/components/motion/circle-animation.module.css'
 import { Keyframes } from '@/components/motion/keyframes'
 import { Tooltip } from '@/components/tailwind/client-components'
@@ -6,13 +7,13 @@ export default function CircleAnimation() {
 	return  <div className={styles.animationWrapper}>
 		{ Array.from({length: 10}).map((_, i) => {
 			const size = getRandomInt(20, 200);
-			return <>
+			return <React.Fragment key={i}>
 				<Keyframes
 					name={`svg-animation-${i}`}
 					delay={`${getRandomInt(100, 200) / 100}s`}
-					_0={{ marginBottom: '2px' }}
+					_0={{ transform: 'translateY(0)' }}
 					_70={{ opacity: 0.2 }}
-					_100={{ opacity: 0.3, marginBottom: `${getRandomInt(50, 500)}px`}}
+					_100={{ opacity: 0.3, transform: `translateY(-${getRandomInt(50, 500)}px)`}}
 				/>
 				<Tooltip
 					content="🥰"
@@ -21,9 +22,9 @@ export default function CircleAnimation() {
 						unmount: { scale: 0, y: 25 },
 					}}
 				>
-					<Circle key={i} className={`svg-animation-${i}`} width={size} height={size} fill={getRandomColor()} />
+					<Circle className={`svg-animation-${i}`} width={size} height={size} fill={getRandomColor()} />
 				</Tooltip>
-			</>;
+			</React.Fragment>;
 		})}
 	</div>
 }

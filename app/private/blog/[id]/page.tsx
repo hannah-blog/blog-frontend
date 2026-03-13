@@ -32,7 +32,7 @@ export default function BlogDetail({
 	const deleteDefaultTags = (deleteTag: Tag) => setDefaultTags(defaultTags.filter(tag => tag !== deleteTag));
 
 	useEffect(() => {
-		fetchBlog(id).then((data) => {
+		fetchBlog(Number(id)).then((data) => {
 			setPost(data);
 			setTags(data.tags);
 			setContent(data.content);

@@ -88,7 +88,7 @@ export default function SeriesDetail({
 	}
 
 	useEffect(() => {
-		fetchSeriesById(id).then((data) => {
+		fetchSeriesById(Number(id)).then((data) => {
 			setSeries(data);
 			setBlogs(data.blogs);
 		});
